@@ -85,6 +85,9 @@ void loop()
   //this will not work since DHT sensor is not working (getting NaN on DHT11)
   Record recordName(1, recordNumber, dhtOne.readTemperature(true), dhtOne.readHumidity(), 
                      analogRead(xPin), analogRead(yPin), analogRead(zPin));
+
+  //test print data to serial monitor after each recording
+  recordName.printToSerial();
   
   //store record in record array for nest one                   
   nestOne[arrayIndex] = recordName;  
@@ -96,4 +99,5 @@ void loop()
 
 	delay(10000); //delay for 10 seconds between each reading
 }
+
 

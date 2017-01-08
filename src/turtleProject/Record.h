@@ -17,6 +17,14 @@ class Record
 		Record();
     Record(int nID);
 		Record(int nID, int rn, int t, int h, int x, int y, int z);
+    int getNestID();
+    unsigned long getRecordNumber();
+    int getTemp();
+    int getHumidity();
+    int getXAcc();
+    int getYAcc();
+    int getZAcc();
+    void printToSerial();
 };
 
 
