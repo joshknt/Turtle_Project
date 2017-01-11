@@ -1,3 +1,4 @@
+
 /*
 Arduino Turtle Sketch
 Authors: Derek C. Brown, Josh Kent
@@ -9,8 +10,9 @@ and movement for the prediction of boils.
 */
 
 
-#include "Record.h"
-#include "DHT.h"
+#include "Record/Record.h"
+#include "OneWire/OneWire.h"
+#include "DallasTemperature/DallasTemperature.h"
 
 //####################__SENSOR EGG PIN SETUP__#########################
 
