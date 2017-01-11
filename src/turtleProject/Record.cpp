@@ -12,12 +12,10 @@ Record::Record(int nID)
 }
 
 
-Record::Record(int nID, int rn, int t, int h, int x, int y, int z)
+Record::Record(int nID, int rn, int x, int y, int z)
 {
 	nestID = nID;
 	recordNumber = rn;
-	temp = t;
-	humidity = h;
 	xAcc = x;
 	yAcc = y;
 	zAcc = z;
@@ -32,18 +30,6 @@ int Record::getNestID()
 unsigned long Record::getRecordNumber()
 {
   return recordNumber;  
-}
-
-
-int Record::getTemp()
-{
-  return temp;
-}
-
-
-int Record::getHumidity()
-{
-  return humidity;
 }
 
 
@@ -72,12 +58,6 @@ void Record::printToSerial()
   
   Serial.print("Record #: "); 
   Serial.println(this->recordNumber);
-  
-  Serial.print("Temp: "); 
-  Serial.println(this->temp);
-  
-  Serial.print("Humidity: "); 
-  Serial.println(this->humidity);
   
   Serial.print("X: ");
   Serial.print(this->xAcc);

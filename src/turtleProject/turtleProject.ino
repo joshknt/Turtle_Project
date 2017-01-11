@@ -16,9 +16,6 @@ and movement for the prediction of boils.
 
 //******************************************************************
 //Sensor Egg 1
-#define DHTPIN 0
-#define SENSORTYPE DHT11
-DHT dhtOne(DHTPIN, SENSORTYPE);
 int xPin = A3;
 int yPin = A4;
 int zPin = A5;
@@ -27,7 +24,6 @@ int zPin = A5;
 //******************************************************************
 //Sensor Egg 2
 //The pins need to be changed for second set of sensors
-//byte tempHumPin = A0;
 //byte xPin = A3;
 //byte yPin = A4;
 //byte zPin = A5;
@@ -36,7 +32,6 @@ int zPin = A5;
 //******************************************************************
 //Sensor Egg 3
 //The pins need to be changed for a third set of sensors
-//byte tempHumPin = A0;
 //byte xPin = A3;
 //byte yPin = A4;
 //byte zPin = A5;
@@ -60,7 +55,6 @@ void setup()
 {
 	Serial.begin(115200);
 	analogReference(EXTERNAL);
-  //dhtOne.begin();
 }
 
 
@@ -82,9 +76,7 @@ void loop()
 
   //store data
   //there must be a new block for each nest
-  //this will not work since DHT sensor is not working (getting NaN on DHT11)
-  Record recordName(1, recordNumber, dhtOne.readTemperature(true), dhtOne.readHumidity(), 
-                     analogRead(xPin), analogRead(yPin), analogRead(zPin));
+  Record recordName(1, recordNumber, analogRead(xPin), analogRead(yPin), analogRead(zPin));
 
   //test print data to serial monitor after each recording
   recordName.printToSerial();
