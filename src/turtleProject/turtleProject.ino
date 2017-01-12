@@ -93,7 +93,6 @@ void loop()
   //test print data to serial monitor after each recording
   recordName.printToSerial();
 
-  Serial.println(bottomTemp.getTempFByIndex(0));
   //store record in record array for nest one                   
   nestOne[arrayIndex] = recordName;  
 
