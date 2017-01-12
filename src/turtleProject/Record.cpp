@@ -21,6 +21,20 @@ Record::Record(int nID, long rn, int x, int y, int z)
 	zAcc = z;
 }
 
+//use this after DB18B20 is working
+//Record::Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z)
+//{
+//  nestID = nID;
+//  recordNumber = rn;
+//  bottomTemp = bt;
+//  midTemp = mt;
+//  topTemp = tt;
+//  xAcc = x;
+//  yAcc = y;
+//  zAcc = z;
+//}
+
+
 int Record::getNestID()
 { 
   return this->nestID;  

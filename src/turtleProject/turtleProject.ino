@@ -108,6 +108,8 @@ Record nestOne[TOTALRECORDS]; //stores records
 Record nestTwo[TOTALRECORDS];
 Record nestThree[TOTALRECORDS];
 Record nestFour[TOTALRECORDS];
+
+//todo: change to c-strings
 String recordName = "r"; //begins the record naming convention
 //#####################################################################
 
@@ -137,6 +139,7 @@ void loop()
 
 
   //create new record object and name for each nest
+  //todo: modify this to work with c-strings
   recordName = "r" + recordNumber;
 
   //store data
