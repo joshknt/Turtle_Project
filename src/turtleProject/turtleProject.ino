@@ -22,40 +22,93 @@ and movement for the prediction of boils.
 
 //******************************************************************
 //Sensor Egg 1
-#define BOTTOMTEMPPIN 2
-int xPin = A3; //change these to #define 
-int yPin = A4;
-int zPin = A5;
+int xPinOne = A0; 
+int yPinOne = A1;
+int zPinOne = A2;
 
+//#define BOTTOMTEMPPINONE 2 
+//OneWire bottomWireOne(BOTTOMTEMPPINONE);  
+//DallasTemperature bottomTempOne(&bottomWireOne);
+
+//#define MIDDLETEMPPIN 3 
+//OneWire middleWireOne(MIDDLETEMPPINONE);  
+//DallasTemperature middleTempOne(&middleWireOne);
+
+//#define TOPTEMPPIN 4 
+//OneWire topWireOneOne(TOPTEMPPINONE);  
+//DallasTemperature topTempOne(&topWireOne);
 
 //******************************************************************
 //Sensor Egg 2
 //The pins need to be changed for second set of sensors
-//byte xPin = A3;
-//byte yPin = A4;
-//byte zPin = A5;
+//byte xPinTwo = A3;
+//byte yPinTwo = A4;
+//byte zPinTwo = A5;
 
+//#define BOTTOMTEMPPIN 5 
+//OneWire bottomWireTwo(BOTTOMTEMPPINTWO);  
+//DallasTemperature bottomTempTwo(&bottomWireTwo);
+
+//#define MIDDLETEMPPIN 6 
+//OneWire middleWireTwo(MIDDLETEMPPINTWO);  
+//DallasTemperature middleTempTwo(&middleWireTwo);
+
+//#define TOPTEMPPIN 7 
+//OneWire topWireTwo(TOPTEMPPINTWO);  
+//DallasTemperature topTempTwo(&topWireTwo);
 
 //******************************************************************
 //Sensor Egg 3
 //The pins need to be changed for a third set of sensors
-//byte xPin = A3;
-//byte yPin = A4;
-//byte zPin = A5;
+//byte xPinThree = A6;
+//byte yPinThree = A7;
+//byte zPinThree = A8;
+
+//#define BOTTOMTEMPPIN 8 
+//OneWire bottomWireThree(BOTTOMTEMPPINTHREE);  
+//DallasTemperature bottomTempThree(&bottomWireThree);
+
+//#define MIDDLETEMPPIN 9 
+//OneWire middleWireThree(MIDDLETEMPPINTHREE);  
+//DallasTemperature middleTempThree(&middleWireThree);
+
+//#define TOPTEMPPIN 10 
+//OneWire topWireThree(TOPTEMPPINTHREE);  
+//DallasTemperature topTempThree(&topWireThree);
+
+//******************************************************************
+//Sensor Egg 4
+//The pins need to be changed for a third set of sensors
+//byte xPinFour = A9;
+//byte yPinFour = A10;
+//byte zPinFour = A11;
+
+//#define BOTTOMTEMPPIN 11 
+//OneWire bottomWireFour(BOTTOMTEMPPINFOUR);  
+//DallasTemperature bottomTempFour(&bottomWireFour);
+
+//#define MIDDLETEMPPIN 12 
+//OneWire middleWireFour(MIDDLETEMPPINFOUR);  
+//DallasTemperature middleTempFour(&middleWireFour);
+
+//#define TOPTEMPPIN 13 
+//OneWire topWireFour(TOPTEMPPINFOUR);  
+//DallasTemperature topTempFour(&topWireFour);
+
 //#####################################################################
 
 
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 50; //constant declares the number of records
+const int TOTALRECORDS = 80; //constant declares the number of records
 int recordNumber = 0; //holds which record being sent
 int arrayIndex = 0; //array bounds checker
 Record nestOne[TOTALRECORDS]; //stores records
+Record nestTwo[TOTALRECORDS];
+Record nestThree[TOTALRECORDS];
+Record nestFour[TOTALRECORDS];
 String recordName = "r"; //begins the record naming convention
-
-OneWire bottomWire(BOTTOMTEMPPIN);
-DallasTemperature bottomTemp(&bottomWire);
 //#####################################################################
 
 
@@ -63,10 +116,10 @@ DallasTemperature bottomTemp(&bottomWire);
 //*********************************************************************
 void setup()
 {
-	Serial.begin(115200);
+	Serial.begin(9600);
 	analogReference(EXTERNAL); //needed to reference 3.3v for accelerometer
 
-  bottomTemp.begin(); //needed for DS18B20
+  //bottomTemp.begin(); //needed for DS18B20
 }
 
 
@@ -88,20 +141,26 @@ void loop()
 
   //store data
   //there must be a new block for each nest
-  Record recordName(1, recordNumber, analogRead(xPin), analogRead(yPin), analogRead(zPin));
-
+  Record recordNameOne(1, recordNumber, analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
+  //Record recordNameTwo(2, recordNumber, analogRead(xPinTwo), analogRead(yPinTwo), analogRead(zPinTwo)); //nest two
+  //Record recordNameThree(3, recordNumber, analogRead(xPinThree), analogRead(yPinThree), analogRead(zPinThree)); //nest three
+  //Record recordNameFour(4, recordNumber, analogRead(xPinFour), analogRead(yPinFour), analogRead(zPinFour)); //nest four
+  
   //test print data to serial monitor after each recording
-  recordName.printToSerial();
+  recordNameOne.printToSerial();
 
-  //store record in record array for nest one                   
-  nestOne[arrayIndex] = recordName;  
+  //store records in arrays                   
+  nestOne[arrayIndex] = recordNameOne;
+  //nestTwo[arrayIndex] = recordNameTwo;
+  //nestThree[arrayIndex] = recordNameThree;
+  //nestFour[arrayIndex] = recordNameFour;  
 
   
 	//incrememnt counters
 	recordNumber++;
 	arrayIndex++;
 
-  delay(500);
+
 	//delay(10000); //delay for 10 seconds between each reading
 }
 

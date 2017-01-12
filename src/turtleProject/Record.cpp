@@ -12,7 +12,7 @@ Record::Record(int nID)
 }
 
 
-Record::Record(int nID, int rn, int x, int y, int z)
+Record::Record(int nID, long rn, int x, int y, int z)
 {
 	nestID = nID;
 	recordNumber = rn;
@@ -27,13 +27,13 @@ int Record::getNestID()
 }
 
 
-unsigned long Record::getRecordNumber()
+long Record::getRecordNumber()
 {
   return recordNumber;  
 }
 
 
-float Record:: getBottomTemp()
+int Record:: getBottomTemp()
 {
   return bottomTemp;
 }
