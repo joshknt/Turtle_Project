@@ -23,13 +23,19 @@ Record::Record(int nID, int rn, int x, int y, int z)
 
 int Record::getNestID()
 { 
-  return nestID;  
+  return this->nestID;  
 }
 
 
 unsigned long Record::getRecordNumber()
 {
   return recordNumber;  
+}
+
+
+float Record:: getBottomTemp()
+{
+  return bottomTemp;
 }
 
 
@@ -58,6 +64,9 @@ void Record::printToSerial()
   
   Serial.print("Record #: "); 
   Serial.println(this->recordNumber);
+
+  //Serial.print("Bottom Temp: "); 
+  //Serial.println(this->bottomTemp);
   
   Serial.print("X: ");
   Serial.print(this->xAcc);
