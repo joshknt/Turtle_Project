@@ -13,10 +13,9 @@ Record::Record(int nID)
 
 
 
-Record::Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z)
+Record::Record(int nID, int bt, int mt, int tt, int x, int y, int z)
 {
   nestID = nID;
-  recordNumber = rn;
   bottomTemp = bt;
   middleTemp = mt;
   topTemp = tt;
@@ -29,12 +28,6 @@ Record::Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z)
 int Record::getNestID()
 { 
   return this->nestID;  
-}
-
-
-long Record::getRecordNumber()
-{
-  return recordNumber;  
 }
 
 
@@ -79,9 +72,6 @@ void Record::printToSerial()
   Serial.print("NestID: "); 
   Serial.println(this->nestID);
   
-  Serial.print("Record #: "); 
-  Serial.println(this->recordNumber);
-
   Serial.print("Bottom Temp: "); 
   Serial.println(this->bottomTemp);
 

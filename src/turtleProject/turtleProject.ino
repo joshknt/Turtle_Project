@@ -168,7 +168,7 @@ void loop()
   //Store records for each nest
   //Temps are multiplied by 100 to keep the precision but save two bytes 
   //  by not making them floats and letting the desktop software reconvert them
-  Record recordNameOne(1, recordNumber, 100 * bottomTempOne.getTempFByIndex(0), 100 * middleTempOne.getTempFByIndex(0), 
+  Record recordNameOne(1, 100 * bottomTempOne.getTempFByIndex(0), 100 * middleTempOne.getTempFByIndex(0), 
                        100 * topTempOne.getTempFByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
                        
   //Record recordNameTwo(2, recordNumber, 100 * bottomTempTwo.getTempFByIndex(0), 100 * middleTempTwo.getTempFByIndex(0),
