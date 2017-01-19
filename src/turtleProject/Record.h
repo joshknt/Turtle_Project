@@ -17,8 +17,7 @@ class Record
 	public:
 		Record();
     Record(int nID);
-		Record(int nID, long rn, int x, int y, int z);
-    //Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z); //use this after DS18B20 is working
+    Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z); //use this after DS18B20 is working
     int getNestID();
     long getRecordNumber();
     int getBottomTemp();
