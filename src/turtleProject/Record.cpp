@@ -12,24 +12,47 @@ Record::Record(int nID)
 }
 
 
-Record::Record(int nID, int rn, int x, int y, int z)
+
+Record::Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z)
 {
-	nestID = nID;
-	recordNumber = rn;
-	xAcc = x;
-	yAcc = y;
-	zAcc = z;
+  nestID = nID;
+  recordNumber = rn;
+  bottomTemp = bt;
+  middleTemp = mt;
+  topTemp = tt;
+  xAcc = x;
+  yAcc = y;
+  zAcc = z;
 }
+
 
 int Record::getNestID()
 { 
-  return nestID;  
+  return this->nestID;  
 }
 
 
-unsigned long Record::getRecordNumber()
+long Record::getRecordNumber()
 {
   return recordNumber;  
+}
+
+
+int Record::getBottomTemp()
+{
+  return bottomTemp;
+}
+
+
+int Record::getMiddleTemp()
+{
+  return middleTemp;
+}
+
+
+int Record::getTopTemp()
+{
+  return topTemp;
 }
 
 
@@ -58,6 +81,15 @@ void Record::printToSerial()
   
   Serial.print("Record #: "); 
   Serial.println(this->recordNumber);
+
+  Serial.print("Bottom Temp: "); 
+  Serial.println(this->bottomTemp);
+
+  Serial.print("Middle Temp: ");
+  Serial.println(this->middleTemp);
+
+  Serial.print("Top Temp: ");
+  Serial.println(this->topTemp);
   
   Serial.print("X: ");
   Serial.print(this->xAcc);
@@ -65,5 +97,8 @@ void Record::printToSerial()
   Serial.print(this->yAcc);
   Serial.print(" Z: ");
   Serial.println(this->zAcc);
+
+  Serial.println();
+  Serial.println();
 }
 

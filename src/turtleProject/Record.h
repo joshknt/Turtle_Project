@@ -6,7 +6,10 @@ class Record
 {
 	private:
 		int nestID;  //holds which nest it is in
-		unsigned long recordNumber;  //holds which record it is - max: 2^32
+		long recordNumber;  //holds which record it is - max: 2^32
+    int bottomTemp;
+    int middleTemp;
+    int topTemp;
 		int xAcc;
 		int yAcc;
 		int zAcc;
@@ -14,9 +17,12 @@ class Record
 	public:
 		Record();
     Record(int nID);
-		Record(int nID, int rn, int x, int y, int z);
+    Record(int nID, long rn, int bt, int mt, int tt, int x, int y, int z); //use this after DS18B20 is working
     int getNestID();
-    unsigned long getRecordNumber();
+    long getRecordNumber();
+    int getBottomTemp();
+    int getMiddleTemp();
+    int getTopTemp();
     int getXAcc();
     int getYAcc();
     int getZAcc();
