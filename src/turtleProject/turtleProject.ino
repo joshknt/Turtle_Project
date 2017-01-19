@@ -99,13 +99,12 @@ DallasTemperature topTempOne(&topWireOne);
 const int TOTALRECORDS = 50; //constant declares the number of records
 int recordNumber = 0; //holds which record being sent
 int arrayIndex = 0; //array bounds checker
+char recordName[8] = "r"; //begins the record naming convention
 Record nestOne[TOTALRECORDS]; //stores records
 Record nestTwo[TOTALRECORDS];
 Record nestThree[TOTALRECORDS];
 Record nestFour[TOTALRECORDS];
-
-//Todo: change to c-strings
-String recordName = "r"; //begins the record naming convention
+char recordName[8] = "r"; //begins the record naming convention
 //#####################################################################
 
 
@@ -157,8 +156,7 @@ void loop()
 
   
   //Create new record object and name for each nest
-  //Todo: modify this to work with c-strings
-  recordName = "r" + recordNumber;
+  strcat(recordName, recordNumber);
 
 
   //Store records for each nest
