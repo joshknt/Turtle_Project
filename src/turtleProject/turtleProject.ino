@@ -96,7 +96,7 @@ DallasTemperature topTempOne(&topWireOne);
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 50; //constant declares the number of records
+const int TOTALRECORDS = 20; //constant declares the number of records
 int recordNumber = 0; //holds which record being sent
 int arrayIndex = 0; //array bounds checker
 char recordNameOne[8] = "r"; //begins the record naming convention
@@ -150,6 +150,10 @@ void loop()
 	if (arrayIndex > TOTALRECORDS)
 	{
 		//Todo: Send data over wifi or SD Card write
+    for(int i = 0; i < TOTALRECORDS; i++)
+    {
+      nestOne[i].printToSerial();
+    }
 		arrayIndex = 0; //this is to overwrite array after transmitting data
 	}
 
@@ -182,7 +186,7 @@ void loop()
 
   
   //Test print data to serial monitor after each recording
-  recordNameOne.printToSerial();
+  //recordNameOne.printToSerial();
   
 
   //Store records in arrays                   
@@ -196,8 +200,8 @@ void loop()
 	recordNumber++;
 	arrayIndex++;
 
-  //Delay for 1 second between readings for testing
-  //delay(1000);
+  //Delay for three minutes between readings 
+  //secondsOfDelay(240);
 }
 
 
@@ -226,4 +230,13 @@ void requestTemperatures()
 //  topTempFour.requestTemperatures();
 }
 
+//*********************************************************************
+//Allows device to delay by seconds rather than m/s
+void secondsOfDelay(int seconds)
+{
+  for(int i = 0; i < seconds; i++)
+  {
+    delay(1000);
+  }
+}
 
