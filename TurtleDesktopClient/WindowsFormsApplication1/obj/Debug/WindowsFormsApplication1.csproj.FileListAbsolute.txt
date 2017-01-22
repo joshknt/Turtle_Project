@@ -1,0 +1,15 @@
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\RDotNet.dll
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\RDotNet.NativeLibrary.dll
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\RDotNet.xml
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\RDotNet.NativeLibrary.xml
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.poller.resources
+T:\testprograms\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TurtleDesktop.exe.config
