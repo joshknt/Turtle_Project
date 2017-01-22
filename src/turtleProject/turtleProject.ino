@@ -150,10 +150,7 @@ void loop()
 	if (arrayIndex > TOTALRECORDS)
 	{
 		//Todo: Send data over wifi or SD Card write
-    for(int i = 0; i < TOTALRECORDS; i++)
-    {
-      nestOne[i].printToSerial();
-    }
+
 		arrayIndex = 0; //this is to overwrite array after transmitting data
 	}
 
@@ -186,7 +183,7 @@ void loop()
 
   
   //Test print data to serial monitor after each recording
-  //recordNameOne.printToSerial();
+  recordNameOne.printToSerial();
   
 
   //Store records in arrays                   
