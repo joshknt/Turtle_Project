@@ -168,17 +168,17 @@ void loop()
   //Store records for each nest
   //Temps are multiplied by 100 to keep the precision but save two bytes 
   //  by not making them floats and letting the desktop software reconvert them
-  Record recordNameOne(1, 100 * bottomTempOne.getTempFByIndex(0), 100 * middleTempOne.getTempFByIndex(0), 
-                       100 * topTempOne.getTempFByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
+  Record recordNameOne(1, 100 * bottomTempOne.getTempCByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
+                       100 * topTempOne.getTempCByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
                        
-  //Record recordNameTwo(2, recordNumber, 100 * bottomTempTwo.getTempFByIndex(0), 100 * middleTempTwo.getTempFByIndex(0),
-  //                       100 * topTempTwo.getTempFByIndex(0), analogRead(xPinTwo), analogRead(yPinTwo), analogRead(zPinTwo)); //nest two
+  //Record recordNameTwo(2, recordNumber, 100 * bottomTempTwo.getTempCByIndex(0), 100 * middleTempTwo.getTempCByIndex(0),
+  //                       100 * topTempTwo.getTempCByIndex(0), analogRead(xPinTwo), analogRead(yPinTwo), analogRead(zPinTwo)); //nest two
                          
-  //Record recordNameThree(3, recordNumber, 100 * bottomTempThree.getTempFByIndex(0), 100 * middleTempThree.getTempFByIndex(0), 
-  //                         100 * topTempThree.getTempFByIndex(0), analogRead(xPinThree), analogRead(yPinThree), analogRead(zPinThree)); //nest three
+  //Record recordNameThree(3, recordNumber, 100 * bottomTempThree.getTempCByIndex(0), 100 * middleTempThree.getTempCByIndex(0), 
+  //                         100 * topTempThree.getTempCByIndex(0), analogRead(xPinThree), analogRead(yPinThree), analogRead(zPinThree)); //nest three
   
-  //Record recordNameFour(4, recordNumber, 100 * bottomTempFour.getTempFByIndex(0), 100 * middleTempThree.getTempFByIndex(0), 
-  //                         100 * topTempFour.getTempFByIndex(0), analogRead(xPinFour), analogRead(yPinFour), analogRead(zPinFour)); //nest four
+  //Record recordNameFour(4, recordNumber, 100 * bottomTempFour.getTempCByIndex(0), 100 * middleTempThree.getTempCByIndex(0), 
+  //                         100 * topTempFour.getTempCByIndex(0), analogRead(xPinFour), analogRead(yPinFour), analogRead(zPinFour)); //nest four
 
   
   //Test print data to serial monitor after each recording
