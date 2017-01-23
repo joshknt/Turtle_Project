@@ -3,8 +3,8 @@
 // Settings data class
 public class Settings
 {
-    // orgDataPath: The file path used by R to aquire the organized data file
-    public string orgDataPath = "T:/testprograms/TurtleDesktopClient/DATA/ORGANIZED/";
+    // orgDataPath: The file path used by R to aquire the organized data file.
+    public string orgDataPath = "T:/Documents/TurtleProject/Turtle_Project/TurtleDesktopClient/DATA/ORGANIZED/";
     // rBinPath: The location of the r binary file. Must point to the 32-bit edition
     public string rBinPath = @"F:\Programs\R\R-3.3.2\bin\i386";
     public string countryCode = "108"; // the first three digits of a board. Same for all data since our program is ran in the set country.

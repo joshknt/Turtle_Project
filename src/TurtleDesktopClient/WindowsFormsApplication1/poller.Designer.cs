@@ -44,11 +44,13 @@
             this.dateTimepicker = new System.Windows.Forms.DateTimePicker();
             this.data_tabControl = new System.Windows.Forms.TabControl();
             this.temp_tab = new System.Windows.Forms.TabPage();
-            this.humidity_tab = new System.Windows.Forms.TabPage();
             this.accel_tab = new System.Windows.Forms.TabPage();
             this.collectionlist = new System.Windows.Forms.ListBox();
             this.updatelistbutton = new System.Windows.Forms.Button();
             this.collectionStatus = new System.Windows.Forms.RichTextBox();
+            this.redtemp_tab = new System.Windows.Forms.TabPage();
+            this.yellowtemp_tab = new System.Windows.Forms.TabPage();
+            this.bluetemp_tab = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
@@ -176,8 +178,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data_tabControl.Controls.Add(this.temp_tab);
-            this.data_tabControl.Controls.Add(this.humidity_tab);
             this.data_tabControl.Controls.Add(this.accel_tab);
+            this.data_tabControl.Controls.Add(this.redtemp_tab);
+            this.data_tabControl.Controls.Add(this.yellowtemp_tab);
+            this.data_tabControl.Controls.Add(this.bluetemp_tab);
             this.data_tabControl.Location = new System.Drawing.Point(156, 54);
             this.data_tabControl.Name = "data_tabControl";
             this.data_tabControl.SelectedIndex = 0;
@@ -195,23 +199,12 @@
             this.temp_tab.Text = "Temperature";
             this.temp_tab.UseVisualStyleBackColor = true;
             // 
-            // humidity_tab
-            // 
-            this.humidity_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.humidity_tab.Location = new System.Drawing.Point(4, 22);
-            this.humidity_tab.Name = "humidity_tab";
-            this.humidity_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.humidity_tab.Size = new System.Drawing.Size(491, 355);
-            this.humidity_tab.TabIndex = 1;
-            this.humidity_tab.Text = "Humidty";
-            this.humidity_tab.UseVisualStyleBackColor = true;
-            // 
             // accel_tab
             // 
             this.accel_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.accel_tab.Location = new System.Drawing.Point(4, 22);
             this.accel_tab.Name = "accel_tab";
-            this.accel_tab.Size = new System.Drawing.Size(491, 355);
+            this.accel_tab.Size = new System.Drawing.Size(491, 353);
             this.accel_tab.TabIndex = 2;
             this.accel_tab.Text = "Movement";
             this.accel_tab.UseVisualStyleBackColor = true;
@@ -249,6 +242,39 @@
             this.collectionStatus.Size = new System.Drawing.Size(111, 139);
             this.collectionStatus.TabIndex = 12;
             this.collectionStatus.Text = "Select a date, terminal, and sensor to view list of collections.";
+            // 
+            // redtemp_tab
+            // 
+            this.redtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.redtemp_tab.Location = new System.Drawing.Point(4, 22);
+            this.redtemp_tab.Name = "redtemp_tab";
+            this.redtemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.redtemp_tab.Size = new System.Drawing.Size(491, 353);
+            this.redtemp_tab.TabIndex = 3;
+            this.redtemp_tab.Text = "Red Temperature";
+            this.redtemp_tab.UseVisualStyleBackColor = true;
+            // 
+            // yellowtemp_tab
+            // 
+            this.yellowtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.yellowtemp_tab.Location = new System.Drawing.Point(4, 22);
+            this.yellowtemp_tab.Name = "yellowtemp_tab";
+            this.yellowtemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.yellowtemp_tab.Size = new System.Drawing.Size(491, 353);
+            this.yellowtemp_tab.TabIndex = 4;
+            this.yellowtemp_tab.Text = "Yellow Temperature";
+            this.yellowtemp_tab.UseVisualStyleBackColor = true;
+            // 
+            // bluetemp_tab
+            // 
+            this.bluetemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bluetemp_tab.Location = new System.Drawing.Point(4, 22);
+            this.bluetemp_tab.Name = "bluetemp_tab";
+            this.bluetemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.bluetemp_tab.Size = new System.Drawing.Size(491, 353);
+            this.bluetemp_tab.TabIndex = 5;
+            this.bluetemp_tab.Text = "Blue Temperature";
+            this.bluetemp_tab.UseVisualStyleBackColor = true;
             // 
             // poller
             // 
@@ -295,11 +321,13 @@
         private System.Windows.Forms.DateTimePicker dateTimepicker;
         private System.Windows.Forms.TabControl data_tabControl;
         private System.Windows.Forms.TabPage temp_tab;
-        private System.Windows.Forms.TabPage humidity_tab;
         private System.Windows.Forms.ComboBox sensor_selector;
         private System.Windows.Forms.TabPage accel_tab;
         private System.Windows.Forms.ListBox collectionlist;
         private System.Windows.Forms.Button updatelistbutton;
         private System.Windows.Forms.RichTextBox collectionStatus;
+        private System.Windows.Forms.TabPage redtemp_tab;
+        private System.Windows.Forms.TabPage yellowtemp_tab;
+        private System.Windows.Forms.TabPage bluetemp_tab;
     }
 }

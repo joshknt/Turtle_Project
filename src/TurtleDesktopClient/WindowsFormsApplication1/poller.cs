@@ -8,6 +8,13 @@
  * 1/8/17 - Program origin. Laid groundwork for frontend design
  * 1/9/17 - Added R functionality
  * 1/11/17 - Cleaned up code
+ * 1/22/17 - Updated data tabs to include support for three temperature probes.
+ *          TODO: fix aspect ratio of tab control to force 1:1
+ *          TODO: add ability to refine graph image based on a set increment of time.
+ *          TODO: add ability to zoom in, and right click to save images to a chosen directory.
+ *          TODO: add appropriate color to red, yellow, and blue lines in graphs.
+ *          TODO: fix temperature tab.
+ *          TODO: fix sensor/terminal choosing bugs.
  * ********************************************************************************/
 
 using System;
@@ -141,21 +148,39 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("timeVec <- read.table(\"" + collectionLocation + "\", sep = ',', header = TRUE)$TIMESTAMPTIME");
                 var timeVec = r_engine.GetSymbol("timeVec");
 
-                // Temperature:
+                // Temperature Red:
+                NumericVector tempredVec = r_engine.Evaluate("tempredVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED").AsNumeric();
+                r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 720, height = 580)"); // prepare temperature graph
+                r_engine.Evaluate("plot(tempredVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                r_engine.Evaluate("dev.off()"); // complete plot
+                redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
+
+                // Temperature Yellow:
+                NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW").AsNumeric();
+                r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 720, height = 580)"); // prepare temperature graph
+                r_engine.Evaluate("plot(tempyellowVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                r_engine.Evaluate("dev.off()"); // complete plot
+                yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
+
+                // Temperature Blue:
+                NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE").AsNumeric();
+                r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 720, height = 580)"); // prepare temperature graph
+                r_engine.Evaluate("plot(tempblueVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                r_engine.Evaluate("dev.off()"); // complete plot
+                bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
+
+                // Temperature: // TODO: average temperatures and create graph here.
+                /*
                 NumericVector temperatureVec = r_engine.Evaluate("temperatureVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPERATURE").AsNumeric();
                 r_engine.Evaluate("png('" + path + collection + "/temp.png, width = 720, height = 580')"); // prepare temperature graph
                 r_engine.Evaluate("plot(temperatureVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 temp_tab.BackgroundImage = Image.FromFile(path + collection + "/temp.png");
-
-                // Humidity:
-                NumericVector humidityVec = r_engine.Evaluate("humidityVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$HUMIDITY").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/humid.png, width = 720, height = 580')"); // prepare temperature graph
-                r_engine.Evaluate("plot(humidityVec, xlab = 'Time', ylab = 'Humidity', main = 'Humidity Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
-                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
-                r_engine.Evaluate("dev.off()"); // complete plot
-                humidity_tab.BackgroundImage = Image.FromFile(path + collection + "/humid.png");
+                */
 
                 // Acceleration:
                 NumericVector XACCEL = r_engine.Evaluate("XACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$X").AsNumeric();
