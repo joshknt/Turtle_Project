@@ -30,7 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,12 +45,12 @@
             this.data_tabControl = new System.Windows.Forms.TabControl();
             this.temp_tab = new System.Windows.Forms.TabPage();
             this.accel_tab = new System.Windows.Forms.TabPage();
-            this.collectionlist = new System.Windows.Forms.ListBox();
-            this.updatelistbutton = new System.Windows.Forms.Button();
-            this.collectionStatus = new System.Windows.Forms.RichTextBox();
             this.redtemp_tab = new System.Windows.Forms.TabPage();
             this.yellowtemp_tab = new System.Windows.Forms.TabPage();
             this.bluetemp_tab = new System.Windows.Forms.TabPage();
+            this.collectionlist = new System.Windows.Forms.ListBox();
+            this.updatelistbutton = new System.Windows.Forms.Button();
+            this.collectionStatus = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
@@ -70,29 +70,30 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
+            this.toolStrip_settings,
             this.printToolStripMenuItem,
             this.printPreviewToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItem1.Text = "File";
             // 
-            // toolStripMenuItem2
+            // toolStrip_settings
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
-            this.toolStripMenuItem2.Text = "Settings";
+            this.toolStrip_settings.Name = "toolStrip_settings";
+            this.toolStrip_settings.Size = new System.Drawing.Size(152, 22);
+            this.toolStrip_settings.Text = "Settings";
+            this.toolStrip_settings.Click += new System.EventHandler(this.toolStrip_settings_Click);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // helpToolStripMenuItem
@@ -209,6 +210,39 @@
             this.accel_tab.Text = "Movement";
             this.accel_tab.UseVisualStyleBackColor = true;
             // 
+            // redtemp_tab
+            // 
+            this.redtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.redtemp_tab.Location = new System.Drawing.Point(4, 22);
+            this.redtemp_tab.Name = "redtemp_tab";
+            this.redtemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.redtemp_tab.Size = new System.Drawing.Size(491, 353);
+            this.redtemp_tab.TabIndex = 3;
+            this.redtemp_tab.Text = "Red Temperature";
+            this.redtemp_tab.UseVisualStyleBackColor = true;
+            // 
+            // yellowtemp_tab
+            // 
+            this.yellowtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.yellowtemp_tab.Location = new System.Drawing.Point(4, 22);
+            this.yellowtemp_tab.Name = "yellowtemp_tab";
+            this.yellowtemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.yellowtemp_tab.Size = new System.Drawing.Size(491, 353);
+            this.yellowtemp_tab.TabIndex = 4;
+            this.yellowtemp_tab.Text = "Yellow Temperature";
+            this.yellowtemp_tab.UseVisualStyleBackColor = true;
+            // 
+            // bluetemp_tab
+            // 
+            this.bluetemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bluetemp_tab.Location = new System.Drawing.Point(4, 22);
+            this.bluetemp_tab.Name = "bluetemp_tab";
+            this.bluetemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.bluetemp_tab.Size = new System.Drawing.Size(491, 353);
+            this.bluetemp_tab.TabIndex = 5;
+            this.bluetemp_tab.Text = "Blue Temperature";
+            this.bluetemp_tab.UseVisualStyleBackColor = true;
+            // 
             // collectionlist
             // 
             this.collectionlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -243,39 +277,6 @@
             this.collectionStatus.TabIndex = 12;
             this.collectionStatus.Text = "Select a date, terminal, and sensor to view list of collections.";
             // 
-            // redtemp_tab
-            // 
-            this.redtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.redtemp_tab.Location = new System.Drawing.Point(4, 22);
-            this.redtemp_tab.Name = "redtemp_tab";
-            this.redtemp_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.redtemp_tab.Size = new System.Drawing.Size(491, 353);
-            this.redtemp_tab.TabIndex = 3;
-            this.redtemp_tab.Text = "Red Temperature";
-            this.redtemp_tab.UseVisualStyleBackColor = true;
-            // 
-            // yellowtemp_tab
-            // 
-            this.yellowtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.yellowtemp_tab.Location = new System.Drawing.Point(4, 22);
-            this.yellowtemp_tab.Name = "yellowtemp_tab";
-            this.yellowtemp_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.yellowtemp_tab.Size = new System.Drawing.Size(491, 353);
-            this.yellowtemp_tab.TabIndex = 4;
-            this.yellowtemp_tab.Text = "Yellow Temperature";
-            this.yellowtemp_tab.UseVisualStyleBackColor = true;
-            // 
-            // bluetemp_tab
-            // 
-            this.bluetemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bluetemp_tab.Location = new System.Drawing.Point(4, 22);
-            this.bluetemp_tab.Name = "bluetemp_tab";
-            this.bluetemp_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.bluetemp_tab.Size = new System.Drawing.Size(491, 353);
-            this.bluetemp_tab.TabIndex = 5;
-            this.bluetemp_tab.Text = "Blue Temperature";
-            this.bluetemp_tab.UseVisualStyleBackColor = true;
-            // 
             // poller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,14 +302,20 @@
             this.data_tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosing += Poller_FormClosing;
 
+        }
+
+        private void Poller_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            System.Environment.Exit(0);
         }
 
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStrip_settings;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;

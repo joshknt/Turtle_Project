@@ -34,7 +34,8 @@ namespace WindowsFormsApplication1
 {
     public partial class poller : Form
     {
-        public Settings settings = new Settings(); // initialize the settings
+        // public Settings settings = new Settings(); // initialize the settings
+        TurtleDesktop.Properties.Settings settings = new TurtleDesktop.Properties.Settings();
         protected bool sensorSelected = false; // determines if the user has selected a sensor.
 
         public poller()
@@ -49,13 +50,14 @@ namespace WindowsFormsApplication1
 
         string generatefilePath(string terminalID, string sensorID, string date, string collection)
         {
-            string path = settings.orgDataPath + terminalID + "/"+ sensorID + "/" + date + "_" +  terminalID+sensorID + "/";
+            string path = settings.DataPath + "/ORGANIZED/" + terminalID + "/"+ sensorID + "/" + date + "_" +  terminalID+sensorID + "/";
             return path;
         }
 
         private void populateTerminals()
         {
-            string path = settings.orgDataPath;
+            settings.Reload();
+            string path = settings.DataPath + "/ORGANIZED/";
             terminal_list.Items.Clear();
             for (int i = 0; i < settings.maxTerminals; i++)
             {
@@ -78,7 +80,7 @@ namespace WindowsFormsApplication1
         private void populateSensors()
         {
             sensorSelected = false;
-            string path = settings.orgDataPath;
+            string path = settings.DataPath + "/ORGANIZED/";
             sensor_selector.Items.Clear();
             for (int i = 0; i < settings.maxSensors; i++)
             {
@@ -95,7 +97,7 @@ namespace WindowsFormsApplication1
         private void populateCollections()
         {
             string date = dateTimepicker.Value.Month.ToString() + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
-            string path = settings.orgDataPath + (string)terminal_list.SelectedItem + "/" + (string)(sensor_selector.SelectedItem) + "/" + date + "_" + (string)terminal_list.SelectedItem + (string)(sensor_selector.SelectedItem);
+            string path = settings.DataPath + "/ORGANIZED/" + (string)terminal_list.SelectedItem + "/" + (string)(sensor_selector.SelectedItem) + "/" + date + "_" + (string)terminal_list.SelectedItem + (string)(sensor_selector.SelectedItem);
             if (Directory.Exists(path))
             {
                 collectionlist.Items.Clear();
@@ -232,6 +234,13 @@ namespace WindowsFormsApplication1
             collectionlist.Items.Clear(); // prepare to update collections.
             populateCollections();
 
+        }
+
+        private void toolStrip_settings_Click(object sender, EventArgs e)
+        {
+            TurtleDesktop.SettingsForm setform = new TurtleDesktop.SettingsForm();
+            setform.Show();
+            setform.Focus();
         }
     }
 }
