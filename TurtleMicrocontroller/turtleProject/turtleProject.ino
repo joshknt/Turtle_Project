@@ -109,7 +109,7 @@ DallasTemperature topTempOne(&topWireOne);
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 20; //constant declares the number of records
+const int TOTALRECORDS = 5; //constant declares the number of records
 int recordNumber = 0; //holds which record being sent
 int arrayIndex = 0; //array position
 char *fileExtension = ".txt";
@@ -230,7 +230,9 @@ void loop()
 	arrayIndex++;
 
   //Delay for three minutes between readings 
-  secondsOfDelay(240);
+
+  delay(2000);
+  //secondsOfDelay(240);
 }
 
 
