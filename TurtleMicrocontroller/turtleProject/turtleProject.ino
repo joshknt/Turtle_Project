@@ -6,12 +6,34 @@ Purpose: Code which runs on a Arduino Mega unit
 Uses a number (depending on pins available) of DHT temperature/humidity sensor and an ADXL accelerometer
 sensors per casted Sensor Egg unit to be placed in a nest to measure changes in temp,humidty,
 and movement for the prediction of boils.
+
+This implementation is for the Arduino Uno. This is because of the 
+different pins used for the SPI bus that the MicroSD card uses and
+the accelerometers use. 
+
+Arduino Uno:
+MISO: 12
+MOSI: 11
+CLK: 13
+SS: 10
+
+Arduino Mega:
+MISO: 50
+MOSI: 51
+CLK: 52
+SS: 53  
 */
+
 
 
 #include "Record.h"
 #include <DallasTemperature.h>
 #include <OneWire.h>
+#include <SPI.h>
+#include <SD.h>
+
+#define COUNTRY_CODE 108
+#define BOARD_ID 01
 
 //####################__SENSOR EGG PIN SETUP__#########################
 
@@ -36,9 +58,6 @@ DallasTemperature topTempOne(&topWireOne);
 //******************************************************************
 //Sensor Egg 2
 //The pins need to be changed for second set of sensors
-//byte xPinTwo = A3;
-//byte yPinTwo = A4;
-//byte zPinTwo = A5;
 
 //#define BOTTOMTEMPPINTWO 5 
 //OneWire bottomWireTwo(BOTTOMTEMPPINTWO);  
@@ -55,9 +74,6 @@ DallasTemperature topTempOne(&topWireOne);
 //******************************************************************
 //Sensor Egg 3
 //The pins need to be changed for a third set of sensors
-//byte xPinThree = A6;
-//byte yPinThree = A7;
-//byte zPinThree = A8;
 
 //#define BOTTOMTEMPPINTHREE 8 
 //OneWire bottomWireThree(BOTTOMTEMPPINTHREE);  
@@ -73,10 +89,7 @@ DallasTemperature topTempOne(&topWireOne);
 
 //******************************************************************
 //Sensor Egg 4
-//The pins need to be changed for a third set of sensors
-//byte xPinFour = A9;
-//byte yPinFour = A10;
-//byte zPinFour = A11;
+//The pins need to be changed for a fourth set of sensors
 
 //#define BOTTOMTEMPPINFOUR 11 
 //OneWire bottomWireFour(BOTTOMTEMPPINFOUR);  
@@ -96,18 +109,27 @@ DallasTemperature topTempOne(&topWireOne);
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 20; //constant declares the number of records
+const int TOTALRECORDS = 5; //constant declares the number of records
 int recordNumber = 0; //holds which record being sent
-int arrayIndex = 0; //array bounds checker
+int arrayIndex = 0; //array position
+char *fileExtension = ".txt";
+
 char recordNameOne[8] = "r"; //begins the record naming convention
-char recordNameTwo[8] = "r"; //begins the record naming convention
-char recordNameThree[8] = "r"; //begins the record naming convention
-char recordNameFour[8] = "r"; //begins the record naming convention
+//char recordNameTwo[8] = "r"; //begins the record naming convention
+//char recordNameThree[8] = "r"; //begins the record naming convention
+//char recordNameFour[8] = "r"; //begins the record naming convention
 
 Record nestOne[TOTALRECORDS]; //stores records
-Record nestTwo[TOTALRECORDS];
-Record nestThree[TOTALRECORDS];
-Record nestFour[TOTALRECORDS];
+//Record nestTwo[TOTALRECORDS];
+//Record nestThree[TOTALRECORDS];
+//Record nestFour[TOTALRECORDS];
+
+File file;
+//File fileTwo;
+//File fileThree;
+//File fileFour;
+
+char fileName[8];
 //#####################################################################
 
 
@@ -115,8 +137,16 @@ Record nestFour[TOTALRECORDS];
 //*********************************************************************
 void setup()
 {
-	Serial.begin(9600);
+	Serial.begin(115200);
+  
 	analogReference(EXTERNAL); //needed to reference 3.3v for accelerometer
+
+  //setup SD support
+  pinMode(53, OUTPUT);
+  if(!SD.begin(53))
+  {
+    Serial.println("MicroSD not initialized");
+  }
 
   //Needed for DS18B20 support
   //Nest one 
@@ -147,10 +177,11 @@ void setup()
 void loop()
 {
 	//If array to hold records reaches maximum send data
-	if (arrayIndex > TOTALRECORDS)
+	if (arrayIndex >= TOTALRECORDS)
 	{
-		//Todo: Send data over wifi or SD Card write
-
+    writeToFile("one", 1);
+   
+  
 		arrayIndex = 0; //this is to overwrite array after transmitting data
 	}
 
@@ -161,9 +192,9 @@ void loop()
   
   //Create new record object and name for each nest
   strcat(recordNameOne, recordNumber);
-  strcat(recordNameTwo, recordNumber);
-  strcat(recordNameThree, recordNumber);
-  strcat(recordNameFour, recordNumber);
+  //strcat(recordNameTwo, recordNumber);
+  //strcat(recordNameThree, recordNumber);
+  //strcat(recordNameFour, recordNumber);
 
 
   //Store records for each nest
@@ -198,6 +229,8 @@ void loop()
 	arrayIndex++;
 
   //Delay for three minutes between readings 
+
+  delay(2000);
   //secondsOfDelay(240);
 }
 
@@ -235,5 +268,41 @@ void secondsOfDelay(int seconds)
   {
     delay(1000);
   }
+}
+
+
+//*********************************************************************
+//Writes data from arrays into text file
+void writeToFile(char* nest, int nestNum)
+{
+    
+    //create file name (ex: "one.txt",  "two.txt", ect.)
+    sprintf(fileName, "%s%s", nest, fileExtension);
+    file = SD.open(fileName, FILE_WRITE);
+
+    //check if file opened properly
+    if(file)
+    {
+      Serial.println("File Opened");
+      delay(1000);
+      //increment through nest data 
+      for(int i = 0; i < TOTALRECORDS; i++)
+      {
+        file.print(COUNTRY_CODE); file.print(",");
+        file.print(BOARD_ID); file.print(",");
+        file.print(nestNum); file.print(",");
+        file.print(nestOne[i].getBottomTemp()); file.print(",");
+        file.print(nestOne[i].getMiddleTemp()); file.print(",");
+        file.print(nestOne[i].getTopTemp()); file.print(",");
+        file.print(nestOne[i].getXAcc()); file.print(",");
+        file.print(nestOne[i].getYAcc()); file.print(",");
+        file.println(nestOne[i].getZAcc());
+      }
+
+      //close file 
+      file.close();
+      Serial.println("File Close");
+      delay(1000);
+    }  
 }
 
