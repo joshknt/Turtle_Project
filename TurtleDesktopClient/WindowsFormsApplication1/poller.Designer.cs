@@ -51,6 +51,8 @@
             this.collectionlist = new System.Windows.Forms.ListBox();
             this.updatelistbutton = new System.Windows.Forms.Button();
             this.collectionStatus = new System.Windows.Forms.RichTextBox();
+            this.SD_ImportButton = new System.Windows.Forms.Button();
+            this.dataBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
@@ -121,7 +123,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 452);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(667, 22);
             this.statusStrip1.TabIndex = 3;
@@ -137,7 +139,7 @@
             // terminal_list
             // 
             this.terminal_list.FormattingEnabled = true;
-            this.terminal_list.Location = new System.Drawing.Point(13, 67);
+            this.terminal_list.Location = new System.Drawing.Point(12, 105);
             this.terminal_list.Name = "terminal_list";
             this.terminal_list.Size = new System.Drawing.Size(132, 95);
             this.terminal_list.TabIndex = 4;
@@ -148,7 +150,7 @@
             this.sensor_selector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sensor_selector.Enabled = false;
             this.sensor_selector.FormattingEnabled = true;
-            this.sensor_selector.Location = new System.Drawing.Point(13, 168);
+            this.sensor_selector.Location = new System.Drawing.Point(13, 206);
             this.sensor_selector.Name = "sensor_selector";
             this.sensor_selector.Size = new System.Drawing.Size(132, 21);
             this.sensor_selector.TabIndex = 5;
@@ -186,7 +188,7 @@
             this.data_tabControl.Location = new System.Drawing.Point(156, 54);
             this.data_tabControl.Name = "data_tabControl";
             this.data_tabControl.SelectedIndex = 0;
-            this.data_tabControl.Size = new System.Drawing.Size(499, 379);
+            this.data_tabControl.Size = new System.Drawing.Size(499, 387);
             this.data_tabControl.TabIndex = 8;
             // 
             // temp_tab
@@ -195,7 +197,7 @@
             this.temp_tab.Location = new System.Drawing.Point(4, 22);
             this.temp_tab.Name = "temp_tab";
             this.temp_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.temp_tab.Size = new System.Drawing.Size(491, 353);
+            this.temp_tab.Size = new System.Drawing.Size(491, 361);
             this.temp_tab.TabIndex = 0;
             this.temp_tab.Text = "Temperature";
             this.temp_tab.UseVisualStyleBackColor = true;
@@ -249,16 +251,16 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.collectionlist.Enabled = false;
             this.collectionlist.FormattingEnabled = true;
-            this.collectionlist.Location = new System.Drawing.Point(13, 195);
+            this.collectionlist.Location = new System.Drawing.Point(13, 233);
             this.collectionlist.Name = "collectionlist";
-            this.collectionlist.Size = new System.Drawing.Size(132, 238);
+            this.collectionlist.Size = new System.Drawing.Size(132, 199);
             this.collectionlist.TabIndex = 10;
             this.collectionlist.SelectedIndexChanged += new System.EventHandler(this.collectionlist_SelectedIndexChanged);
             // 
             // updatelistbutton
             // 
             this.updatelistbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatelistbutton.Location = new System.Drawing.Point(12, 29);
+            this.updatelistbutton.Location = new System.Drawing.Point(12, 67);
             this.updatelistbutton.Name = "updatelistbutton";
             this.updatelistbutton.Size = new System.Drawing.Size(133, 32);
             this.updatelistbutton.TabIndex = 11;
@@ -270,19 +272,31 @@
             // 
             this.collectionStatus.BackColor = System.Drawing.SystemColors.Window;
             this.collectionStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.collectionStatus.Location = new System.Drawing.Point(22, 208);
+            this.collectionStatus.Location = new System.Drawing.Point(22, 255);
             this.collectionStatus.Name = "collectionStatus";
             this.collectionStatus.ReadOnly = true;
             this.collectionStatus.Size = new System.Drawing.Size(111, 139);
             this.collectionStatus.TabIndex = 12;
             this.collectionStatus.Text = "Select a date, terminal, and sensor to view list of collections.";
             // 
+            // SD_ImportButton
+            // 
+            this.SD_ImportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SD_ImportButton.Location = new System.Drawing.Point(12, 29);
+            this.SD_ImportButton.Name = "SD_ImportButton";
+            this.SD_ImportButton.Size = new System.Drawing.Size(133, 32);
+            this.SD_ImportButton.TabIndex = 13;
+            this.SD_ImportButton.Text = "Import From SD";
+            this.SD_ImportButton.UseVisualStyleBackColor = true;
+            this.SD_ImportButton.Click += new System.EventHandler(this.SD_ImportButton_Click);
+            // 
             // poller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(667, 474);
+            this.ClientSize = new System.Drawing.Size(667, 471);
+            this.Controls.Add(this.SD_ImportButton);
             this.Controls.Add(this.collectionStatus);
             this.Controls.Add(this.updatelistbutton);
             this.Controls.Add(this.collectionlist);
@@ -302,7 +316,6 @@
             this.data_tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormClosing += Poller_FormClosing;
 
         }
 
@@ -336,5 +349,7 @@
         private System.Windows.Forms.TabPage redtemp_tab;
         private System.Windows.Forms.TabPage yellowtemp_tab;
         private System.Windows.Forms.TabPage bluetemp_tab;
+        private System.Windows.Forms.Button SD_ImportButton;
+        private System.Windows.Forms.FolderBrowserDialog dataBrowserDialog;
     }
 }

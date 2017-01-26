@@ -61,7 +61,7 @@ namespace TurtleDesktop.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int maxSensors {
             get {
                 return ((int)(this["maxSensors"]));
@@ -92,6 +92,30 @@ namespace TurtleDesktop.Properties {
             }
             set {
                 this["DataPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Units {
+            get {
+                return ((int)(this["Units"]));
+            }
+            set {
+                this["Units"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("one.txt,two.txt,three.txt,four.txt")]
+        public string filenames {
+            get {
+                return ((string)(this["filenames"]));
+            }
+            set {
+                this["filenames"] = value;
             }
         }
     }

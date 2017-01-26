@@ -51,6 +51,8 @@ namespace TurtleDesktop
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+
+            
             settings.rBinPath = RFolderTextBox.Text;
             StringBuilder datapathsb = new StringBuilder();
             for(int i = 0; i < DataFolderTextBox.Text.Length; i++)
@@ -62,6 +64,13 @@ namespace TurtleDesktop
             }
             settings.DataPath = datapathsb.ToString();
             settings.Save();
+            MessageBox.Show("Settings saved!", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            settings.Reload();
+            Close();
         }
     }
 }

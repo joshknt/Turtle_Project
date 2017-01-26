@@ -129,6 +129,23 @@ namespace WindowsFormsApplication1
             }
         }
 
+         /***********************************************************************************
+         * Builds the data directory files if they do not exists already.
+         ***********************************************************************************/
+        private void buildDataDirectory()
+        {
+            string orgPath = settings.DataPath + "/ORGANIZED/";
+            string rawPath = settings.DataPath + "/RAW/";
+            if (!Directory.Exists(orgPath))
+            {
+                Directory.CreateDirectory(orgPath);
+            }
+            if (!Directory.Exists(rawPath))
+            {
+                Directory.CreateDirectory(rawPath);
+            }
+        }
+
         private void generateGraphics()
         {
             string terminal = (string)terminal_list.SelectedItem;
@@ -241,6 +258,69 @@ namespace WindowsFormsApplication1
             TurtleDesktop.SettingsForm setform = new TurtleDesktop.SettingsForm();
             setform.Show();
             setform.Focus();
+        }
+
+        private void SD_ImportButton_Click(object sender, EventArgs e)
+        {
+            string orgPath = settings.DataPath + "/ORGANIZED/";
+            string rawPath = settings.DataPath + "/RAW/";
+            List<string> filenames = new List<string>();
+            StringBuilder sb = new StringBuilder();
+            dataBrowserDialog.ShowDialog();
+            string SDpath = dataBrowserDialog.SelectedPath;
+            try
+            {
+                // First, get sensor filenames //
+                for(int i = 0; i < settings.filenames.Length; i++)
+                {
+                
+                    if(settings.filenames[i] != ',')
+                    {
+                        sb.Append(settings.filenames[i]);
+                    }
+                    else
+                    {
+                        filenames.Add(sb.ToString());
+                        sb.Clear();
+                    }
+                }
+                buildDataDirectory(); // create RAW and ORGANIZED folders in DATA directory if they don't exist already.
+                string time = DateTime.Now.ToShortDateString() + '_' + DateTime.Now.ToShortTimeString(); // take time of reading
+                foreach (string fn in filenames)
+                {
+                    if (Directory.Exists(SDpath + "\\" + fn)) // initial move from sd card for data integrity.  TODO: fix this so it find the file.
+                    {
+                        string filepath = getBoardID(SDpath + "/" + fn, true) + "/" + getBoardID(SDpath + "/" + fn) + "/" + time;
+                        Directory.CreateDirectory(rawPath + filepath);
+                        System.IO.File.Move(SDpath + "/" + fn, rawPath + filepath + "/");
+                    }
+                        // todo convert to organized, move to organized.
+                }
+            }
+            catch
+            {
+               
+            }
+
+        }
+
+        string getBoardID(string filepath, bool term = false)
+        {
+            StringBuilder sb = new StringBuilder();
+            StreamReader file = new StreamReader(filepath);
+            file.ReadLine(); // remove header
+            int count = (term) ? 2 : 3; // if term is true, just read to the termial id, omitting the sensor id.
+            for(int i = 0; i < 3; i++) // get board id
+            {
+                while (file.Peek() != ',') 
+                {
+                    sb.Append(file.Read());
+                }
+                file.Read(); // consume ','
+            }
+            file.Close();
+
+            return sb.ToString();
         }
     }
 }

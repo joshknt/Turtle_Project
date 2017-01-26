@@ -12,13 +12,19 @@
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="maxSensors" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">4</Value>
     </Setting>
     <Setting Name="maxCollections" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">99</Value>
     </Setting>
     <Setting Name="DataPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Units" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="filenames" Type="System.String" Scope="User">
+      <Value Profile="(Default)">one.txt,two.txt,three.txt,four.txt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

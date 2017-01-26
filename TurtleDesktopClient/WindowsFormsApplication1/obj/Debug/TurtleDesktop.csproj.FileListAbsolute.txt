@@ -58,3 +58,7 @@ T:\Documents\TurtleProject\Turtle_Project\src\TurtleDesktopClient\WindowsFormsAp
 T:\Documents\TurtleProject\Turtle_Project\src\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.SettingsForm.en.resources
 T:\Documents\TurtleProject\Turtle_Project\src\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\en\TurtleDesktop.resources.dll
 T:\Documents\TurtleProject\Turtle_Project\src\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.csprojResolveAssemblyReference.cache
+T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\bin\Debug\en\TurtleDesktop.resources.dll
+T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.SettingsForm.resources
+T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.SettingsForm.en.resources
+T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\en\TurtleDesktop.resources.dll
