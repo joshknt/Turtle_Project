@@ -179,10 +179,11 @@ void loop()
 	//If array to hold records reaches maximum send data
 	if (arrayIndex >= TOTALRECORDS)
 	{
+    //TODO: the nest array needs to be passed
     writeToFile("one", 1);
-   
-  
-		arrayIndex = 0; //this is to overwrite array after transmitting data
+
+    //this is to overwrite array after transmitting data
+		arrayIndex = 0; 
 	}
 
 
@@ -273,6 +274,7 @@ void secondsOfDelay(int seconds)
 
 //*********************************************************************
 //Writes data from arrays into text file
+//TODO: the nest array needs to be passed
 void writeToFile(char* nest, int nestNum)
 {
     
