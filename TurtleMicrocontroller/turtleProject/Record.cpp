@@ -6,11 +6,11 @@ Record::Record()
 	nestID = 0;
 }
 
+
 Record::Record(int nID)
 {
   nestID = nID;
 }
-
 
 
 Record::Record(int nID, int bt, int mt, int tt, int x, int y, int z)
@@ -22,48 +22,6 @@ Record::Record(int nID, int bt, int mt, int tt, int x, int y, int z)
   xAcc = x;
   yAcc = y;
   zAcc = z;
-}
-
-
-int Record::getNestID()
-{ 
-  return this->nestID;  
-}
-
-
-int Record::getBottomTemp()
-{
-  return bottomTemp;
-}
-
-
-int Record::getMiddleTemp()
-{
-  return middleTemp;
-}
-
-
-int Record::getTopTemp()
-{
-  return topTemp;
-}
-
-
-int Record::getXAcc()
-{
-  return xAcc;
-}
-
-
-int Record::getYAcc()
-{
-  return yAcc;
-}
-
-
-int Record::getZAcc()
-{
-  return zAcc;
 }
 
 
