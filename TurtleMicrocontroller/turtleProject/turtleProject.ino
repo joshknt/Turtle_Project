@@ -7,7 +7,7 @@ Uses a number (depending on pins available) of DHT temperature/humidity sensor a
 sensors per casted Sensor Egg unit to be placed in a nest to measure changes in temp,humidty,
 and movement for the prediction of boils.
 
-This implementation is for the Arduino Uno. This is because of the 
+This implementation is for the Arduino Mega. This is because of the 
 different pins used for the SPI bus that the MicroSD card uses and
 the accelerometers use. 
 
@@ -277,7 +277,6 @@ void secondsOfDelay(int seconds)
 //TODO: the nest array needs to be passed
 void writeToFile(char* nest, int nestNum)
 {
-    
     //create file name (ex: "one.txt",  "two.txt", ect.)
     sprintf(fileName, "%s%s", nest, fileExtension);
     file = SD.open(fileName, FILE_WRITE);
