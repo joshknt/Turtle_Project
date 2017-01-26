@@ -13,7 +13,7 @@ the accelerometers use.
 
 Arduino Uno:
 MISO: 12
-MOSI: 11
+MOSI: 11  
 CLK: 13
 SS: 10
 
@@ -39,9 +39,7 @@ SS: 53
 
 //******************************************************************
 //Sensor Egg 1
-int xPinOne = A0; 
-int yPinOne = A1;
-int zPinOne = A2;
+int sdPin = 53; //pin for SD card
 
 #define BOTTOMTEMPPINONE 2 
 OneWire bottomWireOne(BOTTOMTEMPPINONE);  
@@ -142,8 +140,8 @@ void setup()
 	analogReference(EXTERNAL); //needed to reference 3.3v for accelerometer
 
   //setup SD support
-  pinMode(53, OUTPUT);
-  if(!SD.begin(53))
+  pinMode(sdPin, OUTPUT);
+  if(!SD.begin(sdPin))
   {
     Serial.println("MicroSD not initialized");
   }
