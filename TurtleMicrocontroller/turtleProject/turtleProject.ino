@@ -12,16 +12,18 @@ different pins used for the SPI bus that the MicroSD card uses and
 the accelerometers use. 
 
 Arduino Uno:
-MISO: 12
-MOSI: 11  
+MISO/SDO: 12
+MOSI/SDA: 11  
 CLK: 13
 SS: 10
+INT_1: 9
 
 Arduino Mega:
-MISO: 50
-MOSI: 51
+MISO/SDO: 50
+MOSI/SDA: 51
 CLK: 52
-SS: 53  
+SS: 53
+INT_1: 49  
 */
 
 
