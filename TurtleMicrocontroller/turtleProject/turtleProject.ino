@@ -41,7 +41,7 @@ INT_1: 49
 
 //******************************************************************
 //Sensor Egg 1
-int sdPin = 53; //pin for SD card
+
 
 #define BOTTOMTEMPPINONE 2 
 OneWire bottomWireOne(BOTTOMTEMPPINONE);  
@@ -112,7 +112,7 @@ DallasTemperature topTempOne(&topWireOne);
 const int TOTALRECORDS = 20; //constant declares the number of records
 int recordNumber = 0; //holds which record being sent
 int arrayIndex = 0; //array position
-char *fileExtension = ".txt";
+char *fileExtension = ".txt"; //variable to hold extension type
 
 char recordNameOne[8] = "r"; //begins the record naming convention
 //char recordNameTwo[8] = "r"; //begins the record naming convention
@@ -124,12 +124,14 @@ Record nestOne[TOTALRECORDS]; //stores records
 //Record nestThree[TOTALRECORDS];
 //Record nestFour[TOTALRECORDS];
 
-File file;
+File file;  //file object for writing to the SD card
 //File fileTwo;
 //File fileThree;
 //File fileFour;
 
-char fileName[8];
+char fileName[8]; //holds changing file names
+
+int sdPin = 53; //pin for SD card
 //#####################################################################
 
 
