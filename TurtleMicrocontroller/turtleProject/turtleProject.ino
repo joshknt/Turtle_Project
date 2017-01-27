@@ -282,6 +282,8 @@ void writeToFile(char* nest, int nestNum)
     //check if file opened properly
     if(file)
     {
+      //TODO:add LED on to signal begin of write
+      
       Serial.println("File Opened");
       delay(1000);
       //increment through nest data 
@@ -300,6 +302,9 @@ void writeToFile(char* nest, int nestNum)
 
       //close file 
       file.close();
+
+      //TODO: add LED off to signal writing is complete
+      
       Serial.println("File Close");
       delay(1000);
     }  
