@@ -34,7 +34,6 @@ namespace WindowsFormsApplication1
 {
     public partial class poller : Form
     {
-        // public Settings settings = new Settings(); // initialize the settings
         TurtleDesktop.Properties.Settings settings = new TurtleDesktop.Properties.Settings();
         protected bool sensorSelected = false; // determines if the user has selected a sensor.
 
@@ -50,14 +49,14 @@ namespace WindowsFormsApplication1
 
         string generatefilePath(string terminalID, string sensorID, string date, string collection)
         {
-            string path = settings.DataPath + "/ORGANIZED/" + terminalID + "/"+ sensorID + "/" + date + "_" +  terminalID+sensorID + "/";
+            string path = settings.DataPath + "/" + terminalID + "/" + sensorID + "/" + date + "_" + terminalID + sensorID + "/";
             return path;
         }
 
         private void populateTerminals()
         {
             settings.Reload();
-            string path = settings.DataPath + "/ORGANIZED/";
+            string path = settings.DataPath + "/";
             terminal_list.Items.Clear();
             for (int i = 0; i < settings.maxTerminals; i++)
             {
@@ -80,7 +79,7 @@ namespace WindowsFormsApplication1
         private void populateSensors()
         {
             sensorSelected = false;
-            string path = settings.DataPath + "/ORGANIZED/";
+            string path = settings.DataPath + "/";
             sensor_selector.Items.Clear();
             for (int i = 0; i < settings.maxSensors; i++)
             {
@@ -96,8 +95,8 @@ namespace WindowsFormsApplication1
 
         private void populateCollections()
         {
-            string date = dateTimepicker.Value.Month.ToString() + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
-            string path = settings.DataPath + "/ORGANIZED/" + (string)terminal_list.SelectedItem + "/" + (string)(sensor_selector.SelectedItem) + "/" + date + "_" + (string)terminal_list.SelectedItem + (string)(sensor_selector.SelectedItem);
+            string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
+            string path = settings.DataPath + "/" + (string)terminal_list.SelectedItem + "/" + (string)(sensor_selector.SelectedItem) + "/" + date + "_" + (string)terminal_list.SelectedItem + (string)(sensor_selector.SelectedItem);
             if (Directory.Exists(path))
             {
                 collectionlist.Items.Clear();
@@ -134,23 +133,26 @@ namespace WindowsFormsApplication1
          ***********************************************************************************/
         private void buildDataDirectory()
         {
-            string orgPath = settings.DataPath + "/ORGANIZED/";
-            string rawPath = settings.DataPath + "/RAW/";
+            //            string orgPath = settings.DataPath + "/ORGANIZED/";
+            //           string rawPath = settings.DataPath + "/RAW/";
+            string orgPath = settings.DataPath;
             if (!Directory.Exists(orgPath))
             {
                 Directory.CreateDirectory(orgPath);
             }
+            /*
             if (!Directory.Exists(rawPath))
             {
                 Directory.CreateDirectory(rawPath);
             }
+            */
         }
 
         private void generateGraphics()
         {
             string terminal = (string)terminal_list.SelectedItem;
             string sensor = (string)sensor_selector.SelectedItem;
-            string date = dateTimepicker.Value.Month.ToString() + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
+            string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
 
@@ -162,7 +164,6 @@ namespace WindowsFormsApplication1
             try
             {
                 // Find file and times of collection samples:
-                //string collectionLocation = path + collection + "-" + terminal + sensor + ".csv";
                 string collectionLocation = path + collection + ".csv";
                 r_engine.Evaluate("timeVec <- read.table(\"" + collectionLocation + "\", sep = ',', header = TRUE)$TIMESTAMPTIME");
                 var timeVec = r_engine.GetSymbol("timeVec");
@@ -262,8 +263,8 @@ namespace WindowsFormsApplication1
 
         private void SD_ImportButton_Click(object sender, EventArgs e)
         {
-            string orgPath = settings.DataPath + "/ORGANIZED/";
-            string rawPath = settings.DataPath + "/RAW/";
+            string orgPath = settings.DataPath;
+            string rawfilename = (string.Empty);
             List<string> filenames = new List<string>();
             StringBuilder sb = new StringBuilder();
             dataBrowserDialog.ShowDialog();
@@ -285,16 +286,30 @@ namespace WindowsFormsApplication1
                     }
                 }
                 buildDataDirectory(); // create RAW and ORGANIZED folders in DATA directory if they don't exist already.
-                string time = DateTime.Now.ToShortDateString() + '_' + DateTime.Now.ToShortTimeString(); // take time of reading
-                foreach (string fn in filenames)
+                string filepath = orgPath;
+                string time = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3]; // take time of reading
+                if (Directory.Exists(SDpath + "\\"))
                 {
-                    if (Directory.Exists(SDpath + "\\" + fn)) // initial move from sd card for data integrity.  TODO: fix this so it find the file.
+                    foreach (string fn in filenames)
                     {
-                        string filepath = getBoardID(SDpath + "/" + fn, true) + "/" + getBoardID(SDpath + "/" + fn) + "/" + time;
-                        Directory.CreateDirectory(rawPath + filepath);
-                        System.IO.File.Move(SDpath + "/" + fn, rawPath + filepath + "/");
+                        if (File.Exists(SDpath + "\\" + fn)) // initial move from sd card for data integrity.  
+                        {
+                        
+                            filepath = orgPath + "\\" + getBoardID(SDpath + "\\" + fn, true) + "\\" + getSensorID(getBoardID(SDpath + "\\" + fn)) + "\\" + time + "_" + getBoardID(SDpath + "\\" + fn) + "\\";
+                            Directory.CreateDirectory(filepath);
+                            for(int i = 0; i < settings.maxCollections; i++)
+                            {
+                                rawfilename = i.ToString() + "-" + getBoardID(SDpath + "\\" + fn);
+                                if (!File.Exists(filepath + rawfilename + ".csv"))
+                                {
+                                    break;
+                                }
+                            }
+                            System.IO.File.Move(SDpath + "\\" + fn, filepath + rawfilename + ".temp");
+                            Directory.CreateDirectory(filepath + "\\" + rawfilename );
+                        }
+                        appendTimes(filepath + rawfilename);
                     }
-                        // todo convert to organized, move to organized.
                 }
             }
             catch
@@ -303,6 +318,13 @@ namespace WindowsFormsApplication1
             }
 
         }
+        string getSensorID(string boardID)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(boardID[6]);
+            sb.Append(boardID[7]);
+            return(sb.ToString());
+        }
 
         string getBoardID(string filepath, bool term = false)
         {
@@ -310,11 +332,11 @@ namespace WindowsFormsApplication1
             StreamReader file = new StreamReader(filepath);
             file.ReadLine(); // remove header
             int count = (term) ? 2 : 3; // if term is true, just read to the termial id, omitting the sensor id.
-            for(int i = 0; i < 3; i++) // get board id
+            for(int i = 0; i < count; i++) // get board id
             {
                 while (file.Peek() != ',') 
                 {
-                    sb.Append(file.Read());
+                    sb.Append((char)file.Read());
                 }
                 file.Read(); // consume ','
             }
@@ -322,5 +344,39 @@ namespace WindowsFormsApplication1
 
             return sb.ToString();
         }
+
+        void appendTimes(string datafile)
+        {
+            StreamReader fileread = new StreamReader(datafile + ".temp");
+            StreamWriter filewrite = new StreamWriter(datafile + ".csv");
+            int hourdecrement = 0;
+            int interval = 3;
+            StringBuilder timebuilder = new StringBuilder();
+            int hour = DateTime.Now.Hour;
+            int minute = DateTime.Now.Minute;
+            while (!fileread.EndOfStream)
+            {
+                timebuilder.Append(dateTimepicker.Value.ToString("MM"));
+                timebuilder.Append("-" + dateTimepicker.Value.Day.ToString());
+                timebuilder.Append("-" + dateTimepicker.Value.Year.ToString() + ',');
+                if ((minute - (interval) < 0))
+                {
+                    hourdecrement++;
+                    minute = 60 + minute - (interval);
+                }
+
+                timebuilder.Append((hour - hourdecrement).ToString());  // todo fix
+                timebuilder.Append((minute - (interval)).ToString()); // todo fix
+                filewrite.WriteLine(fileread.ReadLine() + ',' + timebuilder.ToString());
+                minute = minute - interval;
+                hour = hour - hourdecrement;
+                timebuilder.Clear();
+            }
+            fileread.Close();
+            filewrite.Close();
+            File.Delete(datafile + ".temp");
+        }
+
     }
 }
+
