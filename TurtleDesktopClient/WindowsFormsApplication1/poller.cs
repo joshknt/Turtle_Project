@@ -128,26 +128,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-         /***********************************************************************************
-         * Builds the data directory files if they do not exists already.
-         ***********************************************************************************/
-        private void buildDataDirectory()
-        {
-            //            string orgPath = settings.DataPath + "/ORGANIZED/";
-            //           string rawPath = settings.DataPath + "/RAW/";
-            string orgPath = settings.DataPath;
-            if (!Directory.Exists(orgPath))
-            {
-                Directory.CreateDirectory(orgPath);
-            }
-            /*
-            if (!Directory.Exists(rawPath))
-            {
-                Directory.CreateDirectory(rawPath);
-            }
-            */
-        }
-
         private void generateGraphics()
         {
             string terminal = (string)terminal_list.SelectedItem;
@@ -285,7 +265,7 @@ namespace WindowsFormsApplication1
                         sb.Clear();
                     }
                 }
-                buildDataDirectory(); // create RAW and ORGANIZED folders in DATA directory if they don't exist already.
+                Directory.CreateDirectory(settings.DataPath); //DATA directory if it don't exist already.
                 string filepath = orgPath;
                 string time = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3]; // take time of reading
                 if (Directory.Exists(SDpath + "\\"))
@@ -308,7 +288,7 @@ namespace WindowsFormsApplication1
                             System.IO.File.Move(SDpath + "\\" + fn, filepath + rawfilename + ".temp");
                             Directory.CreateDirectory(filepath + "\\" + rawfilename );
                         }
-                        appendTimes(filepath + rawfilename);
+                        organizeFile(filepath + rawfilename);
                     }
                 }
             }
@@ -345,38 +325,54 @@ namespace WindowsFormsApplication1
             return sb.ToString();
         }
 
-        void appendTimes(string datafile)
+        string convertPath(string path)
+        {
+            char[] charpath = path.ToArray<char>();
+            for(int i = 0; i < path.Length; i++)
+            {
+                if (charpath[i] == '/')
+                    charpath[i] = '\\';
+                else if (charpath[i] == '\\')
+                    charpath[i] = '/';
+            }
+            return charpath.ToString();
+        }
+
+        void organizeFile(string datafile)
         {
             StreamReader fileread = new StreamReader(datafile + ".temp");
             StreamWriter filewrite = new StreamWriter(datafile + ".csv");
-            int hourdecrement = 0;
-            int interval = 3;
-            StringBuilder timebuilder = new StringBuilder();
-            int hour = DateTime.Now.Hour;
-            int minute = DateTime.Now.Minute;
+            int interval = 3; // number of minutes between each measurement
+            //   DateTime importtime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            DateTime importtime = DateTime.Now;
+            Stack<string> times = new Stack<string>();
+            filewrite.WriteLine("COUNTRY, TERMINAL, SENSOR, RECORDNUMBER,TEMPRED,TEMPYELLOW,TEMPBLUE, X, Y, Z, TIMESTAMPDATE, TIMESTAMPTIME"); // append header
+
+            /* Data is written from oldest to newest. Need to read entire file once to build time stack */
             while (!fileread.EndOfStream)
             {
-                timebuilder.Append(dateTimepicker.Value.ToString("MM"));
-                timebuilder.Append("-" + dateTimepicker.Value.Day.ToString());
-                timebuilder.Append("-" + dateTimepicker.Value.Year.ToString() + ',');
-                if ((minute - (interval) < 0))
-                {
-                    hourdecrement++;
-                    minute = 60 + minute - (interval);
-                }
+                // hour and minute variables represent point of file import
+                times.Push("," + importtime.Month.ToString() + "-" + importtime.Day.ToString() + "-" + importtime.Year.ToString() + ',' + importtime.ToString("HH:mm"));
+                importtime = importtime.AddMinutes(- interval); // step back
+                fileread.ReadLine(); // consume line
+            }
+            fileread.Close();
+            fileread = new StreamReader(datafile + ".temp"); // reopen file to reset file pointer
 
-                timebuilder.Append((hour - hourdecrement).ToString());  // todo fix
-                timebuilder.Append((minute - (interval)).ToString()); // todo fix
-                filewrite.WriteLine(fileread.ReadLine() + ',' + timebuilder.ToString());
-                minute = minute - interval;
-                hour = hour - hourdecrement;
-                timebuilder.Clear();
+            
+            while (!fileread.EndOfStream && times.Count > 0)
+            {
+                filewrite.WriteLine(fileread.ReadLine() + times.Pop());
             }
             fileread.Close();
             filewrite.Close();
             File.Delete(datafile + ".temp");
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
