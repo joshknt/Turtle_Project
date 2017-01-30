@@ -1,3 +1,5 @@
+
+
 /*
 Arduino Turtle Sketch
 Authors: Derek C. Brown, Josh Kent
@@ -16,14 +18,14 @@ MISO/SDO: 12
 MOSI/SDA: 11  
 CLK: 13
 SS: 10
-INT_1: 9
+INT_1: //check which pins are interrupt pins for Uno
 
 Arduino Mega:
 MISO/SDO: 50
 MOSI/SDA: 51
 CLK: 52
 SS: 53
-INT_1: 49  
+INT_1: //check which pins are interrupt pins for Mega
 */
 
 
@@ -33,14 +35,19 @@ INT_1: 49
 #include <OneWire.h>
 #include <SPI.h>
 #include <SD.h>
+#include <Adafruit_ADXL345_U.h>
 
 #define COUNTRY_CODE 108
 #define BOARD_ID 01
+#define LEDWRITEPIN 5
 
 //####################__SENSOR EGG PIN SETUP__#########################
 
 //******************************************************************
 //Sensor Egg 1
+int xPinOne = A0; 
+int yPinOne = A1;
+int zPinOne = A2;
 
 
 #define BOTTOMTEMPPINONE 2 
@@ -109,8 +116,7 @@ DallasTemperature topTempOne(&topWireOne);
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 20; //constant declares the number of records
-int recordNumber = 0; //holds which record being sent
+const int TOTALRECORDS = 5; //constant declares the number of records
 int arrayIndex = 0; //array position
 char *fileExtension = ".txt"; //variable to hold extension type
 
@@ -131,7 +137,7 @@ File file;  //file object for writing to the SD card
 
 char fileName[8]; //holds changing file names
 
-int sdPin = 53; //pin for SD card
+int sdPin = 10; //pin for SD card
 //#####################################################################
 
 
@@ -150,6 +156,10 @@ void setup()
     Serial.println("MicroSD not initialized");
   }
 
+  //declare LED pin as output and set it to off
+  pinMode(LEDWRITEPIN, OUTPUT);
+  digitalWrite(LEDWRITEPIN, LOW);
+  
   //Needed for DS18B20 support
   //Nest one 
   bottomTempOne.begin();
@@ -194,16 +204,16 @@ void loop()
 
   
   //Create new record object and name for each nest
-  strcat(recordNameOne, recordNumber);
-  //strcat(recordNameTwo, recordNumber);
-  //strcat(recordNameThree, recordNumber);
-  //strcat(recordNameFour, recordNumber);
+  strcat(recordNameOne, arrayIndex);
+  //strcat(recordNameTwo, arrayIndex);
+  //strcat(recordNameThree, arrayIndex);
+  //strcat(recordNameFour, arrayIndex);
 
 
   //Store records for each nest
   //Temps are multiplied by 100 to keep the precision but save two bytes 
   //  by not making them floats and letting the desktop software reconvert them
-  Record recordNameOne(1, 100 * bottomTempOne.getTempFByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
+  Record recordNameOne(1, 100 * bottomTempOne.getTempCByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
                        100 * topTempOne.getTempCByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
                        
   //Record recordNameTwo(2, recordNumber, 100 * bottomTempTwo.getTempCByIndex(0), 100 * middleTempTwo.getTempCByIndex(0),
@@ -218,6 +228,8 @@ void loop()
   
   //Test print data to serial monitor after each recording
   recordNameOne.printToSerial();
+  Serial.print("Array Index: ");
+  Serial.println(arrayIndex);
   
 
   //Store records in arrays                   
@@ -227,12 +239,12 @@ void loop()
   //nestFour[arrayIndex] = recordNameFour;  
 
   
-	//Incrememnt counters
-	recordNumber++;
+	//Increment array index
 	arrayIndex++;
 
   //Delay for three minutes between readings 
-  secondsOfDelay(240);
+  delay(8000);
+  //secondsOfDelay(240);
 }
 
 
@@ -279,13 +291,16 @@ void writeToFile(char* nest, int nestNum)
 {
     //create file name (ex: "one.txt",  "two.txt", ect.)
     sprintf(fileName, "%s%s", nest, fileExtension);
+    
+    //LED to indicate write so system will not be powered down
+    digitalWrite(LEDWRITEPIN, HIGH);
+    delay(2000);
+    
     file = SD.open(fileName, FILE_WRITE);
 
     //check if file opened properly
     if(file)
-    {
-      //TODO:add LED on to signal begin of write
-      
+    { 
       Serial.println("File Opened");
       delay(1000);
       //increment through nest data 
@@ -305,7 +320,7 @@ void writeToFile(char* nest, int nestNum)
       //close file 
       file.close();
 
-      //TODO: add LED off to signal writing is complete
+      digitalWrite(LEDWRITEPIN, LOW);
       
       Serial.println("File Close");
       delay(1000);
