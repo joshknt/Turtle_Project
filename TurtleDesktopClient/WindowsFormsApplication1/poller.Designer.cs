@@ -36,8 +36,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.terminal_list = new System.Windows.Forms.ListBox();
             this.sensor_selector = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,11 +52,15 @@
             this.collectionStatus = new System.Windows.Forms.RichTextBox();
             this.SD_ImportButton = new System.Windows.Forms.Button();
             this.dataBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.createLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logdataBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
             this.gen_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -86,27 +88,28 @@
             // toolStrip_settings
             // 
             this.toolStrip_settings.Name = "toolStrip_settings";
-            this.toolStrip_settings.Size = new System.Drawing.Size(143, 22);
+            this.toolStrip_settings.Size = new System.Drawing.Size(152, 22);
             this.toolStrip_settings.Text = "Settings";
             this.toolStrip_settings.Click += new System.EventHandler(this.toolStrip_settings_Click);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentationToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.createLogsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -123,24 +126,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(667, 22);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // terminal_list
             // 
@@ -313,6 +298,31 @@
             this.SD_ImportButton.UseVisualStyleBackColor = true;
             this.SD_ImportButton.Click += new System.EventHandler(this.SD_ImportButton_Click);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(667, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // createLogsToolStripMenuItem
+            // 
+            this.createLogsToolStripMenuItem.Name = "createLogsToolStripMenuItem";
+            this.createLogsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.createLogsToolStripMenuItem.Text = "Create Logs";
+            this.createLogsToolStripMenuItem.Click += new System.EventHandler(this.createLogsToolStripMenuItem_Click);
+            // 
             // poller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,16 +344,16 @@
             this.Text = "poller";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.data_tabControl.ResumeLayout(false);
             this.gen_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormClosing += Poller_FormClosing;
 
         }
+
 
         private void Poller_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
@@ -364,8 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ListBox terminal_list;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimepicker;
@@ -382,5 +390,9 @@
         private System.Windows.Forms.Button SD_ImportButton;
         private System.Windows.Forms.FolderBrowserDialog dataBrowserDialog;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem createLogsToolStripMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog logdataBrowserDialog;
     }
 }

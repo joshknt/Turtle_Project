@@ -5,16 +5,11 @@
  * Author: Derek Brown
  * 
  * Changelog:
- * 1/8/17 - Program origin. Laid groundwork for frontend design
- * 1/9/17 - Added R functionality
- * 1/11/17 - Cleaned up code
- * 1/22/17 - Updated data tabs to include support for three temperature probes.
+ *  See Git
  *          TODO: fix aspect ratio of tab control to force 1:1
  *          TODO: add ability to refine graph image based on a set increment of time.
  *          TODO: add ability to zoom in, and right click to save images to a chosen directory.
  *          TODO: add appropriate color to red, yellow, and blue lines in graphs.
- *          TODO: fix temperature tab.
- *          TODO: fix sensor/terminal choosing bugs.
  * ********************************************************************************/
 
 using System;
@@ -40,7 +35,7 @@ namespace WindowsFormsApplication1
         public poller()
         {
             InitializeComponent();
-
+            updateLists();
             // Initialize R //
             var envPath = Environment.GetEnvironmentVariable("PATH"); // prepare R environment
             Environment.SetEnvironmentVariable("PATH", envPath + Path.PathSeparator + settings.rBinPath);
@@ -55,7 +50,6 @@ namespace WindowsFormsApplication1
 
         string generatefilePath(string terminalID, string sensorID, string date, string collection)
         {
-            // string path = settings.DataPath + "/" + terminalID + "/" + sensorID + "/" + date + "_" + terminalID + sensorID + "/";
             string path = convertPath(settings.DataPath) + "/" + terminalID + "/" + sensorID + "/" + date + "_" + terminalID + sensorID + "/";
             return path;
         }
@@ -64,7 +58,6 @@ namespace WindowsFormsApplication1
         {
             settings.Reload();
             string path = settings.DataPath + "/";
-            terminal_list.Items.Clear();
             for (int i = 0; i < settings.maxTerminals; i++)
             {
                 string termnum = i.ToString();
@@ -142,7 +135,7 @@ namespace WindowsFormsApplication1
             string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
-
+            StreamReader streamr;
             try
             {
                 // Find file and times of collection samples:
@@ -153,7 +146,7 @@ namespace WindowsFormsApplication1
                 // Temperature Red:
                 NumericVector tempredVec = r_engine.Evaluate("tempredVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED").AsNumeric();
                 r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 720, height = 580)"); // prepare temperature graph
-                r_engine.Evaluate("plot(tempredVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                r_engine.Evaluate("plot(tempredVec, type = 'o', col = 'red', xlab = 'Time', ylab = 'Temperature', main = 'Red Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
@@ -161,7 +154,7 @@ namespace WindowsFormsApplication1
                 // Temperature Yellow:
                 NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW").AsNumeric();
                 r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 720, height = 580)"); // prepare temperature graph
-                r_engine.Evaluate("plot(tempyellowVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                r_engine.Evaluate("plot(tempyellowVec, type = 'o', col = 'darkgoldenrod3', xlab = 'Time', ylab = 'Temperature', main = 'Yellow Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
@@ -169,28 +162,42 @@ namespace WindowsFormsApplication1
                 // Temperature Blue:
                 NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE").AsNumeric();
                 r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 720, height = 580)"); // prepare temperature graph
-                r_engine.Evaluate("plot(tempblueVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                r_engine.Evaluate("plot(tempblueVec, type = 'o', col = 'blue', xlab = 'Time', ylab = 'Temperature', main = 'Blue Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
 
                 //General Tab
                 DataFrame df = r_engine.Evaluate("read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,5:10]").AsDataFrame();
+                dataGridView1.RowCount = 0;
+                dataGridView1.ColumnCount = 0;
+                streamr = new StreamReader(collectionLocation);
                 for (int i = 0; i < df.ColumnCount; ++i)
                 {
                     dataGridView1.ColumnCount++;
                     dataGridView1.Columns[i].Name = df.ColumnNames[i];
                 }
+                streamr.ReadLine(); // get rid of header.
                 for (int i = 0; i < df.RowCount; ++i)
                 {
                     dataGridView1.RowCount++;
-                    dataGridView1.Rows[i].HeaderCell.Value = df.RowNames[i];
+
+                    for(int j = 0; j < 10; j++)
+                    {
+                        while (streamr.Read() != ',') ; // consume all until date
+                    }
+                    dataGridView1.Rows[i].HeaderCell.Value = streamr.ReadLine();
+
+
+
+
                     for (int k = 0; k < df.ColumnCount; ++k)
                     {
                         dataGridView1[k, i].Value = df[i, k];
                     }
                 }
-
+                dataGridView1.AutoResizeColumns();
+                dataGridView1.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
                 // Acceleration:
                 NumericVector XACCEL = r_engine.Evaluate("XACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$X").AsNumeric();
                 NumericVector YACCEL = r_engine.Evaluate("YACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Y").AsNumeric();
@@ -213,16 +220,28 @@ namespace WindowsFormsApplication1
 
         private void updatelistbutton_Click(object sender, EventArgs e)
         {
+            updateLists();
+        }
+
+        private void updateLists()
+        {
+            sensor_selector.Items.Clear();
+            collectionlist.Items.Clear();
+            terminal_list.Items.Clear();
+            sensor_selector.Enabled = false;
             populateTerminals();
         }
 
         private void terminal_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sensor_selector.Enabled = true;
-            collectionlist.Items.Clear(); // remove items until sensor chosen.
-            sensor_selector.Items.Clear();
-            populateSensors();
-            sensorSelected = false;
+            if (terminal_list.SelectedIndex != -1)
+            {
+                sensor_selector.Enabled = true;
+                collectionlist.Items.Clear(); // remove items until sensor chosen.
+                sensor_selector.Items.Clear();
+                populateSensors();
+                sensorSelected = false;
+            }
         }
 
         private void sensor_selector_SelectedIndexChanged(object sender, EventArgs e)
@@ -241,9 +260,7 @@ namespace WindowsFormsApplication1
 
         private void dateTimepicker_ValueChanged(object sender, EventArgs e)
         {
-            collectionlist.Items.Clear(); // prepare to update collections.
-            populateCollections();
-
+            updateLists();
         }
 
         private void toolStrip_settings_Click(object sender, EventArgs e)
@@ -267,7 +284,7 @@ namespace WindowsFormsApplication1
                 for(int i = 0; i < settings.filenames.Length; i++)
                 {
                 
-                    if(settings.filenames[i] != ',')
+                    if(settings.filenames[i] != ',' && settings.filenames[i] != ' ')
                     {
                         sb.Append(settings.filenames[i]);
                     }
@@ -279,7 +296,7 @@ namespace WindowsFormsApplication1
                 }
                 Directory.CreateDirectory(settings.DataPath); //DATA directory if it don't exist already.
                 string filepath = orgPath;
-                string time = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3]; // take time of reading
+                string time = DateTime.Now.ToString("MM") + "-" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Year.ToString()[2] + DateTime.Now.Year.ToString()[3]; // take time of reading
                 if (Directory.Exists(SDpath + "\\"))
                 {
                     foreach (string fn in filenames)
@@ -388,7 +405,47 @@ namespace WindowsFormsApplication1
 
         }
 
-        
+        private void createLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logdataBrowserDialog.Description = "Choose the location to save the data logs.";
+            logdataBrowserDialog.ShowDialog();
+            if (Directory.Exists(logdataBrowserDialog.SelectedPath))
+            {
+                DirectoryInfo Direct = new DirectoryInfo(settings.DataPath);
+                Compress(Direct, logdataBrowserDialog.SelectedPath);
+            }
+        }
+
+        public static void Compress(DirectoryInfo directorySelected, string targetDirectory)
+        {
+            DirectoryInfo[] directories = directorySelected.GetDirectories();
+            foreach (DirectoryInfo d in directories)
+            {
+                FileInfo[] FI = d.GetFiles();
+                foreach (FileInfo fileToCompress in FI)
+                {
+                    int x = 1;
+                    using (FileStream originalFileStream = fileToCompress.OpenRead())
+                    {
+                        if ((File.GetAttributes(fileToCompress.FullName) &
+                           FileAttributes.Hidden) != FileAttributes.Hidden & fileToCompress.Extension != ".gz")
+                        {
+                            using (FileStream compressedFileStream = File.Create(targetDirectory + "\\" + fileToCompress.FullName + ".gz"))
+                            {
+                                using (System.IO.Compression.GZipStream compressionStream = new System.IO.Compression.GZipStream(compressedFileStream,
+                                   System.IO.Compression.CompressionMode.Compress))
+                                {
+                                    originalFileStream.CopyTo(compressionStream);
+
+                                }
+                            }
+                            FileInfo info = new FileInfo(targetDirectory + "\\" + fileToCompress.Name + ".gz");
+                        }
+                    }
+                }
+             
+            }
+        }
     }
 }
 
