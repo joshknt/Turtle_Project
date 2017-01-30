@@ -43,7 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimepicker = new System.Windows.Forms.DateTimePicker();
             this.data_tabControl = new System.Windows.Forms.TabControl();
-            this.temp_tab = new System.Windows.Forms.TabPage();
+            this.gen_tab = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.accel_tab = new System.Windows.Forms.TabPage();
             this.redtemp_tab = new System.Windows.Forms.TabPage();
             this.yellowtemp_tab = new System.Windows.Forms.TabPage();
@@ -56,6 +57,8 @@
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
+            this.gen_tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,8 +69,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1334, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(667, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,26 +80,26 @@
             this.printToolStripMenuItem,
             this.printPreviewToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(64, 38);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItem1.Text = "File";
             // 
             // toolStrip_settings
             // 
             this.toolStrip_settings.Name = "toolStrip_settings";
-            this.toolStrip_settings.Size = new System.Drawing.Size(269, 38);
+            this.toolStrip_settings.Size = new System.Drawing.Size(143, 22);
             this.toolStrip_settings.Text = "Settings";
             this.toolStrip_settings.Click += new System.EventHandler(this.toolStrip_settings_Click);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // helpToolStripMenuItem
@@ -106,19 +108,19 @@
             this.documentationToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(77, 38);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // documentationToolStripMenuItem
             // 
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(281, 38);
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.documentationToolStripMenuItem.Text = "Documentation";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(281, 38);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -127,10 +129,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 869);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 28, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1334, 37);
+            this.statusStrip1.Size = new System.Drawing.Size(667, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -138,17 +139,15 @@
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(238, 32);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // terminal_list
             // 
             this.terminal_list.FormattingEnabled = true;
-            this.terminal_list.ItemHeight = 25;
-            this.terminal_list.Location = new System.Drawing.Point(24, 202);
-            this.terminal_list.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.terminal_list.Location = new System.Drawing.Point(12, 105);
             this.terminal_list.Name = "terminal_list";
-            this.terminal_list.Size = new System.Drawing.Size(260, 179);
+            this.terminal_list.Size = new System.Drawing.Size(132, 95);
             this.terminal_list.TabIndex = 4;
             this.terminal_list.SelectedIndexChanged += new System.EventHandler(this.terminal_list_SelectedIndexChanged);
             // 
@@ -157,10 +156,9 @@
             this.sensor_selector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sensor_selector.Enabled = false;
             this.sensor_selector.FormattingEnabled = true;
-            this.sensor_selector.Location = new System.Drawing.Point(26, 396);
-            this.sensor_selector.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sensor_selector.Location = new System.Drawing.Point(13, 206);
             this.sensor_selector.Name = "sensor_selector";
-            this.sensor_selector.Size = new System.Drawing.Size(260, 33);
+            this.sensor_selector.Size = new System.Drawing.Size(132, 21);
             this.sensor_selector.TabIndex = 5;
             this.sensor_selector.SelectedIndexChanged += new System.EventHandler(this.sensor_selector_SelectedIndexChanged);
             // 
@@ -168,20 +166,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(153, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 36);
+            this.label1.Size = new System.Drawing.Size(43, 18);
             this.label1.TabIndex = 6;
             this.label1.Text = "Date:";
             // 
             // dateTimepicker
             // 
             this.dateTimepicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimepicker.Location = new System.Drawing.Point(406, 52);
-            this.dateTimepicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimepicker.Location = new System.Drawing.Point(203, 27);
             this.dateTimepicker.Name = "dateTimepicker";
-            this.dateTimepicker.Size = new System.Drawing.Size(336, 31);
+            this.dateTimepicker.Size = new System.Drawing.Size(170, 20);
             this.dateTimepicker.TabIndex = 7;
             this.dateTimepicker.ValueChanged += new System.EventHandler(this.dateTimepicker_ValueChanged);
             // 
@@ -190,37 +186,51 @@
             this.data_tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.data_tabControl.Controls.Add(this.temp_tab);
+            this.data_tabControl.Controls.Add(this.gen_tab);
             this.data_tabControl.Controls.Add(this.accel_tab);
             this.data_tabControl.Controls.Add(this.redtemp_tab);
             this.data_tabControl.Controls.Add(this.yellowtemp_tab);
             this.data_tabControl.Controls.Add(this.bluetemp_tab);
-            this.data_tabControl.Location = new System.Drawing.Point(312, 104);
-            this.data_tabControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.data_tabControl.Location = new System.Drawing.Point(156, 54);
             this.data_tabControl.Name = "data_tabControl";
             this.data_tabControl.SelectedIndex = 0;
-            this.data_tabControl.Size = new System.Drawing.Size(998, 744);
+            this.data_tabControl.Size = new System.Drawing.Size(499, 387);
             this.data_tabControl.TabIndex = 8;
             // 
-            // temp_tab
+            // gen_tab
             // 
-            this.temp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.temp_tab.Location = new System.Drawing.Point(8, 39);
-            this.temp_tab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.temp_tab.Name = "temp_tab";
-            this.temp_tab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.temp_tab.Size = new System.Drawing.Size(982, 697);
-            this.temp_tab.TabIndex = 0;
-            this.temp_tab.Text = "Temperature";
-            this.temp_tab.UseVisualStyleBackColor = true;
+            this.gen_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gen_tab.Controls.Add(this.dataGridView1);
+            this.gen_tab.Location = new System.Drawing.Point(4, 22);
+            this.gen_tab.Name = "gen_tab";
+            this.gen_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.gen_tab.Size = new System.Drawing.Size(491, 361);
+            this.gen_tab.TabIndex = 0;
+            this.gen_tab.Text = "General";
+            this.gen_tab.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(485, 355);
+            this.dataGridView1.TabIndex = 0;
             // 
             // accel_tab
             // 
             this.accel_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.accel_tab.Location = new System.Drawing.Point(8, 39);
-            this.accel_tab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.accel_tab.Location = new System.Drawing.Point(4, 22);
             this.accel_tab.Name = "accel_tab";
-            this.accel_tab.Size = new System.Drawing.Size(982, 697);
+            this.accel_tab.Size = new System.Drawing.Size(491, 361);
             this.accel_tab.TabIndex = 2;
             this.accel_tab.Text = "Movement";
             this.accel_tab.UseVisualStyleBackColor = true;
@@ -228,11 +238,10 @@
             // redtemp_tab
             // 
             this.redtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.redtemp_tab.Location = new System.Drawing.Point(8, 39);
-            this.redtemp_tab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.redtemp_tab.Location = new System.Drawing.Point(4, 22);
             this.redtemp_tab.Name = "redtemp_tab";
-            this.redtemp_tab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.redtemp_tab.Size = new System.Drawing.Size(982, 697);
+            this.redtemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.redtemp_tab.Size = new System.Drawing.Size(491, 361);
             this.redtemp_tab.TabIndex = 3;
             this.redtemp_tab.Text = "Red Temperature";
             this.redtemp_tab.UseVisualStyleBackColor = true;
@@ -240,11 +249,10 @@
             // yellowtemp_tab
             // 
             this.yellowtemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.yellowtemp_tab.Location = new System.Drawing.Point(8, 39);
-            this.yellowtemp_tab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.yellowtemp_tab.Location = new System.Drawing.Point(4, 22);
             this.yellowtemp_tab.Name = "yellowtemp_tab";
-            this.yellowtemp_tab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.yellowtemp_tab.Size = new System.Drawing.Size(982, 697);
+            this.yellowtemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.yellowtemp_tab.Size = new System.Drawing.Size(491, 361);
             this.yellowtemp_tab.TabIndex = 4;
             this.yellowtemp_tab.Text = "Yellow Temperature";
             this.yellowtemp_tab.UseVisualStyleBackColor = true;
@@ -252,11 +260,10 @@
             // bluetemp_tab
             // 
             this.bluetemp_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bluetemp_tab.Location = new System.Drawing.Point(8, 39);
-            this.bluetemp_tab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bluetemp_tab.Location = new System.Drawing.Point(4, 22);
             this.bluetemp_tab.Name = "bluetemp_tab";
-            this.bluetemp_tab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.bluetemp_tab.Size = new System.Drawing.Size(982, 697);
+            this.bluetemp_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.bluetemp_tab.Size = new System.Drawing.Size(491, 361);
             this.bluetemp_tab.TabIndex = 5;
             this.bluetemp_tab.Text = "Blue Temperature";
             this.bluetemp_tab.UseVisualStyleBackColor = true;
@@ -267,21 +274,18 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.collectionlist.Enabled = false;
             this.collectionlist.FormattingEnabled = true;
-            this.collectionlist.ItemHeight = 25;
-            this.collectionlist.Location = new System.Drawing.Point(26, 448);
-            this.collectionlist.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.collectionlist.Location = new System.Drawing.Point(13, 233);
             this.collectionlist.Name = "collectionlist";
-            this.collectionlist.Size = new System.Drawing.Size(260, 379);
+            this.collectionlist.Size = new System.Drawing.Size(132, 199);
             this.collectionlist.TabIndex = 10;
             this.collectionlist.SelectedIndexChanged += new System.EventHandler(this.collectionlist_SelectedIndexChanged);
             // 
             // updatelistbutton
             // 
             this.updatelistbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatelistbutton.Location = new System.Drawing.Point(24, 129);
-            this.updatelistbutton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.updatelistbutton.Location = new System.Drawing.Point(12, 67);
             this.updatelistbutton.Name = "updatelistbutton";
-            this.updatelistbutton.Size = new System.Drawing.Size(266, 62);
+            this.updatelistbutton.Size = new System.Drawing.Size(133, 32);
             this.updatelistbutton.TabIndex = 11;
             this.updatelistbutton.Text = "Update Lists";
             this.updatelistbutton.UseVisualStyleBackColor = true;
@@ -291,21 +295,19 @@
             // 
             this.collectionStatus.BackColor = System.Drawing.SystemColors.Window;
             this.collectionStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.collectionStatus.Location = new System.Drawing.Point(44, 490);
-            this.collectionStatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.collectionStatus.Location = new System.Drawing.Point(22, 255);
             this.collectionStatus.Name = "collectionStatus";
             this.collectionStatus.ReadOnly = true;
-            this.collectionStatus.Size = new System.Drawing.Size(222, 267);
+            this.collectionStatus.Size = new System.Drawing.Size(111, 139);
             this.collectionStatus.TabIndex = 12;
             this.collectionStatus.Text = "Select a date, terminal, and sensor to view list of collections.";
             // 
             // SD_ImportButton
             // 
             this.SD_ImportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SD_ImportButton.Location = new System.Drawing.Point(24, 56);
-            this.SD_ImportButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SD_ImportButton.Location = new System.Drawing.Point(12, 29);
             this.SD_ImportButton.Name = "SD_ImportButton";
-            this.SD_ImportButton.Size = new System.Drawing.Size(266, 62);
+            this.SD_ImportButton.Size = new System.Drawing.Size(133, 32);
             this.SD_ImportButton.TabIndex = 13;
             this.SD_ImportButton.Text = "Import From SD";
             this.SD_ImportButton.UseVisualStyleBackColor = true;
@@ -313,10 +315,10 @@
             // 
             // poller
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1334, 906);
+            this.ClientSize = new System.Drawing.Size(667, 471);
             this.Controls.Add(this.SD_ImportButton);
             this.Controls.Add(this.collectionStatus);
             this.Controls.Add(this.updatelistbutton);
@@ -328,7 +330,6 @@
             this.Controls.Add(this.terminal_list);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "poller";
             this.Text = "poller";
             this.menuStrip1.ResumeLayout(false);
@@ -336,15 +337,22 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.data_tabControl.ResumeLayout(false);
+            this.gen_tab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosing += Poller_FormClosing;
 
         }
 
         private void Poller_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
+            r_engine.Close();
+            r_engine.Dispose();
             System.Environment.Exit(0);
         }
+
+
 
         #endregion
 
@@ -362,7 +370,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimepicker;
         private System.Windows.Forms.TabControl data_tabControl;
-        private System.Windows.Forms.TabPage temp_tab;
+        private System.Windows.Forms.TabPage gen_tab;
         private System.Windows.Forms.ComboBox sensor_selector;
         private System.Windows.Forms.TabPage accel_tab;
         private System.Windows.Forms.ListBox collectionlist;
@@ -373,5 +381,6 @@
         private System.Windows.Forms.TabPage bluetemp_tab;
         private System.Windows.Forms.Button SD_ImportButton;
         private System.Windows.Forms.FolderBrowserDialog dataBrowserDialog;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

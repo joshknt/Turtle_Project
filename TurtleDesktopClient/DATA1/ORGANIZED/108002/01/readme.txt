@@ -1,1 +1,0 @@
-Each folder here contains all data files for a specific day, as ID'd be the date in the folder name. A new one is created each day.

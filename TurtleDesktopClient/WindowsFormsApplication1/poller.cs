@@ -36,10 +36,16 @@ namespace WindowsFormsApplication1
     {
         TurtleDesktop.Properties.Settings settings = new TurtleDesktop.Properties.Settings();
         protected bool sensorSelected = false; // determines if the user has selected a sensor.
-
+        REngine r_engine;
         public poller()
         {
             InitializeComponent();
+
+            // Initialize R //
+            var envPath = Environment.GetEnvironmentVariable("PATH"); // prepare R environment
+            Environment.SetEnvironmentVariable("PATH", envPath + Path.PathSeparator + settings.rBinPath);
+            r_engine = REngine.CreateInstance("RDotNet", settings.rBinPath + "\\R.DLL");
+            r_engine.Initialize();
         }
 
         private void gen_button_Click(object sender, EventArgs e)
@@ -49,7 +55,8 @@ namespace WindowsFormsApplication1
 
         string generatefilePath(string terminalID, string sensorID, string date, string collection)
         {
-            string path = settings.DataPath + "/" + terminalID + "/" + sensorID + "/" + date + "_" + terminalID + sensorID + "/";
+            // string path = settings.DataPath + "/" + terminalID + "/" + sensorID + "/" + date + "_" + terminalID + sensorID + "/";
+            string path = convertPath(settings.DataPath) + "/" + terminalID + "/" + sensorID + "/" + date + "_" + terminalID + sensorID + "/";
             return path;
         }
 
@@ -136,11 +143,6 @@ namespace WindowsFormsApplication1
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
 
-            var envPath = Environment.GetEnvironmentVariable("PATH"); // prepare R environment
-            Environment.SetEnvironmentVariable("PATH", envPath + Path.PathSeparator + settings.rBinPath);
-            REngine r_engine = REngine.CreateInstance("RDotNet", settings.rBinPath + "\\R.DLL");
-            r_engine.Initialize();
-
             try
             {
                 // Find file and times of collection samples:
@@ -172,15 +174,22 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("dev.off()"); // complete plot
                 bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
 
-                // Temperature: // TODO: average temperatures and create graph here.
-                /*
-                NumericVector temperatureVec = r_engine.Evaluate("temperatureVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPERATURE").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/temp.png, width = 720, height = 580')"); // prepare temperature graph
-                r_engine.Evaluate("plot(temperatureVec, xlab = 'Time', ylab = 'Temperature', main = 'Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
-                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
-                r_engine.Evaluate("dev.off()"); // complete plot
-                temp_tab.BackgroundImage = Image.FromFile(path + collection + "/temp.png");
-                */
+                //General Tab
+                DataFrame df = r_engine.Evaluate("read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,5:10]").AsDataFrame();
+                for (int i = 0; i < df.ColumnCount; ++i)
+                {
+                    dataGridView1.ColumnCount++;
+                    dataGridView1.Columns[i].Name = df.ColumnNames[i];
+                }
+                for (int i = 0; i < df.RowCount; ++i)
+                {
+                    dataGridView1.RowCount++;
+                    dataGridView1.Rows[i].HeaderCell.Value = df.RowNames[i];
+                    for (int k = 0; k < df.ColumnCount; ++k)
+                    {
+                        dataGridView1[k, i].Value = df[i, k];
+                    }
+                }
 
                 // Acceleration:
                 NumericVector XACCEL = r_engine.Evaluate("XACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$X").AsNumeric();
@@ -197,9 +206,9 @@ namespace WindowsFormsApplication1
 
 
             }
-            catch{ } // throw out exceptions for missing file errors
-            r_engine.Close();
-            r_engine.Dispose();
+            catch{ } // todo: catch exceptions for errors
+
+            
         }
 
         private void updatelistbutton_Click(object sender, EventArgs e)
@@ -210,6 +219,8 @@ namespace WindowsFormsApplication1
         private void terminal_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             sensor_selector.Enabled = true;
+            collectionlist.Items.Clear(); // remove items until sensor chosen.
+            sensor_selector.Items.Clear();
             populateSensors();
             sensorSelected = false;
         }
@@ -225,6 +236,7 @@ namespace WindowsFormsApplication1
         private void collectionlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             generateGraphics();
+
         }
 
         private void dateTimepicker_ValueChanged(object sender, EventArgs e)
@@ -327,15 +339,17 @@ namespace WindowsFormsApplication1
 
         string convertPath(string path)
         {
-            char[] charpath = path.ToArray<char>();
+            StringBuilder sb = new StringBuilder();
             for(int i = 0; i < path.Length; i++)
             {
-                if (charpath[i] == '/')
-                    charpath[i] = '\\';
-                else if (charpath[i] == '\\')
-                    charpath[i] = '/';
+                if (path[i] == '/')
+                    sb.Append('\\');
+                else if (path[i] == '\\')
+                    sb.Append('/');
+                else
+                    sb.Append(path[i]);
             }
-            return charpath.ToString();
+            return sb.ToString();
         }
 
         void organizeFile(string datafile)
@@ -373,6 +387,8 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        
     }
 }
 

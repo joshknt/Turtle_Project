@@ -54,6 +54,8 @@ namespace TurtleDesktop
 
             
             settings.rBinPath = RFolderTextBox.Text;
+            settings.DataPath = DataFolderTextBox.Text;
+            /*
             StringBuilder datapathsb = new StringBuilder();
             for(int i = 0; i < DataFolderTextBox.Text.Length; i++)
             {
@@ -63,6 +65,7 @@ namespace TurtleDesktop
                     datapathsb.Append(DataFolderTextBox.Text[i]);
             }
             settings.DataPath = datapathsb.ToString();
+            */
             settings.Save();
             MessageBox.Show("Settings saved!", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
