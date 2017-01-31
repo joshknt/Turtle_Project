@@ -1,6 +1,6 @@
 /*
 Arduino Turtle Sketch
-Authors: Derek C. Brown, Josh Kent
+Authors: Josh Kent
 
 Purpose: Code which runs on a Arduino Mega unit 
 Uses a number (depending on pins available) of DHT temperature/humidity sensor and an ADXL accelerometer
@@ -11,17 +11,28 @@ This implementation is for the Arduino Mega. This is because of the
 different pins used for the SPI bus that the MicroSD card uses and
 the accelerometers use. 
 
+*****************************************************************
+SPI_INTERFACE:
 Arduino Uno:
-MISO: 12
-MOSI: 11
+MISO/SDO: 12
+MOSI/SDA: 11  
 CLK: 13
 SS: 10
+INT_1: //check which pins are interrupt pins for Uno
 
 Arduino Mega:
-MISO: 50
-MOSI: 51
+MISO/SDO: 50
+MOSI/SDA: 51
 CLK: 52
-SS: 53  
+SS: 53
+INT_1: //check which pins are interrupt pins for Mega
+
+*******************************************************************
+TODO:
+1. Add error checking for temps
+2. Pass nest array to writeToFile()
+3. Find interrupt pins for boards
+*******************************************************************
 */
 
 
@@ -31,9 +42,16 @@ SS: 53
 #include <OneWire.h>
 #include <SPI.h>
 #include <SD.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_ADXL345_U.h>
+
 
 #define COUNTRY_CODE 108
 #define BOARD_ID 01
+#define LED_WRITE_PIN 5
+#define SD_PIN 10
+#define ACCL_ONE_PIN 9
+#define TOTAL_RECORDS 5
 
 //####################__SENSOR EGG PIN SETUP__#########################
 
@@ -42,195 +60,124 @@ SS: 53
 int xPinOne = A0; 
 int yPinOne = A1;
 int zPinOne = A2;
+Adafruit_ADXL345_Unified acclOne = Adafruit_ADXL345_Unified(00000);
+sensors_event_t eventOne;
 
-#define BOTTOMTEMPPINONE 2 
-OneWire bottomWireOne(BOTTOMTEMPPINONE);  
+#define BOTTOM_TEMP_PIN_ONE 2 
+OneWire bottomWireOne(BOTTOM_TEMP_PIN_ONE);  
 DallasTemperature bottomTempOne(&bottomWireOne);
 
-#define MIDDLETEMPPINONE 3 
-OneWire middleWireOne(MIDDLETEMPPINONE);  
+#define MIDDLE_TEMP_PIN_ONE 3 
+OneWire middleWireOne(MIDDLE_TEMP_PIN_ONE);  
 DallasTemperature middleTempOne(&middleWireOne);
 
-#define TOPTEMPPINONE 4
-OneWire topWireOne(TOPTEMPPINONE);  
+#define TOP_TEMP_PIN_ONE 4
+OneWire topWireOne(TOP_TEMP_PIN_ONE);  
 DallasTemperature topTempOne(&topWireOne);
 
 //******************************************************************
 //Sensor Egg 2
-//The pins need to be changed for second set of sensors
 
-//#define BOTTOMTEMPPINTWO 5 
-//OneWire bottomWireTwo(BOTTOMTEMPPINTWO);  
-//DallasTemperature bottomTempTwo(&bottomWireTwo);
-
-//#define MIDDLETEMPPINTWO 6 
-//OneWire middleWireTwo(MIDDLETEMPPINTWO);  
-//DallasTemperature middleTempTwo(&middleWireTwo);
-
-//#define TOPTEMPPINTWO 7 
-//OneWire topWireTwo(TOPTEMPPINTWO);  
-//DallasTemperature topTempTwo(&topWireTwo);
 
 //******************************************************************
 //Sensor Egg 3
-//The pins need to be changed for a third set of sensors
 
-//#define BOTTOMTEMPPINTHREE 8 
-//OneWire bottomWireThree(BOTTOMTEMPPINTHREE);  
-//DallasTemperature bottomTempThree(&bottomWireThree);
-
-//#define MIDDLETEMPPINTHREE 9 
-//OneWire middleWireThree(MIDDLETEMPPINTHREE);  
-//DallasTemperature middleTempThree(&middleWireThree);
-
-//#define TOPTEMPPINTHREE 10 
-//OneWire topWireThree(TOPTEMPPINTHREE);  
-//DallasTemperature topTempThree(&topWireThree);
 
 //******************************************************************
 //Sensor Egg 4
-//The pins need to be changed for a fourth set of sensors
 
-//#define BOTTOMTEMPPINFOUR 11 
-//OneWire bottomWireFour(BOTTOMTEMPPINFOUR);  
-//DallasTemperature bottomTempFour(&bottomWireFour);
-
-//#define MIDDLETEMPPINFOUR 12 
-//OneWire middleWireFour(MIDDLETEMPPINFOUR);  
-//DallasTemperature middleTempFour(&middleWireFour);
-
-//#define TOPTEMPPINFOUR 13 
-//OneWire topWireFour(TOPTEMPPINFOUR);  
-//DallasTemperature topTempFour(&topWireFour);
 
 //#####################################################################
-
-
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 20; //constant declares the number of records
-int recordNumber = 0; //holds which record being sent
-int arrayIndex = 0; //array position
-char *fileExtension = ".txt";
+int arrayIndex = 0; //Array position
+char *fileExtension = ".txt"; //Variable to hold extension type
+char recordNameOne[8] = "r"; //Begins the record naming convention
+Record nestOne[TOTAL_RECORDS]; //Stores records
 
-char recordNameOne[8] = "r"; //begins the record naming convention
-//char recordNameTwo[8] = "r"; //begins the record naming convention
-//char recordNameThree[8] = "r"; //begins the record naming convention
-//char recordNameFour[8] = "r"; //begins the record naming convention
+File file;  //File object for writing to the SD card
+char fileName[8]; //Holds changing file names
 
-Record nestOne[TOTALRECORDS]; //stores records
-//Record nestTwo[TOTALRECORDS];
-//Record nestThree[TOTALRECORDS];
-//Record nestFour[TOTALRECORDS];
-
-File file;
-//File fileTwo;
-//File fileThree;
-//File fileFour;
-
-char fileName[8];
 //#####################################################################
-
 
 
 //*********************************************************************
 void setup()
 {
 	Serial.begin(115200);
-  
-	analogReference(EXTERNAL); //needed to reference 3.3v for accelerometer
 
-  //setup SD support
-  pinMode(53, OUTPUT);
-  if(!SD.begin(53))
+  //Setup ADXL345 support
+  if(!acclOne.begin())
+  {
+    Serial.println("ADXL345 not initialized");
+  }
+  acclOne.setRange(ADXL345_RANGE_2_G);
+
+  
+  //Setup SD support
+  if(!SD.begin(SD_PIN))
   {
     Serial.println("MicroSD not initialized");
   }
 
-  //Needed for DS18B20 support
+
+  //Declare LED pin as output and set it to off
+  pinMode(LED_WRITE_PIN, OUTPUT);
+  digitalWrite(LED_WRITE_PIN, LOW);
+
+  
+  //Setup DS18B20 support
   //Nest one 
   bottomTempOne.begin();
   middleTempOne.begin();
   topTempOne.begin();
-
-  //Nest two
-//  bottomTempTwo.begin(); 
-//  middleTempTwo.begin();
-//  topTempTwo.begin();
-  
-  //Nest three
-//  bottomTempThree.begin(); 
-//  middleTempThree.begin();
-//  topTempThree.begin();
-  
-  //Nest four
-//  bottomTempFour.begin(); 
-//  middleTempFour.begin();
-//  topTempFour.begin();
 }
-
 
 
 //*********************************************************************
 //Main Driver
 void loop()
 {
-	//If array to hold records reaches maximum send data
-	if (arrayIndex >= TOTALRECORDS)
-	{
-    //TODO: the nest array needs to be passed
-    writeToFile("one", 1);
-
-    //this is to overwrite array after transmitting data
-		arrayIndex = 0; 
-	}
-
-
   //Request temperatures from sensors
   requestTemperatures();
 
-  
+  //Get accelerometer data
+  acclOne.getEvent(&eventOne);
+
   //Create new record object and name for each nest
-  strcat(recordNameOne, recordNumber);
-  //strcat(recordNameTwo, recordNumber);
-  //strcat(recordNameThree, recordNumber);
-  //strcat(recordNameFour, recordNumber);
+  strcat(recordNameOne, arrayIndex);
 
-
-  //Store records for each nest
-  //Temps are multiplied by 100 to keep the precision but save two bytes 
+  //Store records a nest (seperate nests will each need their own constructor)
+  //Data multiplied by 100 to keep the precision but saves two bytes 
   //  by not making them floats and letting the desktop software reconvert them
-  Record recordNameOne(1, 100 * bottomTempOne.getTempFByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
-                       100 * topTempOne.getTempCByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
-                       
-  //Record recordNameTwo(2, recordNumber, 100 * bottomTempTwo.getTempCByIndex(0), 100 * middleTempTwo.getTempCByIndex(0),
-  //                       100 * topTempTwo.getTempCByIndex(0), analogRead(xPinTwo), analogRead(yPinTwo), analogRead(zPinTwo)); //nest two
-                         
-  //Record recordNameThree(3, recordNumber, 100 * bottomTempThree.getTempCByIndex(0), 100 * middleTempThree.getTempCByIndex(0), 
-  //                         100 * topTempThree.getTempCByIndex(0), analogRead(xPinThree), analogRead(yPinThree), analogRead(zPinThree)); //nest three
-  
-  //Record recordNameFour(4, recordNumber, 100 * bottomTempFour.getTempCByIndex(0), 100 * middleTempThree.getTempCByIndex(0), 
-  //                         100 * topTempFour.getTempCByIndex(0), analogRead(xPinFour), analogRead(yPinFour), analogRead(zPinFour)); //nest four
+  Record recordNameOne(1, 100 * bottomTempOne.getTempCByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
+                       100 * topTempOne.getTempCByIndex(0), 100 * eventOne.acceleration.x, 
+                       100 * eventOne.acceleration.y, 100 * eventOne.acceleration.z); //nest one               
 
-  
   //Test print data to serial monitor after each recording
   recordNameOne.printToSerial();
-  
+  Serial.print("Array Index: ");
+  Serial.println(arrayIndex);
 
+   
   //Store records in arrays                   
   nestOne[arrayIndex] = recordNameOne;
-  //nestTwo[arrayIndex] = recordNameTwo;
-  //nestThree[arrayIndex] = recordNameThree;
-  //nestFour[arrayIndex] = recordNameFour;  
-
   
-	//Incrememnt counters
-	recordNumber++;
+	//Increment array index
 	arrayIndex++;
-
+ 
+  //If array to hold records reaches maximum send data
+  if (arrayIndex >= TOTAL_RECORDS)
+  {
+    writeToFile("one", 1);
+    arrayIndex = 0; //this is to overwrite array after transmitting data
+  }
+  
+  
   //Delay for three minutes between readings 
-  secondsOfDelay(240);
+  delay(1000);
+  //secondsOfDelay(240);
 }
 
 
@@ -242,22 +189,8 @@ void requestTemperatures()
   bottomTempOne.requestTemperatures();
   middleTempOne.requestTemperatures();
   topTempOne.requestTemperatures();
-
-  //Nest Two
-//  bottomTempTwo.requestTemperatures();
-//  middleTempTwo.requestTemperatures();
-//  topTempTwo.requestTemperatures();
-
-  //Nest Three
-//  bottomTempThree.requestTemperatures();
-//  middleTempThree.requestTemperatures();
-//  topTempThree.requestTemperatures();
-
-  //Nest Four
-//  bottomTempFour.requestTemperatures();
-//  middleTempFour.requestTemperatures();
-//  topTempFour.requestTemperatures();
 }
+
 
 //*********************************************************************
 //Allows device to delay by seconds rather than m/s
@@ -272,20 +205,24 @@ void secondsOfDelay(int seconds)
 
 //*********************************************************************
 //Writes data from arrays into text file
-//TODO: the nest array needs to be passed
 void writeToFile(char* nest, int nestNum)
 {
-    //create file name (ex: "one.txt",  "two.txt", ect.)
+    //Create file name (ex: "one.txt",  "two.txt", ect.)
     sprintf(fileName, "%s%s", nest, fileExtension);
+    
+    //LED to indicate write so system will not be powered down
+    digitalWrite(LED_WRITE_PIN, HIGH);
+    delay(2000);
+    
     file = SD.open(fileName, FILE_WRITE);
 
     //check if file opened properly
     if(file)
-    {
+    { 
       Serial.println("File Opened");
       delay(1000);
       //increment through nest data 
-      for(int i = 0; i < TOTALRECORDS; i++)
+      for(int i = 0; i < TOTAL_RECORDS; i++)
       {
         file.print(COUNTRY_CODE); file.print(",");
         file.print(BOARD_ID); file.print(",");
@@ -298,8 +235,12 @@ void writeToFile(char* nest, int nestNum)
         file.println(nestOne[i].getZAcc());
       }
 
-      //close file 
+      //Close file 
       file.close();
+
+      //Turn off LED to show it is to remove card without corruption
+      digitalWrite(LED_WRITE_PIN, LOW);
+      
       Serial.println("File Close");
       delay(1000);
     }  
