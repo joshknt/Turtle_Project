@@ -1,6 +1,6 @@
 /*
 Arduino Turtle Sketch
-Authors: Derek C. Brown, Josh Kent
+Authors: Josh Kent
 
 Purpose: Code which runs on a Arduino Mega unit 
 Uses a number (depending on pins available) of DHT temperature/humidity sensor and an ADXL accelerometer
@@ -62,83 +62,33 @@ DallasTemperature topTempOne(&topWireOne);
 
 //******************************************************************
 //Sensor Egg 2
-//The pins need to be changed for second set of sensors
 
-//#define BOTTOMTEMPPINTWO 5 
-//OneWire bottomWireTwo(BOTTOMTEMPPINTWO);  
-//DallasTemperature bottomTempTwo(&bottomWireTwo);
-
-//#define MIDDLETEMPPINTWO 6 
-//OneWire middleWireTwo(MIDDLETEMPPINTWO);  
-//DallasTemperature middleTempTwo(&middleWireTwo);
-
-//#define TOPTEMPPINTWO 7 
-//OneWire topWireTwo(TOPTEMPPINTWO);  
-//DallasTemperature topTempTwo(&topWireTwo);
 
 //******************************************************************
 //Sensor Egg 3
-//The pins need to be changed for a third set of sensors
 
-//#define BOTTOMTEMPPINTHREE 8 
-//OneWire bottomWireThree(BOTTOMTEMPPINTHREE);  
-//DallasTemperature bottomTempThree(&bottomWireThree);
-
-//#define MIDDLETEMPPINTHREE 9 
-//OneWire middleWireThree(MIDDLETEMPPINTHREE);  
-//DallasTemperature middleTempThree(&middleWireThree);
-
-//#define TOPTEMPPINTHREE 10 
-//OneWire topWireThree(TOPTEMPPINTHREE);  
-//DallasTemperature topTempThree(&topWireThree);
 
 //******************************************************************
 //Sensor Egg 4
-//The pins need to be changed for a fourth set of sensors
 
-//#define BOTTOMTEMPPINFOUR 11 
-//OneWire bottomWireFour(BOTTOMTEMPPINFOUR);  
-//DallasTemperature bottomTempFour(&bottomWireFour);
-
-//#define MIDDLETEMPPINFOUR 12 
-//OneWire middleWireFour(MIDDLETEMPPINFOUR);  
-//DallasTemperature middleTempFour(&middleWireFour);
-
-//#define TOPTEMPPINFOUR 13 
-//OneWire topWireFour(TOPTEMPPINFOUR);  
-//DallasTemperature topTempFour(&topWireFour);
 
 //#####################################################################
-
-
 
 
 //#######################__DECLARE VARIABLES__#########################
 const int TOTALRECORDS = 2; //constant declares the number of records
 int arrayIndex = 0; //array position
 char *fileExtension = ".txt"; //variable to hold extension type
-
 char recordNameOne[8] = "r"; //begins the record naming convention
-//char recordNameTwo[8] = "r"; //begins the record naming convention
-//char recordNameThree[8] = "r"; //begins the record naming convention
-//char recordNameFour[8] = "r"; //begins the record naming convention
-
 Record nestOne[TOTALRECORDS]; //stores records
-//Record nestTwo[TOTALRECORDS];
-//Record nestThree[TOTALRECORDS];
-//Record nestFour[TOTALRECORDS];
 
 File file;  //file object for writing to the SD card
-//File fileTwo;
-//File fileThree;
-//File fileFour;
-
 char fileName[8]; //holds changing file names
 
 int sdPin = 10; //pin for SD card (UNO) 
+int accPin = 9; //pin for accelerometer
 //int sdPin = 53 //pin for SD card (Mega)
 //#####################################################################
-
 
 
 //*********************************************************************
@@ -164,23 +114,7 @@ void setup()
   bottomTempOne.begin();
   middleTempOne.begin();
   topTempOne.begin();
-
-  //Nest two
-//  bottomTempTwo.begin(); 
-//  middleTempTwo.begin();
-//  topTempTwo.begin();
-  
-  //Nest three
-//  bottomTempThree.begin(); 
-//  middleTempThree.begin();
-//  topTempThree.begin();
-  
-  //Nest four
-//  bottomTempFour.begin(); 
-//  middleTempFour.begin();
-//  topTempFour.begin();
 }
-
 
 
 //*********************************************************************
@@ -190,42 +124,22 @@ void loop()
   //Request temperatures from sensors
   requestTemperatures();
 
-  
   //Create new record object and name for each nest
   strcat(recordNameOne, arrayIndex);
-  //strcat(recordNameTwo, arrayIndex);
-  //strcat(recordNameThree, arrayIndex);
-  //strcat(recordNameFour, arrayIndex);
 
-
-  //Store records for each nest
+  //Store records a nest (seperate nests will each need their own constructor)
   //Temps are multiplied by 100 to keep the precision but save two bytes 
   //  by not making them floats and letting the desktop software reconvert them
   Record recordNameOne(1, 100 * bottomTempOne.getTempCByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
-                       100 * topTempOne.getTempCByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one
-                       
-  //Record recordNameTwo(2, recordNumber, 100 * bottomTempTwo.getTempCByIndex(0), 100 * middleTempTwo.getTempCByIndex(0),
-  //                       100 * topTempTwo.getTempCByIndex(0), analogRead(xPinTwo), analogRead(yPinTwo), analogRead(zPinTwo)); //nest two
-                         
-  //Record recordNameThree(3, recordNumber, 100 * bottomTempThree.getTempCByIndex(0), 100 * middleTempThree.getTempCByIndex(0), 
-  //                         100 * topTempThree.getTempCByIndex(0), analogRead(xPinThree), analogRead(yPinThree), analogRead(zPinThree)); //nest three
-  
-  //Record recordNameFour(4, recordNumber, 100 * bottomTempFour.getTempCByIndex(0), 100 * middleTempThree.getTempCByIndex(0), 
-  //                         100 * topTempFour.getTempCByIndex(0), analogRead(xPinFour), analogRead(yPinFour), analogRead(zPinFour)); //nest four
+                       100 * topTempOne.getTempCByIndex(0), analogRead(xPinOne), analogRead(yPinOne), analogRead(zPinOne)); //nest one               
 
-  
   //Test print data to serial monitor after each recording
   recordNameOne.printToSerial();
   Serial.print("Array Index: ");
   Serial.println(arrayIndex);
   
-
   //Store records in arrays                   
   nestOne[arrayIndex] = recordNameOne;
-  //nestTwo[arrayIndex] = recordNameTwo;
-  //nestThree[arrayIndex] = recordNameThree;
-  //nestFour[arrayIndex] = recordNameFour;  
-
   
 	//Increment array index
 	arrayIndex++;
@@ -255,22 +169,8 @@ void requestTemperatures()
   bottomTempOne.requestTemperatures();
   middleTempOne.requestTemperatures();
   topTempOne.requestTemperatures();
-
-  //Nest Two
-//  bottomTempTwo.requestTemperatures();
-//  middleTempTwo.requestTemperatures();
-//  topTempTwo.requestTemperatures();
-
-  //Nest Three
-//  bottomTempThree.requestTemperatures();
-//  middleTempThree.requestTemperatures();
-//  topTempThree.requestTemperatures();
-
-  //Nest Four
-//  bottomTempFour.requestTemperatures();
-//  middleTempFour.requestTemperatures();
-//  topTempFour.requestTemperatures();
 }
+
 
 //*********************************************************************
 //Allows device to delay by seconds rather than m/s
