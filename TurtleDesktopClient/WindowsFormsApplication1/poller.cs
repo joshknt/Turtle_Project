@@ -36,11 +36,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             updateLists();
-            // Initialize R //
-            var envPath = Environment.GetEnvironmentVariable("PATH"); // prepare R environment
-            Environment.SetEnvironmentVariable("PATH", envPath + Path.PathSeparator + settings.rBinPath);
-            r_engine = REngine.CreateInstance("RDotNet", settings.rBinPath + "\\R.DLL");
-            r_engine.Initialize();
+
         }
 
         private void gen_button_Click(object sender, EventArgs e)
@@ -130,11 +126,35 @@ namespace WindowsFormsApplication1
 
         private void generateGraphics()
         {
+            settings.Reload();
             string terminal = (string)terminal_list.SelectedItem;
             string sensor = (string)sensor_selector.SelectedItem;
             string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
+
+            // Initialize R //
+            try
+            {
+                if (!File.Exists(settings.rBinPath + "\\R.DLL"))
+                {
+                    throw new DllNotFoundException();
+                }
+                else if (r_engine == null && File.Exists(settings.rBinPath + "\\R.DLL")) // singleton approach. REngine can only be initialized once in the program.
+                {
+                    var envPath = Environment.GetEnvironmentVariable("PATH"); // prepare R environment
+                    Environment.SetEnvironmentVariable("PATH", envPath + Path.PathSeparator + settings.rBinPath);
+                    r_engine = REngine.CreateInstance("RDotNet", settings.rBinPath + "\\R.DLL");
+                    r_engine.Initialize();
+                }
+            }
+            catch(System.DllNotFoundException)
+            {
+                MessageBox.Show("R bin file not located in the given folder. Ensure the 32-bit edition of the R distribution's bin is located in the folder set in settings. See error 1 documentation for more help.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            //////////////////
+
             StreamReader streamr;
             try
             {
@@ -144,31 +164,31 @@ namespace WindowsFormsApplication1
                 var timeVec = r_engine.GetSymbol("timeVec");
 
                 // Temperature Red:
-                NumericVector tempredVec = r_engine.Evaluate("tempredVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 720, height = 580)"); // prepare temperature graph
+                NumericVector tempredVec = r_engine.Evaluate("tempredVec <- (read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED)/100.0").AsNumeric();
+                r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 1080, height = 720)"); // prepare temperature graph
                 r_engine.Evaluate("plot(tempredVec, type = 'o', col = 'red', xlab = 'Time', ylab = 'Temperature', main = 'Red Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
 
                 // Temperature Yellow:
-                NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 720, height = 580)"); // prepare temperature graph
+                NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW/100.0").AsNumeric();
+                r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 1080, height = 720)"); // prepare temperature graph
                 r_engine.Evaluate("plot(tempyellowVec, type = 'o', col = 'darkgoldenrod3', xlab = 'Time', ylab = 'Temperature', main = 'Yellow Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
 
                 // Temperature Blue:
-                NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 720, height = 580)"); // prepare temperature graph
+                NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE/100.0").AsNumeric();
+                r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 1080, height = 720)"); // prepare temperature graph
                 r_engine.Evaluate("plot(tempblueVec, type = 'o', col = 'blue', xlab = 'Time', ylab = 'Temperature', main = 'Blue Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
 
                 //General Tab
-                DataFrame df = r_engine.Evaluate("read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,5:10]").AsDataFrame();
+                DataFrame df = r_engine.Evaluate("cbind((read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,4:6]/100.0) , (read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,7:9]))").AsDataFrame();
                 dataGridView1.RowCount = 0;
                 dataGridView1.ColumnCount = 0;
                 streamr = new StreamReader(collectionLocation);
@@ -182,15 +202,11 @@ namespace WindowsFormsApplication1
                 {
                     dataGridView1.RowCount++;
 
-                    for(int j = 0; j < 10; j++)
+                    for(int j = 0; j < settings.DataFileColumnCount -2; j++)
                     {
                         while (streamr.Read() != ',') ; // consume all until date
                     }
                     dataGridView1.Rows[i].HeaderCell.Value = streamr.ReadLine();
-
-
-
-
                     for (int k = 0; k < df.ColumnCount; ++k)
                     {
                         dataGridView1[k, i].Value = df[i, k];
@@ -198,6 +214,7 @@ namespace WindowsFormsApplication1
                 }
                 dataGridView1.AutoResizeColumns();
                 dataGridView1.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+
                 // Acceleration:
                 NumericVector XACCEL = r_engine.Evaluate("XACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$X").AsNumeric();
                 NumericVector YACCEL = r_engine.Evaluate("YACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Y").AsNumeric();
@@ -348,6 +365,35 @@ namespace WindowsFormsApplication1
                     sb.Append((char)file.Read());
                 }
                 file.Read(); // consume ','
+
+                switch (i)
+                {
+                    case 0:
+                        {
+                            while(sb.Length < 3)
+                            {
+                                sb.Insert(0, '0');
+                            }
+                            break;
+                        }
+                    case 1:
+                        {
+                            while (sb.Length < 6)
+                            {
+                                sb.Insert(3, '0');
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            while (sb.Length < 8)
+                            {
+                                sb.Insert(6, '0');
+                            }
+                            break;
+                        }
+                    default: break;
+                }
             }
             file.Close();
 
@@ -377,7 +423,7 @@ namespace WindowsFormsApplication1
             //   DateTime importtime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             DateTime importtime = DateTime.Now;
             Stack<string> times = new Stack<string>();
-            filewrite.WriteLine("COUNTRY, TERMINAL, SENSOR, RECORDNUMBER,TEMPRED,TEMPYELLOW,TEMPBLUE, X, Y, Z, TIMESTAMPDATE, TIMESTAMPTIME"); // append header
+            filewrite.WriteLine("COUNTRY, TERMINAL, SENSOR,TEMPRED,TEMPYELLOW,TEMPBLUE, X, Y, Z, TIMESTAMPDATE, TIMESTAMPTIME"); // append header
 
             /* Data is written from oldest to newest. Need to read entire file once to build time stack */
             while (!fileread.EndOfStream)

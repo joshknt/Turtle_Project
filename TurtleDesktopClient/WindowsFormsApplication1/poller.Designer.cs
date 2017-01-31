@@ -36,6 +36,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminal_list = new System.Windows.Forms.ListBox();
             this.sensor_selector = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,8 +55,8 @@
             this.dataBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.createLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logdataBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
             this.gen_tab.SuspendLayout();
@@ -88,20 +89,20 @@
             // toolStrip_settings
             // 
             this.toolStrip_settings.Name = "toolStrip_settings";
-            this.toolStrip_settings.Size = new System.Drawing.Size(152, 22);
+            this.toolStrip_settings.Size = new System.Drawing.Size(143, 22);
             this.toolStrip_settings.Text = "Settings";
             this.toolStrip_settings.Click += new System.EventHandler(this.toolStrip_settings_Click);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // helpToolStripMenuItem
@@ -126,6 +127,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // createLogsToolStripMenuItem
+            // 
+            this.createLogsToolStripMenuItem.Name = "createLogsToolStripMenuItem";
+            this.createLogsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.createLogsToolStripMenuItem.Text = "Create Logs";
+            this.createLogsToolStripMenuItem.Click += new System.EventHandler(this.createLogsToolStripMenuItem_Click);
             // 
             // terminal_list
             // 
@@ -302,26 +310,25 @@
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel1.Text = "Ready.";
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripProgressBar1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(667, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // createLogsToolStripMenuItem
+            // toolStripProgressBar1
             // 
-            this.createLogsToolStripMenuItem.Name = "createLogsToolStripMenuItem";
-            this.createLogsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.createLogsToolStripMenuItem.Text = "Create Logs";
-            this.createLogsToolStripMenuItem.Click += new System.EventHandler(this.createLogsToolStripMenuItem_Click);
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // poller
             // 
@@ -341,7 +348,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "poller";
-            this.Text = "poller";
+            this.Text = "MUTS - Turtle Nest Monitoring Under The Sand - First Beta";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.data_tabControl.ResumeLayout(false);
@@ -394,5 +401,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem createLogsToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog logdataBrowserDialog;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }

@@ -16,7 +16,8 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //   Application.Run(new Form1()); Menu for syncing to be added in phase 2
+            Application.Run(new poller());
         }
     }
 }

@@ -118,5 +118,17 @@ namespace TurtleDesktop.Properties {
                 this["filenames"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
+        public int DataFileColumnCount {
+            get {
+                return ((int)(this["DataFileColumnCount"]));
+            }
+            set {
+                this["DataFileColumnCount"] = value;
+            }
+        }
     }
 }

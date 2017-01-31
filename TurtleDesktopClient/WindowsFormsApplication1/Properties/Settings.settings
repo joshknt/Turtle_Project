@@ -26,5 +26,8 @@
     <Setting Name="filenames" Type="System.String" Scope="User">
       <Value Profile="(Default)">one.txt,two.txt,three.txt,four.txt</Value>
     </Setting>
+    <Setting Name="DataFileColumnCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">11</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
