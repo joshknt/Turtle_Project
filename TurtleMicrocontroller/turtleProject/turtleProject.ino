@@ -39,8 +39,6 @@ TODO:
 
 #include "Record.h"
 #include <DallasTemperature.h>
-#include <OneWire.h>
-#include <SPI.h>
 #include <SD.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_ADXL345_U.h>
@@ -50,18 +48,16 @@ TODO:
 #define BOARD_ID 01
 #define LED_WRITE_PIN 5
 #define SD_PIN 10
-#define ACCL_ONE_PIN 9
-#define TOTAL_RECORDS 5
+#define TOTAL_RECORDS 2
+#define FILE_EXTENSION ".txt"
 
 //####################__SENSOR EGG PIN SETUP__#########################
 
 //******************************************************************
 //Sensor Egg 1
-int xPinOne = A0; 
-int yPinOne = A1;
-int zPinOne = A2;
 Adafruit_ADXL345_Unified acclOne = Adafruit_ADXL345_Unified(00000);
 sensors_event_t eventOne;
+float xOffsetOne, yOffsetOne, zOffsetOne;
 
 #define BOTTOM_TEMP_PIN_ONE 2 
 OneWire bottomWireOne(BOTTOM_TEMP_PIN_ONE);  
@@ -91,14 +87,13 @@ DallasTemperature topTempOne(&topWireOne);
 
 
 //#######################__DECLARE VARIABLES__#########################
-int arrayIndex = 0; //Array position
-char *fileExtension = ".txt"; //Variable to hold extension type
-char recordNameOne[8] = "r"; //Begins the record naming convention
+uint8_t arrayIndex = 0; //Array position
+//char FILE_EXTENSION[4] = ".txt"; //Variable to hold extension type
+char recordNameOne[3] = "r"; //Begins the record naming convention
 Record nestOne[TOTAL_RECORDS]; //Stores records
 
 File file;  //File object for writing to the SD card
-char fileName[8]; //Holds changing file names
-
+char fileName[5]; //Holds changing file names
 //#####################################################################
 
 
@@ -107,18 +102,19 @@ void setup()
 {
 	Serial.begin(115200);
 
-  //Setup ADXL345 support
-  if(!acclOne.begin())
-  {
-    Serial.println("ADXL345 not initialized");
-  }
+  //Setup ADXL345 support and offsets
+  acclOne.begin();
   acclOne.setRange(ADXL345_RANGE_2_G);
-
+  acclOne.getEvent(&eventOne);
+  xOffsetOne = eventOne.acceleration.x;
+  yOffsetOne = eventOne.acceleration.y;
+  zOffsetOne = eventOne.acceleration.z;
   
+
   //Setup SD support
   if(!SD.begin(SD_PIN))
   {
-    Serial.println("MicroSD not initialized");
+    Serial.println("SD not initialized");
   }
 
 
@@ -146,21 +142,20 @@ void loop()
   acclOne.getEvent(&eventOne);
 
   //Create new record object and name for each nest
-  strcat(recordNameOne, arrayIndex);
-
+  sprintf(recordNameOne, "r%d", arrayIndex);
+ 
   //Store records a nest (seperate nests will each need their own constructor)
   //Data multiplied by 100 to keep the precision but saves two bytes 
   //  by not making them floats and letting the desktop software reconvert them
   Record recordNameOne(1, 100 * bottomTempOne.getTempCByIndex(0), 100 * middleTempOne.getTempCByIndex(0), 
-                       100 * topTempOne.getTempCByIndex(0), 100 * eventOne.acceleration.x, 
-                       100 * eventOne.acceleration.y, 100 * eventOne.acceleration.z); //nest one               
+                       100 * topTempOne.getTempCByIndex(0), (100* xOffsetOne) - (100 * eventOne.acceleration.x), 
+                       (100* yOffsetOne) - (100 * eventOne.acceleration.y), (100* zOffsetOne) - (100 * eventOne.acceleration.z));                
 
   //Test print data to serial monitor after each recording
   recordNameOne.printToSerial();
   Serial.print("Array Index: ");
   Serial.println(arrayIndex);
 
-   
   //Store records in arrays                   
   nestOne[arrayIndex] = recordNameOne;
   
@@ -175,9 +170,9 @@ void loop()
   }
   
   
-  //Delay for three minutes between readings 
-  delay(1000);
-  //secondsOfDelay(240);
+  //Delay for five minutes between readings 
+  delay(2000);
+  //secondsOfDelay(300);
 }
 
 
@@ -206,21 +201,21 @@ void secondsOfDelay(int seconds)
 //*********************************************************************
 //Writes data from arrays into text file
 void writeToFile(char* nest, int nestNum)
-{
+{   
     //Create file name (ex: "one.txt",  "two.txt", ect.)
-    sprintf(fileName, "%s%s", nest, fileExtension);
-    
-    //LED to indicate write so system will not be powered down
-    digitalWrite(LED_WRITE_PIN, HIGH);
-    delay(2000);
+    sprintf(fileName, "%s%s", nest, FILE_EXTENSION);
     
     file = SD.open(fileName, FILE_WRITE);
 
     //check if file opened properly
     if(file)
     { 
+      //LED to indicate write so system will not be powered down
+      digitalWrite(LED_WRITE_PIN, HIGH);
+      delay(2000);
+      
       Serial.println("File Opened");
-      delay(1000);
+
       //increment through nest data 
       for(int i = 0; i < TOTAL_RECORDS; i++)
       {
@@ -242,7 +237,9 @@ void writeToFile(char* nest, int nestNum)
       digitalWrite(LED_WRITE_PIN, LOW);
       
       Serial.println("File Close");
-      delay(1000);
     }  
+    else
+    {
+      Serial.println("FILE NOT OPENED");
+    }
 }
-

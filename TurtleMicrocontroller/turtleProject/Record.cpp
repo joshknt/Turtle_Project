@@ -7,13 +7,7 @@ Record::Record()
 }
 
 
-Record::Record(int nID)
-{
-  nestID = nID;
-}
-
-
-Record::Record(int nID, int bt, int mt, int tt, int x, int y, int z)
+Record::Record(uint8_t nID, uint16_t bt, uint16_t mt, uint16_t tt, int x, int y, int z)
 {
   nestID = nID;
   bottomTemp = bt;
