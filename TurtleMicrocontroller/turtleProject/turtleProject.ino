@@ -1,5 +1,3 @@
-
-
 /*
 Arduino Turtle Sketch
 Authors: Derek C. Brown, Josh Kent
@@ -35,7 +33,7 @@ INT_1: //check which pins are interrupt pins for Mega
 #include <OneWire.h>
 #include <SPI.h>
 #include <SD.h>
-#include <Adafruit_ADXL345_U.h>
+#include <SparkFun_ADXL345.h>
 
 #define COUNTRY_CODE 108
 #define BOARD_ID 01
@@ -48,7 +46,7 @@ INT_1: //check which pins are interrupt pins for Mega
 int xPinOne = A0; 
 int yPinOne = A1;
 int zPinOne = A2;
-
+ADXL345 acclOne = ADXL345(9);
 
 #define BOTTOMTEMPPINONE 2 
 OneWire bottomWireOne(BOTTOMTEMPPINONE);  
@@ -116,7 +114,7 @@ DallasTemperature topTempOne(&topWireOne);
 
 
 //#######################__DECLARE VARIABLES__#########################
-const int TOTALRECORDS = 5; //constant declares the number of records
+const int TOTALRECORDS = 2; //constant declares the number of records
 int arrayIndex = 0; //array position
 char *fileExtension = ".txt"; //variable to hold extension type
 
@@ -137,7 +135,8 @@ File file;  //file object for writing to the SD card
 
 char fileName[8]; //holds changing file names
 
-int sdPin = 10; //pin for SD card
+int sdPin = 10; //pin for SD card (UNO) 
+//int sdPin = 53 //pin for SD card (Mega)
 //#####################################################################
 
 
@@ -188,17 +187,6 @@ void setup()
 //Main Driver
 void loop()
 {
-	//If array to hold records reaches maximum send data
-	if (arrayIndex >= TOTALRECORDS)
-	{
-    //TODO: the nest array needs to be passed
-    writeToFile("one", 1);
-
-    //this is to overwrite array after transmitting data
-		arrayIndex = 0; 
-	}
-
-
   //Request temperatures from sensors
   requestTemperatures();
 
@@ -241,9 +229,20 @@ void loop()
   
 	//Increment array index
 	arrayIndex++;
+ 
+  //If array to hold records reaches maximum send data
+  if (arrayIndex >= TOTALRECORDS)
+  {
+    //TODO: the nest array needs to be passed
+    writeToFile("one", 1);
 
+    //this is to overwrite array after transmitting data
+    arrayIndex = 0; 
+  }
+  
+  
   //Delay for three minutes between readings 
-  delay(8000);
+  delay(10000);
   //secondsOfDelay(240);
 }
 
