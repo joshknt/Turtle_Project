@@ -78,6 +78,12 @@
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="poller.en.resx">
+      <DependentUpon>poller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="poller.es.resx">
+      <DependentUpon>poller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="poller.resx">
       <DependentUpon>poller.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SettingsForm.en.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.es.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx">

@@ -109,7 +109,7 @@ namespace TurtleDesktop.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("one.txt,two.txt,three.txt,four.txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ONE.TXT,TWO.TXT,THREE.TXT,FOUR.TXT")]
         public string filenames {
             get {
                 return ((string)(this["filenames"]));

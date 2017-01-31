@@ -46,108 +46,77 @@ namespace TurtleDesktop
             // 
             // RFolderTextBox
             // 
-            this.RFolderTextBox.Location = new System.Drawing.Point(12, 28);
+            resources.ApplyResources(this.RFolderTextBox, "RFolderTextBox");
             this.RFolderTextBox.Name = "RFolderTextBox";
-            this.RFolderTextBox.Size = new System.Drawing.Size(284, 20);
-            this.RFolderTextBox.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "R 32-Bit BIN File";
             // 
             // RBrowse_button
             // 
-            this.RBrowse_button.Location = new System.Drawing.Point(302, 28);
+            resources.ApplyResources(this.RBrowse_button, "RBrowse_button");
             this.RBrowse_button.Name = "RBrowse_button";
-            this.RBrowse_button.Size = new System.Drawing.Size(59, 21);
-            this.RBrowse_button.TabIndex = 3;
-            this.RBrowse_button.Text = "Browse";
             this.RBrowse_button.UseVisualStyleBackColor = true;
             this.RBrowse_button.Click += new System.EventHandler(this.Browse_button_Click);
             // 
             // DataBrowseButton
             // 
-            this.DataBrowseButton.Location = new System.Drawing.Point(302, 70);
+            resources.ApplyResources(this.DataBrowseButton, "DataBrowseButton");
             this.DataBrowseButton.Name = "DataBrowseButton";
-            this.DataBrowseButton.Size = new System.Drawing.Size(59, 21);
-            this.DataBrowseButton.TabIndex = 6;
-            this.DataBrowseButton.Text = "Browse";
             this.DataBrowseButton.UseVisualStyleBackColor = true;
             this.DataBrowseButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 51);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Data Folder";
             // 
             // DataFolderTextBox
             // 
-            this.DataFolderTextBox.Location = new System.Drawing.Point(12, 70);
+            resources.ApplyResources(this.DataFolderTextBox, "DataFolderTextBox");
             this.DataFolderTextBox.Name = "DataFolderTextBox";
-            this.DataFolderTextBox.Size = new System.Drawing.Size(284, 20);
-            this.DataFolderTextBox.TabIndex = 4;
             // 
             // Help_R_Button
             // 
-            this.Help_R_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Help_R_Button.BackgroundImage")));
-            this.Help_R_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.Help_R_Button, "Help_R_Button");
             this.Help_R_Button.FlatAppearance.BorderSize = 0;
-            this.Help_R_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Help_R_Button.Location = new System.Drawing.Point(367, 28);
             this.Help_R_Button.Name = "Help_R_Button";
-            this.Help_R_Button.Size = new System.Drawing.Size(24, 20);
-            this.Help_R_Button.TabIndex = 7;
             this.Help_R_Button.UseVisualStyleBackColor = true;
             this.Help_R_Button.Click += new System.EventHandler(this.Help_R_Button_Click);
             // 
             // Help_Data_Button
             // 
-            this.Help_Data_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Help_Data_Button.BackgroundImage")));
-            this.Help_Data_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.Help_Data_Button, "Help_Data_Button");
             this.Help_Data_Button.FlatAppearance.BorderSize = 0;
-            this.Help_Data_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Help_Data_Button.Location = new System.Drawing.Point(367, 71);
             this.Help_Data_Button.Name = "Help_Data_Button";
-            this.Help_Data_Button.Size = new System.Drawing.Size(24, 20);
-            this.Help_Data_Button.TabIndex = 8;
             this.Help_Data_Button.UseVisualStyleBackColor = true;
             this.Help_Data_Button.Click += new System.EventHandler(this.Help_Data_Button_Click);
             // 
+            // folderBrowserDialog1
+            // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
+            // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(64, 97);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(128, 31);
-            this.saveButton.TabIndex = 9;
-            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(198, 97);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(128, 31);
-            this.cancelButton.TabIndex = 10;
-            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(400, 138);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.Help_Data_Button);
@@ -159,11 +128,8 @@ namespace TurtleDesktop
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RFolderTextBox);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(416, 177);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(416, 177);
             this.Name = "SettingsForm";
-            this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
 
