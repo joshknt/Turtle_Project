@@ -132,10 +132,11 @@ namespace WindowsFormsApplication1
             string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
-            redtemp_tab.BackgroundImage = null;
-            bluetemp_tab.BackgroundImage = null;
-            yellowtemp_tab.BackgroundImage = null;
-            accel_tab.BackgroundImage = null;
+  //          redtemp_tab.BackgroundImage = null;
+   //         bluetemp_tab.BackgroundImage = null;
+   //         yellowtemp_tab.BackgroundImage = null;
+    //        accel_tab.BackgroundImage = null;
+
             
             // Initialize R //
             try
@@ -167,33 +168,50 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("timeVec <- read.table(\"" + collectionLocation + "\", sep = ',', header = TRUE)$TIMESTAMPTIME");
                 var timeVec = r_engine.GetSymbol("timeVec");
 
+                if(movementpicturebox.Image != null)
+                    movementpicturebox.Image.Dispose();
+                if (redpicbox.Image != null)
+                    redpicbox.Image.Dispose();
+                if (bluepicbox.Image != null)
+                    bluepicbox.Image.Dispose();
+                if (yellowpicbox.Image != null)
+                    yellowpicbox.Image.Dispose();
 
+                if (redpicbox.Image == null || !File.Exists(path + collection + "/tempred.png"))
+                {
+                    // Temperature Red:
+                    NumericVector tempredVec = r_engine.Evaluate("tempredVec <- (read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED)/100.0").AsNumeric();
+                    r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 1080, height = 720)"); // prepare temperature graph
+                    r_engine.Evaluate("plot(tempredVec, type = 'o', col = 'red', xlab = 'Time', ylab = 'Temperature', main = 'Red Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                    r_engine.Evaluate("dev.off()"); // complete plot
+                                                    // redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
+                }
+                redpicbox.Image = Image.FromFile(path + collection + "/tempred.png");
 
-                // Temperature Red:
-                NumericVector tempredVec = r_engine.Evaluate("tempredVec <- (read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED)/100.0").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 1080, height = 720)"); // prepare temperature graph
-                r_engine.Evaluate("plot(tempredVec, type = 'o', col = 'red', xlab = 'Time', ylab = 'Temperature', main = 'Red Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
-                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
-                r_engine.Evaluate("dev.off()"); // complete plot
-                redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
+                if (yellowpicbox.Image == null || !File.Exists(path + collection + "/tempyellow.png"))
+                {
+                    // Temperature Yellow:
+                    NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW/100.0").AsNumeric();
+                    r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 1080, height = 720)"); // prepare temperature graph
+                    r_engine.Evaluate("plot(tempyellowVec, type = 'o', col = 'darkgoldenrod3', xlab = 'Time', ylab = 'Temperature', main = 'Yellow Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                    r_engine.Evaluate("dev.off()"); // complete plot
+                                                    //   yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
+                }
+                yellowpicbox.Image = Image.FromFile(path + collection + "/tempyellow.png");
 
-
-                // Temperature Yellow:
-                NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW/100.0").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 1080, height = 720)"); // prepare temperature graph
-                r_engine.Evaluate("plot(tempyellowVec, type = 'o', col = 'darkgoldenrod3', xlab = 'Time', ylab = 'Temperature', main = 'Yellow Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
-                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
-                r_engine.Evaluate("dev.off()"); // complete plot
-                yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
-
-
-                // Temperature Blue:
-                NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE/100.0").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 1080, height = 720)"); // prepare temperature graph
-                r_engine.Evaluate("plot(tempblueVec, type = 'o', col = 'blue', xlab = 'Time', ylab = 'Temperature', main = 'Blue Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
-                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
-                r_engine.Evaluate("dev.off()"); // complete plot
-                bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
+                if (bluepicbox.Image == null || !File.Exists(path + collection + "/tempblue.png"))
+                {
+                    // Temperature Blue:
+                    NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE/100.0").AsNumeric();
+                    r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 1080, height = 720)"); // prepare temperature graph
+                    r_engine.Evaluate("plot(tempblueVec, type = 'o', col = 'blue', xlab = 'Time', ylab = 'Temperature', main = 'Blue Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                    r_engine.Evaluate("dev.off()"); // complete plot
+                                                    // bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
+                }
+                bluepicbox.Image = Image.FromFile(path + collection + "/tempblue.png");
 
                 //General Tab
                 DataFrame df = r_engine.Evaluate("cbind((read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,4:6]/100.0) , (read.table('" + collectionLocation + "', sep = ',', header = TRUE)[,7:9]))").AsDataFrame();
@@ -223,20 +241,22 @@ namespace WindowsFormsApplication1
                 dataGridView1.AutoResizeColumns();
                 dataGridView1.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
 
-                // Acceleration:
-                NumericVector XACCEL = r_engine.Evaluate("XACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$X").AsNumeric();
-                NumericVector YACCEL = r_engine.Evaluate("YACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Y").AsNumeric();
-                NumericVector ZACCEL = r_engine.Evaluate("ZACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Z").AsNumeric();
-                r_engine.Evaluate("png('" + path + collection + "/motion.png', width = 720, height = 580)"); // prepare temperature graph
-                r_engine.Evaluate("plot(XACCEL, type = 'o', col = 'blue', ylim = c(100,500), xlab = 'Time', ylab = 'Motion', main = 'Motion Data for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
-                r_engine.Evaluate("lines(YACCEL, type='o', pch=22, lty=2, col='red')");
-                r_engine.Evaluate("lines(ZACCEL, type='o', pch=22, lty=2, col='green')");
-                r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
-                r_engine.Evaluate("legend(1, 150, c('X-Axis','Y-Axis', 'Z-Axis'), cex=0.8, col = c('blue', 'red', 'green'), pch = 21:22, lty = 1:3)"); // add legend
-                r_engine.Evaluate("dev.off()"); // complete plot
-                accel_tab.BackgroundImage = Image.FromFile(path + collection + "/motion.png");
-
-
+                if (movementpicturebox.Image == null || !File.Exists(path + collection + "/motion.png"))
+                {
+                    // Acceleration:
+                    NumericVector XACCEL = r_engine.Evaluate("XACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$X").AsNumeric();
+                    NumericVector YACCEL = r_engine.Evaluate("YACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Y").AsNumeric();
+                    NumericVector ZACCEL = r_engine.Evaluate("ZACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Z").AsNumeric();
+                    r_engine.Evaluate("png('" + path + collection + "/motion.png', width = 1080, height = 720)"); // prepare temperature graph
+                    r_engine.Evaluate("plot(XACCEL, type = 'o', col = 'blue', ylim = c(100,500), xlab = 'Time', ylab = 'Motion', main = 'Motion Data for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("lines(YACCEL, type='o', pch=22, lty=2, col='red')");
+                    r_engine.Evaluate("lines(ZACCEL, type='o', pch=22, lty=2, col='green')");
+                    r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
+                    r_engine.Evaluate("legend(1, 150, c('X-Axis','Y-Axis', 'Z-Axis'), cex=0.8, col = c('blue', 'red', 'green'), pch = 21:22, lty = 1:3)"); // add legend
+                    r_engine.Evaluate("dev.off()"); // complete plot
+                                                    //  accel_tab.BackgroundImage = Image.FromFile(path + collection + "/motion.png");  
+                }
+                movementpicturebox.Image = Image.FromFile(path + collection + "/motion.png");
             }
             catch{ } // todo: catch exceptions for errors
 
@@ -246,6 +266,19 @@ namespace WindowsFormsApplication1
         private void updatelistbutton_Click(object sender, EventArgs e)
         {
             updateLists();
+
+            try
+            {
+                movementpicturebox.Image.Dispose();
+                redpicbox.Image.Dispose();
+                bluepicbox.Image.Dispose();
+                yellowpicbox.Image.Dispose();
+                movementpicturebox.Image = null;
+                redpicbox.Image = null;
+                bluepicbox.Image = null;
+                yellowpicbox.Image = null;
+            }
+            catch { }
         }
 
         private void updateLists()
