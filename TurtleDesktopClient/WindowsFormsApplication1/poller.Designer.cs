@@ -33,10 +33,9 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminal_list = new System.Windows.Forms.ListBox();
             this.sensor_selector = new System.Windows.Forms.ComboBox();
@@ -46,9 +45,13 @@
             this.gen_tab = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.accel_tab = new System.Windows.Forms.TabPage();
+            this.movementpicturebox = new System.Windows.Forms.PictureBox();
             this.redtemp_tab = new System.Windows.Forms.TabPage();
+            this.redpicbox = new System.Windows.Forms.PictureBox();
             this.yellowtemp_tab = new System.Windows.Forms.TabPage();
+            this.yellowpicbox = new System.Windows.Forms.PictureBox();
             this.bluetemp_tab = new System.Windows.Forms.TabPage();
+            this.bluepicbox = new System.Windows.Forms.PictureBox();
             this.collectionlist = new System.Windows.Forms.ListBox();
             this.updatelistbutton = new System.Windows.Forms.Button();
             this.collectionStatus = new System.Windows.Forms.RichTextBox();
@@ -58,23 +61,22 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.logdataBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.movementpicturebox = new System.Windows.Forms.PictureBox();
-            this.redpicbox = new System.Windows.Forms.PictureBox();
-            this.yellowpicbox = new System.Windows.Forms.PictureBox();
-            this.bluepicbox = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.menuStrip1.SuspendLayout();
             this.data_tabControl.SuspendLayout();
             this.gen_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.accel_tab.SuspendLayout();
-            this.redtemp_tab.SuspendLayout();
-            this.yellowtemp_tab.SuspendLayout();
-            this.bluetemp_tab.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movementpicturebox)).BeginInit();
+            this.redtemp_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.redpicbox)).BeginInit();
+            this.yellowtemp_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yellowpicbox)).BeginInit();
+            this.bluetemp_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bluepicbox)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -91,7 +93,7 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStrip_settings,
             this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem});
+            this.saveToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
@@ -105,17 +107,18 @@
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             resources.ApplyResources(this.printToolStripMenuItem, "printToolStripMenuItem");
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
-            // printPreviewToolStripMenuItem
+            // saveToolStripMenuItem
             // 
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            resources.ApplyResources(this.printPreviewToolStripMenuItem, "printPreviewToolStripMenuItem");
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentationToolStripMenuItem,
-            this.aboutToolStripMenuItem,
             this.createLogsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
@@ -124,12 +127,6 @@
             // 
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
             resources.ApplyResources(this.documentationToolStripMenuItem, "documentationToolStripMenuItem");
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // createLogsToolStripMenuItem
             // 
@@ -202,12 +199,24 @@
             this.accel_tab.Name = "accel_tab";
             this.accel_tab.UseVisualStyleBackColor = true;
             // 
+            // movementpicturebox
+            // 
+            resources.ApplyResources(this.movementpicturebox, "movementpicturebox");
+            this.movementpicturebox.Name = "movementpicturebox";
+            this.movementpicturebox.TabStop = false;
+            // 
             // redtemp_tab
             // 
             resources.ApplyResources(this.redtemp_tab, "redtemp_tab");
             this.redtemp_tab.Controls.Add(this.redpicbox);
             this.redtemp_tab.Name = "redtemp_tab";
             this.redtemp_tab.UseVisualStyleBackColor = true;
+            // 
+            // redpicbox
+            // 
+            resources.ApplyResources(this.redpicbox, "redpicbox");
+            this.redpicbox.Name = "redpicbox";
+            this.redpicbox.TabStop = false;
             // 
             // yellowtemp_tab
             // 
@@ -216,12 +225,24 @@
             this.yellowtemp_tab.Name = "yellowtemp_tab";
             this.yellowtemp_tab.UseVisualStyleBackColor = true;
             // 
+            // yellowpicbox
+            // 
+            resources.ApplyResources(this.yellowpicbox, "yellowpicbox");
+            this.yellowpicbox.Name = "yellowpicbox";
+            this.yellowpicbox.TabStop = false;
+            // 
             // bluetemp_tab
             // 
             resources.ApplyResources(this.bluetemp_tab, "bluetemp_tab");
             this.bluetemp_tab.Controls.Add(this.bluepicbox);
             this.bluetemp_tab.Name = "bluetemp_tab";
             this.bluetemp_tab.UseVisualStyleBackColor = true;
+            // 
+            // bluepicbox
+            // 
+            resources.ApplyResources(this.bluepicbox, "bluepicbox");
+            this.bluepicbox.Name = "bluepicbox";
+            this.bluepicbox.TabStop = false;
             // 
             // collectionlist
             // 
@@ -272,29 +293,19 @@
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             // 
-            // movementpicturebox
+            // saveFileDialog1
             // 
-            resources.ApplyResources(this.movementpicturebox, "movementpicturebox");
-            this.movementpicturebox.Name = "movementpicturebox";
-            this.movementpicturebox.TabStop = false;
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             // 
-            // redpicbox
+            // printDocument1
             // 
-            resources.ApplyResources(this.redpicbox, "redpicbox");
-            this.redpicbox.Name = "redpicbox";
-            this.redpicbox.TabStop = false;
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // yellowpicbox
+            // printPreviewDialog1
             // 
-            resources.ApplyResources(this.yellowpicbox, "yellowpicbox");
-            this.yellowpicbox.Name = "yellowpicbox";
-            this.yellowpicbox.TabStop = false;
-            // 
-            // bluepicbox
-            // 
-            resources.ApplyResources(this.bluepicbox, "bluepicbox");
-            this.bluepicbox.Name = "bluepicbox";
-            this.bluepicbox.TabStop = false;
+            resources.ApplyResources(this.printPreviewDialog1, "printPreviewDialog1");
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
             // 
             // poller
             // 
@@ -319,15 +330,15 @@
             this.gen_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.accel_tab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.movementpicturebox)).EndInit();
             this.redtemp_tab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.redpicbox)).EndInit();
             this.yellowtemp_tab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.yellowpicbox)).EndInit();
             this.bluetemp_tab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bluepicbox)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.movementpicturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.redpicbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yellowpicbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bluepicbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,10 +360,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_settings;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ListBox terminal_list;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimepicker;
@@ -378,5 +387,9 @@
         private System.Windows.Forms.PictureBox redpicbox;
         private System.Windows.Forms.PictureBox yellowpicbox;
         private System.Windows.Forms.PictureBox bluepicbox;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

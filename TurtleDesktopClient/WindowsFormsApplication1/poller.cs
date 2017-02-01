@@ -34,8 +34,12 @@ namespace WindowsFormsApplication1
         REngine r_engine;
         public poller()
         {
+            //used to test spanish localization:
+       //     System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
+       //     System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-ES");
             InitializeComponent();
             updateLists();
+
 
         }
 
@@ -59,7 +63,7 @@ namespace WindowsFormsApplication1
                 string termnum = i.ToString();
                 if (i < 10)
                     termnum = "00" + i.ToString();
-                else if(i < 100)
+                else if (i < 100)
                     termnum = "0" + i.ToString();
                 if (Directory.Exists(path + settings.countryCode + termnum))
                 {
@@ -112,7 +116,7 @@ namespace WindowsFormsApplication1
                 collectionStatus.Visible = true;
                 collectionStatus.Enabled = true;
                 collectionlist.Enabled = false;
-                
+
                 collectionStatus.Text = (sensorSelected) ? "No data found for selected parameters." : "Select a sensor to search data collections.";
             }
             else
@@ -132,12 +136,8 @@ namespace WindowsFormsApplication1
             string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
-  //          redtemp_tab.BackgroundImage = null;
-   //         bluetemp_tab.BackgroundImage = null;
-   //         yellowtemp_tab.BackgroundImage = null;
-    //        accel_tab.BackgroundImage = null;
 
-            
+
             // Initialize R //
             try
             {
@@ -153,7 +153,7 @@ namespace WindowsFormsApplication1
                     r_engine.Initialize();
                 }
             }
-            catch(System.DllNotFoundException)
+            catch (System.DllNotFoundException)
             {
                 MessageBox.Show("R bin file not located in the given folder. Ensure the 32-bit edition of the R distribution's bin is located in the folder set in settings. See error 1 documentation for more help.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
@@ -168,7 +168,7 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("timeVec <- read.table(\"" + collectionLocation + "\", sep = ',', header = TRUE)$TIMESTAMPTIME");
                 var timeVec = r_engine.GetSymbol("timeVec");
 
-                if(movementpicturebox.Image != null)
+                if (movementpicturebox.Image != null)
                     movementpicturebox.Image.Dispose();
                 if (redpicbox.Image != null)
                     redpicbox.Image.Dispose();
@@ -182,10 +182,9 @@ namespace WindowsFormsApplication1
                     // Temperature Red:
                     NumericVector tempredVec = r_engine.Evaluate("tempredVec <- (read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED)/100.0").AsNumeric();
                     r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 1080, height = 720)"); // prepare temperature graph
-                    r_engine.Evaluate("plot(tempredVec, type = 'o', col = 'red', xlab = 'Time', ylab = 'Temperature', main = 'Red Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("plot(tempredVec, type = 'o', col = 'red', xlab = 'Time', ylab = 'Temperature', main = 'Red Temperature Changes for Nest " + terminal + sensor + " " + date + "', xaxt = 'n')"); // generate base graph
                     r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                     r_engine.Evaluate("dev.off()"); // complete plot
-                                                    // redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
                 }
                 redpicbox.Image = Image.FromFile(path + collection + "/tempred.png");
 
@@ -194,10 +193,9 @@ namespace WindowsFormsApplication1
                     // Temperature Yellow:
                     NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW/100.0").AsNumeric();
                     r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 1080, height = 720)"); // prepare temperature graph
-                    r_engine.Evaluate("plot(tempyellowVec, type = 'o', col = 'darkgoldenrod3', xlab = 'Time', ylab = 'Temperature', main = 'Yellow Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("plot(tempyellowVec, type = 'o', col = 'darkgoldenrod3', xlab = 'Time', ylab = 'Temperature', main = 'Yellow Temperature Changes for Nest " + terminal + sensor + " " + date + "', xaxt = 'n')"); // generate base graph
                     r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                     r_engine.Evaluate("dev.off()"); // complete plot
-                                                    //   yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
                 }
                 yellowpicbox.Image = Image.FromFile(path + collection + "/tempyellow.png");
 
@@ -206,10 +204,9 @@ namespace WindowsFormsApplication1
                     // Temperature Blue:
                     NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE/100.0").AsNumeric();
                     r_engine.Evaluate("png('" + path + collection + "/tempblue.png', width = 1080, height = 720)"); // prepare temperature graph
-                    r_engine.Evaluate("plot(tempblueVec, type = 'o', col = 'blue', xlab = 'Time', ylab = 'Temperature', main = 'Blue Temperature Changes for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("plot(tempblueVec, type = 'o', col = 'blue', xlab = 'Time', ylab = 'Temperature', main = 'Blue Temperature Changes for Nest " + terminal + sensor + " "+ date + "', xaxt = 'n')"); // generate base graph
                     r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                     r_engine.Evaluate("dev.off()"); // complete plot
-                                                    // bluetemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempblue.png");
                 }
                 bluepicbox.Image = Image.FromFile(path + collection + "/tempblue.png");
 
@@ -228,7 +225,7 @@ namespace WindowsFormsApplication1
                 {
                     dataGridView1.RowCount++;
 
-                    for(int j = 0; j < settings.DataFileColumnCount -2; j++)
+                    for (int j = 0; j < settings.DataFileColumnCount - 2; j++)
                     {
                         while (streamr.Read() != ',') ; // consume all until date
                     }
@@ -248,19 +245,18 @@ namespace WindowsFormsApplication1
                     NumericVector YACCEL = r_engine.Evaluate("YACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Y").AsNumeric();
                     NumericVector ZACCEL = r_engine.Evaluate("ZACCEL <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$Z").AsNumeric();
                     r_engine.Evaluate("png('" + path + collection + "/motion.png', width = 1080, height = 720)"); // prepare temperature graph
-                    r_engine.Evaluate("plot(XACCEL, type = 'o', col = 'blue', ylim = c(100,500), xlab = 'Time', ylab = 'Motion', main = 'Motion Data for Nest " + terminal + sensor + "', xaxt = 'n')"); // generate base graph
+                    r_engine.Evaluate("plot(XACCEL, type = 'o', col = 'blue', ylim = c(100,500), xlab = 'Time', ylab = 'Motion', main = 'Motion Data for Nest " + terminal + sensor + " " + date + "', xaxt = 'n')"); // generate base graph
                     r_engine.Evaluate("lines(YACCEL, type='o', pch=22, lty=2, col='red')");
                     r_engine.Evaluate("lines(ZACCEL, type='o', pch=22, lty=2, col='green')");
                     r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                     r_engine.Evaluate("legend(1, 150, c('X-Axis','Y-Axis', 'Z-Axis'), cex=0.8, col = c('blue', 'red', 'green'), pch = 21:22, lty = 1:3)"); // add legend
                     r_engine.Evaluate("dev.off()"); // complete plot
-                                                    //  accel_tab.BackgroundImage = Image.FromFile(path + collection + "/motion.png");  
                 }
                 movementpicturebox.Image = Image.FromFile(path + collection + "/motion.png");
             }
-            catch{ } // todo: catch exceptions for errors
+            catch { } // todo: catch exceptions for errors
 
-            
+
         }
 
         private void updatelistbutton_Click(object sender, EventArgs e)
@@ -306,8 +302,8 @@ namespace WindowsFormsApplication1
         {
             sensorSelected = true;
             populateCollections();
-            
-            
+
+
         }
 
         private void collectionlist_SelectedIndexChanged(object sender, EventArgs e)
@@ -339,10 +335,10 @@ namespace WindowsFormsApplication1
             try
             {
                 // First, get sensor filenames //
-                for(int i = 0; i < settings.filenames.Length; i++)
+                for (int i = 0; i < settings.filenames.Length; i++)
                 {
-                
-                    if(settings.filenames[i] != ',' && settings.filenames[i] != ' ')
+
+                    if (settings.filenames[i] != ',' && settings.filenames[i] != ' ')
                     {
                         sb.Append(settings.filenames[i]);
                     }
@@ -361,10 +357,10 @@ namespace WindowsFormsApplication1
                     {
                         if (File.Exists(SDpath + "\\" + fn)) // initial move from sd card for data integrity.  
                         {
-                        
+
                             filepath = orgPath + "\\" + getBoardID(SDpath + "\\" + fn, true) + "\\" + getSensorID(getBoardID(SDpath + "\\" + fn)) + "\\" + time + "_" + getBoardID(SDpath + "\\" + fn) + "\\";
                             Directory.CreateDirectory(filepath);
-                            for(int i = 0; i < settings.maxCollections; i++)
+                            for (int i = 0; i < settings.maxCollections; i++)
                             {
                                 rawfilename = i.ToString() + "-" + getBoardID(SDpath + "\\" + fn);
                                 if (!File.Exists(filepath + rawfilename + ".csv"))
@@ -373,7 +369,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                             System.IO.File.Move(SDpath + "\\" + fn, filepath + rawfilename + ".temp");
-                            Directory.CreateDirectory(filepath + "\\" + rawfilename );
+                            Directory.CreateDirectory(filepath + "\\" + rawfilename);
                         }
                         organizeFile(filepath + rawfilename);
                     }
@@ -381,7 +377,7 @@ namespace WindowsFormsApplication1
             }
             catch
             {
-               
+
             }
 
         }
@@ -390,7 +386,7 @@ namespace WindowsFormsApplication1
             StringBuilder sb = new StringBuilder();
             sb.Append(boardID[6]);
             sb.Append(boardID[7]);
-            return(sb.ToString());
+            return (sb.ToString());
         }
 
         string getBoardID(string filepath, bool term = false)
@@ -399,9 +395,9 @@ namespace WindowsFormsApplication1
             StreamReader file = new StreamReader(filepath);
             file.ReadLine(); // remove header
             int count = (term) ? 2 : 3; // if term is true, just read to the termial id, omitting the sensor id.
-            for(int i = 0; i < count; i++) // get board id
+            for (int i = 0; i < count; i++) // get board id
             {
-                while (file.Peek() != ',') 
+                while (file.Peek() != ',')
                 {
                     sb.Append((char)file.Read());
                 }
@@ -411,7 +407,7 @@ namespace WindowsFormsApplication1
                 {
                     case 0:
                         {
-                            while(sb.Length < 3)
+                            while (sb.Length < 3)
                             {
                                 sb.Insert(0, '0');
                             }
@@ -444,7 +440,7 @@ namespace WindowsFormsApplication1
         string convertPath(string path)
         {
             StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < path.Length; i++)
+            for (int i = 0; i < path.Length; i++)
             {
                 if (path[i] == '/')
                     sb.Append('\\');
@@ -471,13 +467,13 @@ namespace WindowsFormsApplication1
             {
                 // hour and minute variables represent point of file import
                 times.Push("," + importtime.Month.ToString() + "-" + importtime.Day.ToString() + "-" + importtime.Year.ToString() + ',' + importtime.ToString("HH:mm"));
-                importtime = importtime.AddMinutes(- interval); // step back
+                importtime = importtime.AddMinutes(-interval); // step back
                 fileread.ReadLine(); // consume line
             }
             fileread.Close();
             fileread = new StreamReader(datafile + ".temp"); // reopen file to reset file pointer
 
-            
+
             while (!fileread.EndOfStream && times.Count > 0)
             {
                 filewrite.WriteLine(fileread.ReadLine() + times.Pop());
@@ -511,7 +507,6 @@ namespace WindowsFormsApplication1
                 FileInfo[] FI = d.GetFiles();
                 foreach (FileInfo fileToCompress in FI)
                 {
-                    int x = 1;
                     using (FileStream originalFileStream = fileToCompress.OpenRead())
                     {
                         if ((File.GetAttributes(fileToCompress.FullName) &
@@ -530,8 +525,68 @@ namespace WindowsFormsApplication1
                         }
                     }
                 }
-             
+
             }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+            // If the file name is not an empty string open it for saving.
+            try
+            {
+                if (saveFileDialog1.FileName != "")
+                {
+                    // Saves the Image via a FileStream created by the OpenFile method.
+                    System.IO.FileStream fs =
+                       (System.IO.FileStream)saveFileDialog1.OpenFile();
+                    // Saves the Image in the appropriate ImageFormat based upon the
+                    // File type selected in the dialog box.
+                    // NOTE that the FilterIndex property is one-based.
+                    switch (saveFileDialog1.FilterIndex)
+                    {
+                        case 1:
+                            this.data_tabControl.SelectedTab.Controls.OfType<PictureBox>().First<PictureBox>().Image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            break;
+
+                        case 2:
+                            this.data_tabControl.SelectedTab.Controls.OfType<PictureBox>().First<PictureBox>().Image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+                            break;
+
+                        default: break;
+                    }
+                    fs.Close();
+                    
+                }
+            }
+            catch { }
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printDocument1.DefaultPageSettings.Landscape = true;
+            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+                printDocument1.Print();
+
+        }
+
+        private void printDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                if (data_tabControl.SelectedTab == gen_tab)
+                {
+                    int height = dataGridView1.Height * dataGridView1.RowCount;
+                    dataGridView1.Height = height;
+                    Bitmap img = new Bitmap(dataGridView1.Width, height);
+                    dataGridView1.DrawToBitmap(img, new Rectangle(0, 0, dataGridView1.Width, height));
+                    e.Graphics.DrawImage(img, 0, 0);
+                }
+                else
+                    e.Graphics.DrawImage(data_tabControl.SelectedTab.Controls.OfType<PictureBox>().First<PictureBox>().Image, 0, 0, 720, 500);
+            }
+            catch { }
         }
     }
 }
