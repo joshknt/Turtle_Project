@@ -46,9 +46,9 @@ TODO:
 
 #define COUNTRY_CODE 108
 #define BOARD_ID 01
-#define LED_WRITE_PIN 5
+#define LED_WRITE_PIN 6
 #define SD_PIN 10
-#define TOTAL_RECORDS 2
+#define TOTAL_RECORDS 10
 #define FILE_EXTENSION ".txt"
 
 //####################__SENSOR EGG PIN SETUP__#########################
@@ -100,7 +100,7 @@ char fileName[5]; //Holds changing file names
 //*********************************************************************
 void setup()
 {
-	Serial.begin(115200);
+	//Serial.begin(115200);
 
   //Setup ADXL345 support and offsets
   acclOne.begin();
@@ -110,19 +110,13 @@ void setup()
   yOffsetOne = eventOne.acceleration.y;
   zOffsetOne = eventOne.acceleration.z;
   
-
   //Setup SD support
-  if(!SD.begin(SD_PIN))
-  {
-    Serial.println("SD not initialized");
-  }
-
+  SD.begin(SD_PIN);
 
   //Declare LED pin as output and set it to off
   pinMode(LED_WRITE_PIN, OUTPUT);
   digitalWrite(LED_WRITE_PIN, LOW);
 
-  
   //Setup DS18B20 support
   //Nest one 
   bottomTempOne.begin();
@@ -152,9 +146,7 @@ void loop()
                        (100* yOffsetOne) - (100 * eventOne.acceleration.y), (100* zOffsetOne) - (100 * eventOne.acceleration.z));                
 
   //Test print data to serial monitor after each recording
-  recordNameOne.printToSerial();
-  Serial.print("Array Index: ");
-  Serial.println(arrayIndex);
+  //recordNameOne.printToSerial();
 
   //Store records in arrays                   
   nestOne[arrayIndex] = recordNameOne;
@@ -171,8 +163,7 @@ void loop()
   
   
   //Delay for five minutes between readings 
-  delay(2000);
-  //secondsOfDelay(300);
+  secondsOfDelay(300);
 }
 
 
@@ -210,12 +201,12 @@ void writeToFile(char* nest, int nestNum)
     //check if file opened properly
     if(file)
     { 
+      //Serial.println("File Opened");
+      
       //LED to indicate write so system will not be powered down
       digitalWrite(LED_WRITE_PIN, HIGH);
       delay(2000);
       
-      Serial.println("File Opened");
-
       //increment through nest data 
       for(int i = 0; i < TOTAL_RECORDS; i++)
       {
@@ -232,11 +223,10 @@ void writeToFile(char* nest, int nestNum)
 
       //Close file 
       file.close();
-
+      //Serial.println("File Closed");
+      
       //Turn off LED to show it is to remove card without corruption
       digitalWrite(LED_WRITE_PIN, LOW);
-      
-      Serial.println("File Close");
     }  
     else
     {
