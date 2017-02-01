@@ -29,12 +29,21 @@ namespace TurtleDesktop
 
         private void Help_R_Button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A 32-bit distribution of the R language must be installed on this computer to generate graphs. Once installed, the folder containing the bin should be R\\R-X.X.X\\bin\\i386", "R-Help", MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "es-ES") { 
+                MessageBox.Show("Una distribución de 32 bits de la lengua R debe ser instalada en este equipo para generar gráficos. Una vez instalado, la carpeta que contiene el recipiente debe ser R\\R-X. X.X\\bin\\i386", "R-Help", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            else
+                MessageBox.Show("A 32-bit distribution of the R language must be installed on this computer to generate graphs. Once installed, the folder containing the bin should be R\\R-X.X.X\\bin\\i386", "R-Help", MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
         }
 
         private void Help_Data_Button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This folder will be the location which both raw and organized data will be stored. It should be an empty folder, with any name.", "Data-Help", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "es-ES")
+            {
+                MessageBox.Show("Esta carpeta será la ubicación que se almacenarán los datos crudos y organizados. Debe ser una carpeta vacía, con cualquier nombre.", "R-Help", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            else
+                MessageBox.Show("This folder will be the location which both raw and organized data will be stored. It should be an empty folder, with any name.", "Data-Help", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         private void Browse_button_Click(object sender, EventArgs e)
