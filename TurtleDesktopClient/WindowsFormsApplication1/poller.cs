@@ -132,7 +132,11 @@ namespace WindowsFormsApplication1
             string date = dateTimepicker.Value.ToString("MM") + "-" + dateTimepicker.Value.Day.ToString() + "-" + dateTimepicker.Value.Year.ToString()[2] + dateTimepicker.Value.Year.ToString()[3];
             string collection = (string)collectionlist.SelectedItem;
             string path = generatefilePath(terminal, sensor, date, collection); // path to save plots to
-
+            redtemp_tab.BackgroundImage = null;
+            bluetemp_tab.BackgroundImage = null;
+            yellowtemp_tab.BackgroundImage = null;
+            accel_tab.BackgroundImage = null;
+            
             // Initialize R //
             try
             {
@@ -163,6 +167,8 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("timeVec <- read.table(\"" + collectionLocation + "\", sep = ',', header = TRUE)$TIMESTAMPTIME");
                 var timeVec = r_engine.GetSymbol("timeVec");
 
+
+
                 // Temperature Red:
                 NumericVector tempredVec = r_engine.Evaluate("tempredVec <- (read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPRED)/100.0").AsNumeric();
                 r_engine.Evaluate("png('" + path + collection + "/tempred.png', width = 1080, height = 720)"); // prepare temperature graph
@@ -171,6 +177,7 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("dev.off()"); // complete plot
                 redtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempred.png");
 
+
                 // Temperature Yellow:
                 NumericVector tempyellowVec = r_engine.Evaluate("tempyellowVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPYELLOW/100.0").AsNumeric();
                 r_engine.Evaluate("png('" + path + collection + "/tempyellow.png', width = 1080, height = 720)"); // prepare temperature graph
@@ -178,6 +185,7 @@ namespace WindowsFormsApplication1
                 r_engine.Evaluate("axis(1, at = timeVec, labels = timeVec, las = 1)");
                 r_engine.Evaluate("dev.off()"); // complete plot
                 yellowtemp_tab.BackgroundImage = Image.FromFile(path + collection + "/tempyellow.png");
+
 
                 // Temperature Blue:
                 NumericVector tempblueVec = r_engine.Evaluate("tempblueVec <- read.table('" + collectionLocation + "', sep = ',', header = TRUE)$TEMPBLUE/100.0").AsNumeric();

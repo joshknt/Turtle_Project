@@ -16,7 +16,8 @@ T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplic
 T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.exe
 T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.pdb
 T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\bin\Debug\es\TurtleDesktop.resources.dll
-T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\MUTS-Desktop.csprojResolveAssemblyReference.cache
 T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.poller.en.resources
 T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.poller.es.resources
 T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\es\TurtleDesktop.resources.dll
+T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\TurtleDesktop.SettingsForm.es.resources
+T:\Documents\TurtleProject\Turtle_Project\TurtleDesktopClient\WindowsFormsApplication1\obj\Debug\MUTS-Desktop.csprojResolveAssemblyReference.cache
