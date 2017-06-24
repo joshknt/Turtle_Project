@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="487.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="muts_java.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="205.0" layoutY="158.0" onAction="#handleButtonAction" text="Click Me!" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <SplitPane dividerPositions="0.3453815261044177" prefHeight="374.0" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="157.0">
+               <children>
+                  <Text layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Measurements" wrappingWidth="115.703125">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Pane layoutX="-7.0" layoutY="23.0" prefHeight="189.0" prefWidth="165.0" AnchorPane.bottomAnchor="273.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="23.0">
+                     <children>
+                        <DatePicker fx:id="datePickFilter" layoutX="14.0" layoutY="43.0" onAction="#handleDateTermSenseChange" prefHeight="25.0" prefWidth="140.0" />
+                        <Text fill="#000000b0" fontSmoothingType="LCD" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" />
+                        <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                        <Text layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terminal Number" />
+                        <ComboBox fx:id="terminalSelector" editable="true" layoutX="14.0" layoutY="90.0" onAction="#handleDateTermSenseChange" prefHeight="25.0" prefWidth="140.0" visibleRowCount="20" />
+                        <ComboBox fx:id="sensorSelector" layoutX="14.0" layoutY="138.0" onAction="#handleDateTermSenseChange" prefHeight="25.0" prefWidth="140.0" />
+                        <Text layoutX="14.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor Number" />
+                        <Button layoutX="88.0" layoutY="7.0" mnemonicParsing="false" onAction="#resetButtonAction" prefHeight="25.0" prefWidth="65.0" text="Reset" />
+                        <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date -- Terminal -- Sensor" />
+                     </children>
+                  </Pane>
+                  <AnchorPane layoutY="200.0" prefHeight="274.0" prefWidth="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="211.0">
+                     <children>
+                        <ListView fx:id="dataList" onEditCommit="#handleDataFileChosen" onMouseClicked="#handleDataFileChosen" prefHeight="263.0" prefWidth="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="483.0">
+               <children>
+                  <SplitPane dividerPositions="0.7543307086614173" prefHeight="487.0" prefWidth="637.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="435.0">
+                           <children>
+                              <SplitPane dividerPositions="0.8877338877338877" orientation="VERTICAL" prefHeight="483.0" prefWidth="476.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="474.0">
+                                       <children>
+                                          <TabPane fx:id="graphTabs" prefHeight="390.0" prefWidth="476.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                                             <tabs>
+                                                <Tab text="Movement">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="594.0">
+                                                         <children>
+                                                            <LineChart fx:id="MOTION" prefHeight="400.0" prefWidth="484.0" style="-fx-effect: null;" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+                                                               <xAxis>
+                                                                  <CategoryAxis fx:id="MotionxAxis" side="BOTTOM" />
+                                                               </xAxis>
+                                                               <yAxis>
+                                                                  <NumberAxis fx:id="MotionyAxis" side="LEFT" />
+                                                               </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Red Temperature">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <LineChart fx:id="REDTEMP" prefHeight="400.0" prefWidth="484.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+                                                               <xAxis>
+                                                                  <CategoryAxis fx:id="RedxAxis" side="BOTTOM" />
+                                                               </xAxis>
+                                                               <yAxis>
+                                                                  <NumberAxis fx:id="RedyAxis" side="LEFT" />
+                                                               </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Yellow Temperature">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <LineChart fx:id="YELLOWTEMP" prefHeight="400.0" prefWidth="484.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+                                                               <xAxis>
+                                                                  <CategoryAxis fx:id="YellowxAxis" side="BOTTOM" />
+                                                               </xAxis>
+                                                               <yAxis>
+                                                                  <NumberAxis fx:id="YellowyAxis" side="LEFT" />
+                                                               </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Blue Temperature">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <LineChart fx:id="BLUETEMP" prefHeight="400.0" prefWidth="484.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+                                                               <xAxis>
+                                                                  <CategoryAxis fx:id="BluexAxis" side="BOTTOM" />
+                                                               </xAxis>
+                                                               <yAxis>
+                                                                  <NumberAxis fx:id="BlueyAxis" side="LEFT" />
+                                                               </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                             </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                                       <children>
+                                          <Button layoutX="36.0" layoutY="10.0" mnemonicParsing="false" onAction="#handlePrintGraph" prefHeight="31.0" prefWidth="124.0" text="Print" />
+                                          <Button layoutX="177.0" layoutY="10.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="124.0" text="Print Detailed" />
+                                          <Button layoutX="315.0" layoutY="10.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="124.0" text="View Raw Data" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="225.0" SplitPane.resizableWithParent="false">
+                           <children>
+                              <Text layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment" wrappingWidth="115.703125">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="14.0" layoutY="34.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="124.0" text="Tranceiver Not Connected" textAlignment="CENTER" wrapText="true" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
