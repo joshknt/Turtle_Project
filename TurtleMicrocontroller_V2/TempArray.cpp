@@ -14,7 +14,7 @@ TempArray::TempArray(int bottom, int middle, int top)
   top     = top;
 }
 
-char* TempArray::ToString(TempArray a)
+char* TempArray::ToString()
 {
   char* buffer;
 

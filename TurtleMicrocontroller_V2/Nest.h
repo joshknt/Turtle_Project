@@ -7,26 +7,26 @@
 class Nest
 {
   private:
-    uint8_t nestID;
-    float temperature;
-    float humidity;
-    int   xDeg;
-    int   yDeg;
-    int   zDeg;
+    uint8_t   nestID;
+    int16_t   temperature;
+    float     humidity;
+    int16_t   xDeg;
+    int16_t   yDeg;
+    int16_t   zDeg;
 
 
   public:
     Nest();
     Nest(uint8_t nestID);
-    Nest(uint8_t nestID, float temp, float hum, int xDeg, int yDeg, int zDeg);
+    Nest(uint8_t nestID, uint16_t temp, float hum, int16_t xDeg, int16_t yDeg, int16_t zDeg);
     
-    uint8_t GetNestID()       {return nestID;}
-    float   GetTemperature()  {return temperature;}
-    float   GetHumidity()     {return humidity;}
-    int     GetXDegrees()     {return xDeg;}
-    int     GetYDegrees()     {return yDeg;}
-    int     GetZDegrees()     {return zDeg;}
-    char*   ToString(Nest n);
+    uint8_t     GetNestID()       {return nestID;}
+    uint16_t    GetTemperature()  {return temperature;}
+    float       GetHumidity()     {return humidity;}
+    int16_t     GetXDegrees()     {return xDeg;}
+    int16_t     GetYDegrees()     {return yDeg;}
+    int16_t     GetZDegrees()     {return zDeg;}
+    char*       ToString();
 };
 
 #endif // _NEST_H_

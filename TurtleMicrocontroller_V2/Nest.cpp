@@ -16,7 +16,7 @@ Nest::Nest(uint8_t nestID)
   nestID = nestID;
 }
 
-Nest::Nest(uint8_t nestID, float temp, float hum, int xDeg, int yDeg, int zDeg)
+Nest::Nest(uint8_t nestID, uint16_t temp, float hum, int16_t xDeg, int16_t yDeg, int16_t zDeg)
 {
   nestID  = nestID;
   temp    = temperature;
@@ -26,11 +26,9 @@ Nest::Nest(uint8_t nestID, float temp, float hum, int xDeg, int yDeg, int zDeg)
   zDeg    = zDeg;
 }
 
-char* Nest::ToString(Nest n)
+char* Nest::ToString()
 {
   char* buffer;
-
-  sprintf(buffer, "%s", "dkfj");
 
   return buffer;
 }
