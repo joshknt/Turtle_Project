@@ -3,17 +3,19 @@
 
 #include <Arduino.h>
 
+#define MAX_LINE  100
 
 class TempArray
 {
   private:
+    uint8_t arrayNumber;
     int  bottom;
     int  middle;
     int  top;
 
     
   public:   
-    TempArray();
+    TempArray(uint8_t ar);
     TempArray(int bottom, int middle, int top);
     
     int       GetBottomTemp()       {return bottom;}
