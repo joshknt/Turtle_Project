@@ -1,0 +1,1075 @@
+7/26/2017 7:02:13 PM: COM4
+7/26/2017 7:02:13 PM: Port opened.
+7/26/2017 7:02:13 PM: MUTS SERVICES STARTED.
+7/26/2017 7:02:23 PM: COM4
+7/26/2017 7:02:23 PM: Port opened successfully.
+7/26/2017 7:02:24 PM: Data was obtained
+7/26/2017 7:02:24 PM: Data has been read.
+7/26/2017 7:02:24 PM: Data was obtained
+7/26/2017 7:02:24 PM: Data has been read.
+7/26/2017 7:02:24 PM: Data was obtained
+7/26/2017 7:02:24 PM: Data has been read.
+7/26/2017 7:02:24 PM: Data was obtained
+7/26/2017 7:02:24 PM: Data has been read.
+7/26/2017 7:02:24 PM: Data was obtained
+7/26/2017 7:02:24 PM: Data has been read.
+7/26/2017 7:02:24 PM: Data was obtained
+7/26/2017 7:02:24 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:25 PM: Data was obtained
+7/26/2017 7:02:25 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:26 PM: Data was obtained
+7/26/2017 7:02:26 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:27 PM: Data was obtained
+7/26/2017 7:02:27 PM: Data has been read.
+7/26/2017 7:02:33 PM: COM4
+7/26/2017 7:02:33 PM: Port opened successfully.
+7/26/2017 7:02:34 PM: RX timer ticked
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,461,476,485,96
+7/26/2017 7:02:34 PM: record 108,001,01,2231,2193,2225,461,476,485,96 inserted into list
+7/26/2017 7:02:34 PM: Attempting to get board ID and protocol from 
+7/26/2017 7:02:34 PM: Input string was not in a correct format.
+7/26/2017 7:02:34 PM: Attempting to write record(s) to 1 files
+7/26/2017 7:02:43 PM: COM4
+7/26/2017 7:02:43 PM: Port opened successfully.
+7/26/2017 7:02:53 PM: COM4
+7/26/2017 7:02:53 PM: Port opened successfully.
+7/26/2017 7:03:03 PM: MUTS Service has stopped.
+7/26/2017 7:29:26 PM: COM4
+7/26/2017 7:29:26 PM: Port opened.
+7/26/2017 7:29:26 PM: MUTS SERVICES STARTED.
+7/26/2017 7:29:36 PM: COM4
+7/26/2017 7:29:36 PM: Port opened successfully.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:38 PM: Data was obtained
+7/26/2017 7:29:38 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:39 PM: Data was obtained
+7/26/2017 7:29:39 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:40 PM: Data was obtained
+7/26/2017 7:29:40 PM: Data has been read.
+7/26/2017 7:29:41 PM: Data was obtained
+7/26/2017 7:29:41 PM: Data has been read.
+7/26/2017 7:29:41 PM: Data was obtained
+7/26/2017 7:29:41 PM: Data has been read.
+7/26/2017 7:29:41 PM: Data was obtained
+7/26/2017 7:29:41 PM: Data has been read.
+7/26/2017 7:29:41 PM: Data was obtained
+7/26/2017 7:29:41 PM: Data has been read.
+7/26/2017 7:29:41 PM: Data was obtained
+7/26/2017 7:29:41 PM: Data has been read.
+7/26/2017 7:29:41 PM: Data was obtained
+7/26/2017 7:29:41 PM: Data has been read.
+7/26/2017 7:29:46 PM: COM4
+7/26/2017 7:29:46 PM: Port opened successfully.
+7/26/2017 7:29:48 PM: RX timer ticked
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:29:48 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:29:48 PM: Attempting to get board ID and protocol from 
+7/26/2017 7:29:48 PM: Input string was not in a correct format.
+7/26/2017 7:29:48 PM: Attempting to write record(s) to 1 files
+7/26/2017 7:29:56 PM: COM4
+7/26/2017 7:29:56 PM: Port opened successfully.
+7/26/2017 7:30:06 PM: COM4
+7/26/2017 7:30:06 PM: Port opened successfully.
+7/26/2017 7:30:09 PM: Data was obtained
+7/26/2017 7:30:09 PM: Data has been read.
+7/26/2017 7:30:09 PM: Data was obtained
+7/26/2017 7:30:09 PM: Data has been read.
+7/26/2017 7:30:09 PM: Data was obtained
+7/26/2017 7:30:09 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:10 PM: Data was obtained
+7/26/2017 7:30:10 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:11 PM: Data was obtained
+7/26/2017 7:30:11 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:12 PM: Data was obtained
+7/26/2017 7:30:12 PM: Data has been read.
+7/26/2017 7:30:16 PM: COM4
+7/26/2017 7:30:16 PM: Port opened successfully.
+7/26/2017 7:30:19 PM: RX timer ticked
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:30:19 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:30:19 PM: Attempting to get board ID and protocol from 
+7/26/2017 7:30:19 PM: Input string was not in a correct format.
+7/26/2017 7:30:19 PM: Attempting to write record(s) to 1 files
+7/26/2017 7:30:26 PM: COM4
+7/26/2017 7:30:26 PM: Port opened successfully.
+7/26/2017 7:30:36 PM: COM4
+7/26/2017 7:30:36 PM: Port opened successfully.
+7/26/2017 7:30:46 PM: COM4
+7/26/2017 7:30:46 PM: Port opened successfully.
+7/26/2017 7:30:56 PM: COM4
+7/26/2017 7:30:56 PM: Port opened successfully.
+7/26/2017 7:31:06 PM: COM4
+7/26/2017 7:31:06 PM: Port opened successfully.
+7/26/2017 7:31:16 PM: COM4
+7/26/2017 7:31:16 PM: Port opened successfully.
+7/26/2017 7:31:26 PM: COM4
+7/26/2017 7:31:26 PM: Port opened successfully.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:26 PM: Data was obtained
+7/26/2017 7:31:26 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:27 PM: Data was obtained
+7/26/2017 7:31:27 PM: Data has been read.
+7/26/2017 7:31:28 PM: Data was obtained
+7/26/2017 7:31:28 PM: Data has been read.
+7/26/2017 7:31:28 PM: Data was obtained
+7/26/2017 7:31:28 PM: Data has been read.
+7/26/2017 7:31:28 PM: Data was obtained
+7/26/2017 7:31:28 PM: Data has been read.
+7/26/2017 7:31:36 PM: COM4
+7/26/2017 7:31:36 PM: Port opened successfully.
+7/26/2017 7:31:36 PM: RX timer ticked
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,96
+7/26/2017 7:31:36 PM: record 108,001,01,2231,2193,2225,485,96 inserted into list
+7/26/2017 7:31:36 PM: Attempting to get board ID and protocol from 
+7/26/2017 7:31:36 PM: Input string was not in a correct format.
+7/26/2017 7:31:36 PM: Attempting to write record(s) to 1 files
+7/26/2017 7:31:46 PM: COM4
+7/26/2017 7:31:46 PM: Port opened successfully.
+7/26/2017 7:31:56 PM: COM4
+7/26/2017 7:31:56 PM: Port opened successfully.
+7/26/2017 7:32:06 PM: COM4
+7/26/2017 7:32:06 PM: Port opened successfully.
+7/26/2017 7:32:16 PM: COM4
+7/26/2017 7:32:16 PM: Port opened successfully.
+7/26/2017 7:32:26 PM: COM4
+7/26/2017 7:32:26 PM: Port opened successfully.
+7/26/2017 7:32:36 PM: COM4
+7/26/2017 7:32:36 PM: Port opened successfully.
+7/26/2017 7:32:46 PM: COM4
+7/26/2017 7:32:46 PM: Port opened successfully.
+7/26/2017 7:32:56 PM: COM4
+7/26/2017 7:32:56 PM: Port opened successfully.
+7/26/2017 7:33:06 PM: COM4
+7/26/2017 7:33:06 PM: Port opened successfully.
+7/26/2017 7:33:16 PM: COM4
+7/26/2017 7:33:16 PM: Port opened successfully.
+7/26/2017 7:33:26 PM: COM4
+7/26/2017 7:33:26 PM: Port opened successfully.
+7/26/2017 7:33:36 PM: COM4
+7/26/2017 7:33:36 PM: Port opened successfully.
+7/26/2017 7:33:46 PM: COM4
+7/26/2017 7:33:46 PM: Port opened successfully.
+7/26/2017 7:33:56 PM: COM4
+7/26/2017 7:33:56 PM: Port opened successfully.
+7/26/2017 7:34:03 PM: MUTS Service has stopped.
+7/26/2017 7:37:56 PM: COM4
+7/26/2017 7:37:56 PM: Port opened.
+7/26/2017 7:37:56 PM: MUTS SERVICES STARTED.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:58 PM: Data was obtained
+7/26/2017 7:37:58 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:37:59 PM: Data was obtained
+7/26/2017 7:37:59 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:00 PM: Data was obtained
+7/26/2017 7:38:00 PM: Data has been read.
+7/26/2017 7:38:06 PM: COM4
+7/26/2017 7:38:06 PM: Port opened successfully.
+7/26/2017 7:38:08 PM: RX timer ticked
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/26/2017 7:38:08 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/26/2017 7:38:08 PM: Attempting to get board ID and protocol from 
+7/26/2017 7:38:08 PM: Input string was not in a correct format.
+7/26/2017 7:38:08 PM: Attempting to write record(s) to 1 files
+7/26/2017 7:38:16 PM: COM4
+7/26/2017 7:38:16 PM: Port opened successfully.
+7/26/2017 7:38:26 PM: COM4
+7/26/2017 7:38:26 PM: Port opened successfully.
+7/26/2017 7:38:36 PM: COM4
+7/26/2017 7:38:36 PM: Port opened successfully.
+7/26/2017 7:38:37 PM: MUTS Service has stopped.
+7/28/2017 8:36:48 PM: COM4
+7/28/2017 8:36:48 PM: Port opened.
+7/28/2017 8:36:48 PM: MUTS SERVICES STARTED.
+7/28/2017 8:36:58 PM: COM4
+7/28/2017 8:36:58 PM: Port opened successfully.
+7/28/2017 8:37:08 PM: COM4
+7/28/2017 8:37:08 PM: Port opened successfully.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:11 PM: Data was obtained
+7/28/2017 8:37:11 PM: Data has been read.
+7/28/2017 8:37:12 PM: Data was obtained
+7/28/2017 8:37:12 PM: Data has been read.
+7/28/2017 8:37:12 PM: Data was obtained
+7/28/2017 8:37:12 PM: Data has been read.
+7/28/2017 8:37:12 PM: Data was obtained
+7/28/2017 8:37:12 PM: Data has been read.
+7/28/2017 8:37:12 PM: Data was obtained
+7/28/2017 8:37:12 PM: Data has been read.
+7/28/2017 8:37:12 PM: Data was obtained
+7/28/2017 8:37:12 PM: Data has been read.
+7/28/2017 8:37:12 PM: Data was obtained
+7/28/2017 8:37:12 PM: Data has been read.
+7/28/2017 8:37:18 PM: COM4
+7/28/2017 8:37:18 PM: Port opened successfully.
+7/28/2017 8:37:21 PM: RX timer ticked
+7/28/2017 8:37:21 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,98
+7/28/2017 8:37:21 PM: record 108,001,01,2231,2193,2225,485,98 inserted into list
+7/28/2017 8:37:21 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/28/2017 8:37:21 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/28/2017 8:37:21 PM: Attempting to get board ID and protocol from 2,108,001,01,2731,2693,3026
+7/28/2017 8:37:21 PM: record 108,001,01,2731,2693,3026 inserted into list
+7/28/2017 8:37:21 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/28/2017 8:37:21 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/28/2017 8:37:21 PM: Attempting to get board ID and protocol from 2,108,001,01,2761,2993,3226
+7/28/2017 8:37:21 PM: record 108,001,01,2761,2993,3226 inserted into list
+7/28/2017 8:37:21 PM: Attempting to get board ID and protocol from 
+7/28/2017 8:37:21 PM: Input string was not in a correct format.
+7/28/2017 8:37:21 PM: Attempting to write record(s) to 1 files
+7/28/2017 8:37:28 PM: COM4
+7/28/2017 8:37:28 PM: Port opened successfully.
+7/28/2017 8:37:38 PM: COM4
+7/28/2017 8:37:38 PM: Port opened successfully.
+7/28/2017 8:37:48 PM: COM4
+7/28/2017 8:37:48 PM: Port opened successfully.
+7/28/2017 8:37:58 PM: COM4
+7/28/2017 8:37:58 PM: Port opened successfully.
+7/28/2017 8:38:08 PM: COM4
+7/28/2017 8:38:08 PM: Port opened successfully.
+7/28/2017 8:38:18 PM: COM4
+7/28/2017 8:38:18 PM: Port opened successfully.
+7/28/2017 8:38:28 PM: COM4
+7/28/2017 8:38:28 PM: Port opened successfully.
+7/28/2017 8:38:38 PM: COM4
+7/28/2017 8:38:38 PM: Port opened successfully.
+7/28/2017 8:38:48 PM: COM4
+7/28/2017 8:38:48 PM: Port opened successfully.
+7/28/2017 8:38:58 PM: COM4
+7/28/2017 8:38:58 PM: Port opened successfully.
+7/28/2017 8:39:08 PM: COM4
+7/28/2017 8:39:08 PM: Port opened successfully.
+7/28/2017 8:39:18 PM: COM4
+7/28/2017 8:39:18 PM: Port opened successfully.
+7/28/2017 8:39:28 PM: COM4
+7/28/2017 8:39:28 PM: Port opened successfully.
+7/28/2017 8:39:38 PM: COM4
+7/28/2017 8:39:38 PM: Port opened successfully.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:40 PM: Data was obtained
+7/28/2017 8:39:40 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:41 PM: Data was obtained
+7/28/2017 8:39:41 PM: Data has been read.
+7/28/2017 8:39:48 PM: COM4
+7/28/2017 8:39:48 PM: Port opened successfully.
+7/28/2017 8:39:50 PM: RX timer ticked
+7/28/2017 8:39:50 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,98
+7/28/2017 8:39:50 PM: record 108,001,01,2231,2193,2225,485,98 inserted into list
+7/28/2017 8:39:50 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/28/2017 8:39:50 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/28/2017 8:39:50 PM: Attempting to get board ID and protocol from 2,108,002,01,2731,2693,3026
+7/28/2017 8:39:50 PM: record 108,002,01,2731,2693,3026 inserted into list
+7/28/2017 8:39:50 PM: Attempting to get board ID and protocol from 2,108,001,02,2231,2193,2226
+7/28/2017 8:39:50 PM: record 108,001,02,2231,2193,2226 inserted into list
+7/28/2017 8:39:50 PM: Attempting to get board ID and protocol from 2,108,001,03,2761,2993,3226
+7/28/2017 8:39:50 PM: record 108,001,03,2761,2993,3226 inserted into list
+7/28/2017 8:39:50 PM: Attempting to get board ID and protocol from 
+7/28/2017 8:39:50 PM: Input string was not in a correct format.
+7/28/2017 8:39:50 PM: Attempting to write record(s) to 4 files
+7/28/2017 8:39:58 PM: COM4
+7/28/2017 8:39:58 PM: Port opened successfully.
+7/28/2017 8:40:08 PM: COM4
+7/28/2017 8:40:08 PM: Port opened successfully.
+7/28/2017 8:40:18 PM: COM4
+7/28/2017 8:40:18 PM: Port opened successfully.
+7/28/2017 8:40:28 PM: COM4
+7/28/2017 8:40:28 PM: Port opened successfully.
+7/28/2017 8:40:38 PM: COM4
+7/28/2017 8:40:38 PM: Port opened successfully.
+7/28/2017 8:40:48 PM: COM4
+7/28/2017 8:40:49 PM: Port opened successfully.
+7/28/2017 8:40:58 PM: COM4
+7/28/2017 8:40:59 PM: Port opened successfully.
+7/28/2017 8:41:08 PM: COM4
+7/28/2017 8:41:09 PM: Port opened successfully.
+7/28/2017 8:41:18 PM: COM4
+7/28/2017 8:41:19 PM: Port opened successfully.
+7/28/2017 8:41:28 PM: COM4
+7/28/2017 8:41:29 PM: Port opened successfully.
+7/28/2017 8:41:38 PM: COM4
+7/28/2017 8:41:39 PM: Port opened successfully.
+7/28/2017 8:41:48 PM: COM4
+7/28/2017 8:41:49 PM: Port opened successfully.
+7/28/2017 8:41:58 PM: COM4
+7/28/2017 8:41:59 PM: Port opened successfully.
+7/28/2017 8:42:08 PM: COM4
+7/28/2017 8:42:09 PM: Port opened successfully.
+7/28/2017 8:42:18 PM: COM4
+7/28/2017 8:42:19 PM: Port opened successfully.
+7/28/2017 8:42:28 PM: COM4
+7/28/2017 8:42:29 PM: Port opened successfully.
+7/28/2017 8:42:38 PM: COM4
+7/28/2017 8:42:39 PM: Port opened successfully.
+7/28/2017 8:42:48 PM: COM4
+7/28/2017 8:42:49 PM: Port opened successfully.
+7/28/2017 8:42:55 PM: MUTS Service has stopped.
+7/28/2017 8:47:52 PM: COM4
+7/28/2017 8:47:52 PM: Port opened.
+7/28/2017 8:47:52 PM: MUTS SERVICES STARTED.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:47:56 PM: Data was obtained
+7/28/2017 8:47:56 PM: Data has been read.
+7/28/2017 8:48:01 PM: COM4
+7/28/2017 8:48:02 PM: Port opened successfully.
+7/28/2017 8:48:06 PM: RX timer ticked
+7/28/2017 8:48:06 PM: Attempting to get board ID and protocol from 1,108,001,01,2231,2193,2225,485,98
+7/28/2017 8:48:06 PM: record 108,001,01,2231,2193,2225,485,98 inserted into list
+7/28/2017 8:48:06 PM: Attempting to get board ID and protocol from 2,108,001,01,2231,2193,2226
+7/28/2017 8:48:06 PM: record 108,001,01,2231,2193,2226 inserted into list
+7/28/2017 8:48:06 PM: Attempting to get board ID and protocol from 2,108,002,01,2731,2693,3026
+7/28/2017 8:48:06 PM: record 108,002,01,2731,2693,3026 inserted into list
+7/28/2017 8:48:06 PM: Attempting to get board ID and protocol from 2,108,001,02,2231,2193,2226
+7/28/2017 8:48:06 PM: record 108,001,02,2231,2193,2226 inserted into list
+7/28/2017 8:48:06 PM: Attempting to get board ID and protocol from 2,108,001,03,2761,2993,3226
+7/28/2017 8:48:06 PM: record 108,001,03,2761,2993,3226 inserted into list
+7/28/2017 8:48:06 PM: Attempting to get board ID and protocol from 
+7/28/2017 8:48:06 PM: Input string was not in a correct format.
+7/28/2017 8:48:06 PM: Attempting to write record(s) to 5 files
+7/28/2017 8:48:11 PM: COM4
+7/28/2017 8:48:12 PM: Port opened successfully.
+7/28/2017 8:48:21 PM: COM4
+7/28/2017 8:48:22 PM: Port opened successfully.
+7/28/2017 8:48:32 PM: COM4
+7/28/2017 8:48:32 PM: Port opened successfully.
+7/28/2017 8:48:42 PM: COM4
+7/28/2017 8:48:42 PM: Port opened successfully.
+7/28/2017 8:48:52 PM: COM4
+7/28/2017 8:48:52 PM: Port opened successfully.
+7/28/2017 8:49:02 PM: COM4
+7/28/2017 8:49:02 PM: Port opened successfully.
+7/28/2017 8:49:05 PM: MUTS Service has stopped.
+8/8/2017 5:22:29 PM: MUTS SERVICES STARTED.
+8/8/2017 5:22:34 PM: No wireless USB FTDI Dongle found.
+8/8/2017 5:22:44 PM: No wireless USB FTDI Dongle found.
+8/8/2017 5:22:45 PM: MUTS Service has stopped.
+8/8/2017 5:58:54 PM: MUTS SERVICES STARTED.
+8/8/2017 5:59:04 PM: No wireless USB FTDI Dongle found.
+8/8/2017 5:59:06 PM: MUTS Service has stopped.

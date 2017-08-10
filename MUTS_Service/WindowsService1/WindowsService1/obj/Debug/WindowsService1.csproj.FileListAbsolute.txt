@@ -1,0 +1,20 @@
+D:\MACS 490\Program2\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+D:\MACS 490\Program2\WindowsService1\WindowsService1\bin\Debug\WindowsService1.pdb
+D:\MACS 490\Program2\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csprojResolveAssemblyReference.cache
+D:\MACS 490\Program2\WindowsService1\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+D:\MACS 490\Program2\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.Cache
+D:\MACS 490\Program2\WindowsService1\WindowsService1\obj\Debug\WindowsService1.exe
+D:\MACS 490\Program2\WindowsService1\WindowsService1\obj\Debug\WindowsService1.pdb
+D:\WindowsService1\WindowsService1\obj\Debug\WindowsService1.exe
+D:\WindowsService1\WindowsService1\obj\Debug\WindowsService1.pdb
+D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.pdb
+D:\WindowsService1\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+D:\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.Cache
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csprojResolveAssemblyReference.cache
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.Cache
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Debug\WindowsService1.exe
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Debug\WindowsService1.pdb
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.pdb

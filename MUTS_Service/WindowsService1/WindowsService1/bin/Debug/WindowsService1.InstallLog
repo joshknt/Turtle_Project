@@ -1,0 +1,762 @@
+﻿Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Creating EventLog source MUTSService in log Application...
+Rolling back assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Restoring event log to previous state for source MUTSService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Creating EventLog source MUTSService in log Application...
+Rolling back assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Restoring event log to previous state for source MUTSService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = D:\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Creating EventLog source MUTSService in log Application...
+Rolling back assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Restoring event log to previous state for source MUTSService.
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Warning: The source MUTSService is not registered on the local machine.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Creating EventLog source MUTSService in log Application...
+Rolling back assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Restoring event log to previous state for source MUTSService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+The file containing the saved state for the E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe assembly, located at E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallState, could not be read, and the file might have been corrupted. The uninstall will continue without the saved information.
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Removing EventLog source MUTSService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Uninstalling assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.
+Installing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Installing assembly 'E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Installing service MUTSService...
+Service MUTSService has been successfully installed.
+Creating EventLog source MUTSService in log Application...
+Committing assembly 'E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Uninstalling assembly 'E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Removing EventLog source MUTSService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Uninstalling assembly 'E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Removing EventLog source MUTSService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Uninstalling assembly 'E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   assemblypath = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+   logfile = E:\testprograms\MUTS\MUTS_Service\WindowsService1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   logtoconsole = 
+Removing EventLog source MUTSService.
+Service MUTSService is being removed from the system...
+Service MUTSService was successfully removed from the system.

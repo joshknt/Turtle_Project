@@ -1,0 +1,7 @@
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\bin\Release\WindowsService1.pdb
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Release\WindowsService1.csprojResolveAssemblyReference.cache
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Release\WindowsService1.ProjectInstaller.resources
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Release\WindowsService1.csproj.GenerateResource.Cache
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Release\WindowsService1.exe
+E:\testprograms\MUTS_Service\WindowsService1\WindowsService1\obj\Release\WindowsService1.pdb
