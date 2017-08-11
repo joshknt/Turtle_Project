@@ -147,17 +147,17 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name:  InitTempSensors
  * 
- * Description:
+ * Description: Start the DS18B20 temp sensors
  * 
- * Inputs:
+ * Inputs: None.
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return:  None.
  * 
- * Notes: 
+ * Notes: None.
  */
 
   void InitTempSensors()
@@ -176,17 +176,17 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name: InitDHT    
  * 
- * Description:
+ * Description: Start the DHT22 temp/hum sensors
  * 
- * Inputs:
+ * Inputs:  None.
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return:  None.
  * 
- * Notes: 
+ * Notes: None.
  */
   void InitDHT()
   {
@@ -202,17 +202,18 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name: InitAccSensors()
  * 
- * Description:
+ * Description: Initializes the ADXL345 accl/gyro sensors
  * 
- * Inputs:
+ * Inputs: None.
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return: None.
  * 
- * Notes: 
+ * Notes:  When the arduino is first powered on, the sensors take an 
+ *          initial reading to use as an offset
  */
   void InitAccSensors()
   {
@@ -302,9 +303,9 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:        
+ * Name:  RequestTemperatures
  * 
- * Description: 
+ * Description: Request the DS18B20 to get the temperatures 
  * 
  * Inputs:      None. 
  * 
@@ -341,17 +342,17 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name: GetNestValues
  * 
- * Description:
+ * Description: Get temp/hum/orientation from the each nest
  * 
- * Inputs:
+ * Inputs: n1(2-5) - Nest object to store all the data
  * 
- * Outputs:
+ * Outputs: n1(2-5) - Nest object with all relevant data
  * 
- * Return:
+ * Return: None.
  * 
- * Notes:
+ * Notes: None.
  * 
  */
   void GetNestValues(Nest &n1, Nest &n2, Nest &n3, Nest &n4, Nest &n5)
@@ -404,17 +405,17 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name:  xbeeWriteAllData
  * 
- * Description:
+ * Description: Formats and transmits xbee strings to send wirelessly
  * 
- * Inputs:
+ * Inputs: None.
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return: None.
  * 
- * Notes:
+ * Notes: None.
  * 
  */
   void xbeeWriteAllData()
@@ -459,17 +460,17 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name: setup
  * 
- * Description:
+ * Description: Begin/initialize all sensors and xbee
  * 
- * Inputs:
+ * Inputs: None.
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return: None.
  * 
- * Notes:
+ * Notes: None.
  * 
  */
   void setup() 
@@ -488,40 +489,40 @@
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name: MinutesToDelay
  * 
- * Description:
+ * Description: Will delay the arduino for a set number of minutes
  * 
- * Inputs:
+ * Inputs: min - an unsigned 8-bit integer for how many minutes to delay
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return: None.
  * 
- * Notes:
+ * Notes: None.
  * 
  */
   void MinutesToDelay(uint8_t min)
   {
-    for(int i = 0; i < min; i++)
-      delay(60000);
+    for(int i = 0; i < min * 2; i++)
+      delay(30000);
   }
  
 //************************************************************************
 //########################################################################
 //************************************************************************
 /*
- * Name:
+ * Name: loop
  * 
- * Description:
+ * Description: Main processing loop
  * 
- * Inputs:
+ * Inputs: None.
  * 
- * Outputs:
+ * Outputs: None.
  * 
- * Return:
+ * Return: None.
  * 
- * Notes:
+ * Notes: None.
  * 
  */
 
