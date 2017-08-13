@@ -440,7 +440,6 @@
     protocol = 1;
 
     sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID, nestOne.ToString());
-    Serial.println(buf);
     xbee.write(buf);
     delay(50);
 
@@ -538,7 +537,6 @@
     GetNestValues(nestOne, nestTwo, nestThree, nestFour, nestFive);
     
     xbeeWriteAllData();
-    delay(500);
-    //MinutesToDelay(30);
+    MinutesToDelay(30);
   }
 
