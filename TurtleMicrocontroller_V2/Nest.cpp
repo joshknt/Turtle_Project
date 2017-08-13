@@ -10,7 +10,9 @@
  * Notes:
  *    None.
  *    
- * 
+ * Copyright:
+ *    2017 Josh Kent and the MUTS team
+ *         
  * License:
  *    This program is free software: you can redistribute it and/or modify
  *    it under the terms of the GNU General Public License as published by
@@ -40,9 +42,9 @@ Nest::Nest()
   zDeg           = -360;
 }
 
-Nest::Nest(uint8_t nestID)
+Nest::Nest(uint8_t id)
 {
-  nestID = nestID;
+  nestID = id;
 }
 
 Nest::Nest(uint8_t nestID, uint16_t temp, uint16_t hum, int16_t xDeg, int16_t yDeg, int16_t zDeg)

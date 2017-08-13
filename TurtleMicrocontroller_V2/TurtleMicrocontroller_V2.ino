@@ -23,6 +23,9 @@
  *      CLK: 52
  *      SS: 53
  * 
+ * Copyright:
+ *    2017 Josh Kent and the MUTS team
+ *    
  * License:
  *    This program is free software: you can redistribute it and/or modify
  *    it under the terms of the GNU General Public License as published by
@@ -68,18 +71,18 @@
   #define TEMP_ARRAY_TWO_TOP_PIN      13
   
   // Nest DHT22 Sensors (Temperature/Humidty)
-  #define NEST_ONE_DHT_PIN      22   
-  #define NEST_TWO_DHT_PIN      23
-  #define NEST_THREE_DHT_PIN    24
-  #define NEST_FOUR_DHT_PIN     25
-  #define NEST_FIVE_DHT_PIN     26
+  #define NEST_ONE_DHT_PIN      24   
+  #define NEST_TWO_DHT_PIN      26
+  #define NEST_THREE_DHT_PIN    28
+  #define NEST_FOUR_DHT_PIN     30
+  #define NEST_FIVE_DHT_PIN     32
   
   // Nest ADXL345 Sensors (Gyroscope/Accelerometer)
   #define NEST_ONE_ADXL_PIN     40
-  #define NEST_TWO_ADXL_PIN     41  
-  #define NEST_THREE_ADXL_PIN   42
-  #define NEST_FOUR_ADXL_PIN    43
-  #define NEST_FIVE_ADXL_PIN    44
+  #define NEST_TWO_ADXL_PIN     42  
+  #define NEST_THREE_ADXL_PIN   44
+  #define NEST_FOUR_ADXL_PIN    46
+  #define NEST_FIVE_ADXL_PIN    48
   
   // End Constants
 
@@ -434,23 +437,24 @@
 
     protocol = 1;
 
-    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID,nestOne.ToString());
+    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID, nestOne.ToString());
+    Serial.println(buf);
     xbee.write(buf);
     delay(50);
 
-    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID,nestTwo.ToString());
+    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID, nestTwo.ToString());
     xbee.write(buf);
     delay(50);
 
-    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID,nestThree.ToString());
+    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID, nestThree.ToString());
     xbee.write(buf);
     delay(50);
 
-    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID,nestFour.ToString());
+    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID, nestFour.ToString());
     xbee.write(buf);
     delay(50);
 
-    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID,nestFive.ToString());
+    sprintf(buf, "%d,%d,%d,%s", protocol, COUNTRY_CODE, BOARD_ID, nestFive.ToString());
     xbee.write(buf);
     delay(50);
   }
@@ -532,6 +536,7 @@
     GetNestValues(nestOne, nestTwo, nestThree, nestFour, nestFive);
     
     xbeeWriteAllData();
-    MinutesToDelay(30);
+    delay(500);
+    //MinutesToDelay(30);
   }
 

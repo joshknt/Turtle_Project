@@ -10,6 +10,8 @@
  * Notes:
  *    None.
  *    
+ * Copyright:
+ *    2017 Josh Kent and the MUTS team    
  * 
  * License:
  *    This program is free software: you can redistribute it and/or modify
