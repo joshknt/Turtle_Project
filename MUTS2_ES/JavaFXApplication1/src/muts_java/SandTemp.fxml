@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="muts_java.SandTempController">
+   <children>
+      <SplitPane dividerPositions="0.2842809364548495" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="167.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label layoutX="2.0" layoutY="58.0" text="Area" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="58.0" />
+                  <Label layoutX="2.0" layoutY="6.0" text="Date" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="6.0" />
+                  <DatePicker fx:id="datePickSandFilter" layoutX="2.0" layoutY="27.0" onAction="#handleDateChange" prefHeight="25.0" prefWidth="144.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="27.0" />
+                  <ListView fx:id="areaList" editable="true" layoutX="2.0" layoutY="81.0" onEditCommit="#handleDataSandFile" onMouseClicked="#handleDataSandFile" prefHeight="316.0" prefWidth="161.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="81.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="424.0">
+               <children>
+                  <TabPane prefHeight="400.0" prefWidth="431.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Sand Temperature">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <LineChart fx:id="SANDTEMP" layoutY="1.0" prefHeight="368.0" prefWidth="425.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="SandTempxAxis" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="SandTempyAxis" side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
